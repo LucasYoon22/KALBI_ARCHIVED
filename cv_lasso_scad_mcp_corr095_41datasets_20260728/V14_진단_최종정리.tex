@@ -1,0 +1,465 @@
+% =====================================================================
+%  V14 데이터 생성기 진단 — 최종 정리
+%  Overleaf 설정:  Menu → Compiler → XeLaTeX  로 변경하십시오.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---------- 한글 ----------
+% Overleaf 에서는 kotex 이 사용되고, 없는 환경에서는 xeCJK 로 대체됩니다.
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+  \IfFileExists{kotex.sty}{%
+    \usepackage{kotex}%                          % ← Overleaf 는 이 경로
+  }{\IfFileExists{ctexhook.sty}{%
+    \usepackage{xeCJK}%
+    \setCJKmainfont{Noto Sans CJK KR}%
+    \setCJKsansfont{Noto Sans CJK KR}%
+  }{%
+    \setmainfont{Noto Sans CJK KR}%              % 최후 대체 (로컬 QA 용)
+    \setsansfont{Noto Sans CJK KR}%
+  }}
+\else
+  \GenericError{}{XeLaTeX 로 컴파일하십시오 (Menu -> Compiler -> XeLaTeX)}{}{}
+\fi
+
+% ---------- 기본 ----------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\tcbuselibrary{skins,breakable}
+
+% ---------- 색 ----------
+\definecolor{ink}{HTML}{1B2430}
+\definecolor{acc}{HTML}{8C3A2E}
+\definecolor{steel}{HTML}{3A5A80}
+\definecolor{grn}{HTML}{2C5F4A}
+\definecolor{mut}{HTML}{6E7B88}
+\definecolor{soft}{HTML}{F5F6F8}
+\definecolor{tint}{HTML}{FAF3F1}
+
+% ---------- 제목 스타일 ----------
+\titleformat{\section}{\normalfont\Large\bfseries\color{acc}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{ink}}{\thesubsubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus 1ex minus .2ex}{1.1ex plus .2ex}
+
+% ---------- 정리 환경 ----------
+\theoremstyle{definition}
+\newtheorem{lemma}{보조정리}
+\newtheorem{proposition}{명제}
+\newtheorem{corollary}{귀결}
+
+% ---------- 박스 ----------
+\newtcolorbox{keybox}[1][]{
+  enhanced, breakable, colback=tint, colframe=acc,
+  boxrule=0pt, leftrule=2.5pt, arc=1pt, left=10pt, right=10pt,
+  top=8pt, bottom=8pt, #1}
+\newtcolorbox{notebox}[1][]{
+  enhanced, breakable, colback=soft, colframe=soft,
+  boxrule=0pt, arc=1pt, left=10pt, right=10pt, top=8pt, bottom=8pt, #1}
+
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\arraystretch}{1.25}
+
+% =====================================================================
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{ink} V14 데이터 생성기 진단 --- 최종 정리}\\[0.7em]
+{\large\color{mut} KALBI V6 / Lambda Selector V20 이 real 데이터셋에서 작은 계수를 내는 원인}\\[1.2em]
+{\small\color{mut} 2026년 8월 4일 \quad$\cdot$\quad 개정 3판 \quad$\cdot$\quad V14 baseline 65 태스크 재생성}
+\end{center}
+\vspace{0.8em}
+
+\begin{keybox}
+가장 유력한 원인은 \textbf{V14가 생성하는 학습 태스크의 최적 계수가 구조적으로 \(\lVert\bbeta\rVert_2\lesssim1\) 범위에 갇힌다}는 점이다. 그 결과 KALBI가 가진 계수 정의역 \(\lvert\beta_j\rvert\le6\) 중 약 \(83\%\)가 훈련 중 한 번도 탐색되지 않는다. KALBI는 \(\arg\min\)을 근사하도록 학습된 함수이므로, 학습 범위 밖에서는 근사가 성립하지 않는다. 관찰된 ``real 데이터에서 solution path 붕괴''와 정합적이다.
+
+\smallskip
+2순위는 penalty 함수의 sparsity 능력 손실이며, 아키텍처 문서가 이미 한계로 명시한 항목이다. 3순위는 shape 사전분포의 하한 문제다.
+
+\smallskip
+\textbf{중요한 단서.} 1순위의 \emph{사실}은 실측과 항등식으로 확정되었다. 그러나 이 불일치가 실제 성능 저하의 \emph{원인}이라는 인과는 아직 검증되지 않았다. 5절과 6절에 검증 절차를 정리했다.
+\end{keybox}
+
+% =====================================================================
+\section{진단 대상과 전제}
+
+관찰된 증상은 ``합성 데이터에서는 solution path가 정답과 거의 일치하나, real 데이터에서는 붕괴한다''이다.
+
+solution path는 \(\lambda\)를 전 구간에 걸쳐 변화시키며 \(\bbeta\) 경로를 정답과 대조한 것이다. 전 구간에서 붕괴했으므로 \(\lambda\) 선택은 원인에서 배제된다. 증상은 계수 solver인 KALBI V6에서 발현하며, 근본 원인은 그 학습 분포를 공급하는 V14일 수 있다.
+
+Lambda Selector V20은 \textbf{lambda teacher나 oracle supervision 없이} held-out 예측 MSE만으로 학습된다(아키텍처 문서 Selector update 절). 따라서 ``\(\lambda\) 라벨 분포가 어긋났다''는 형태의 설명은 성립하지 않는다. 진단 대상은 \textbf{V14 생성 분포와 모델 표현 범위의 겹침}이다.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{구성 요소} & \textbf{입력} & \textbf{출력}\\
+\midrule
+V14 생성기 & 없음 (난수) & \(X,\ y\)\\
+Lambda Selector V20 & 표준화된 \(X,\ y\) & \(\lambda\), penalty \(\rho\)\\
+KALBI V6 solver & \(X,\ y,\ \lambda,\ \rho\) & 계수 \(\bbeta\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{분석의 근본적 제약}
+
+\textbf{본 분석은 real 데이터의 \(X\) 행렬에 접근하지 못한 상태에서 수행되었다.} real 쪽 조건수 지표는 직접 측정이 아니라 다음 항등식으로 역산한 값이다.
+\[
+\R(\bbeta)=\frac{\operatorname{Var}(X\bbeta)}{\lVert\bbeta\rVert_2^{2}}
+\]
+분자는 저장된 test prediction의 분산을 \(y_{\text{scale}}^2\)으로 나눠 표준화 공간으로 환원했고, 분모는 저장된 계수에서 계산했다. 레일리 몫의 정의상 \(\lambda_{\min}\le\R(\bbeta)\)이므로, 역산값은 최소고유값에 대한 \textbf{상한}을 준다.
+
+또한 평가 벤치마크가 41개에서 13개로 변경되었다. 새 13개는 \verb|corr095_removed_pct| \(\le40\%\)와 \(0.2<R^2<0.9\) 조건으로 선정되어, 극단적 공선성을 갖는 저차원 분광 데이터가 제외되었다. 이에 따라 이전 판의 P 분포 관련 주장은 폐기하였다(4절 참조).
+
+% =====================================================================
+\section{1순위 --- 학습 계수가 정의역을 채우지 못한다}
+
+\subsection{인과 사슬}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.35em]
+\item V14는 support를 설계행렬과 무관하게 균등 랜덤으로 추출한다.
+\item 그 결과 레일리 몫 \(\R(\bbeta)\)가 1에 집중한다 (명제 2).
+\item \(y\)를 표준화하므로 \(\operatorname{Var}(X\bbeta)\le1\), 따라서 \(\lVert\bbeta\rVert_2\lesssim1\).
+\item KALBI의 계수 정의역 \(\lvert\beta_j\rvert\le6\) 중 \(83\%\)가 학습에서 미탐색으로 남는다.
+\item real 데이터의 최적해가 그 범위 밖이면 근사가 붕괴한다.
+\end{enumerate}
+
+\subsection{명제 1 --- 계수 노름의 항등식}
+
+표준화된 \(X\)에 대해 Gram 행렬 \(G=X^\top X/N\)은 대각이 1인 상관행렬이다. 레일리 몫을
+\[
+\R(\bbeta)=\frac{\bbeta^\top G\bbeta}{\lVert\bbeta\rVert_2^{2}}=\frac{\operatorname{Var}(X\bbeta)}{\lVert\bbeta\rVert_2^{2}}
+\]
+로 정의하면, 이항하여 다음을 얻는다.
+
+\begin{proposition}[계수 노름의 분해]
+\[
+\boxed{\ \lVert\bbeta\rVert_2=\sqrt{\frac{\operatorname{Var}(X\bbeta)}{\R(\bbeta)}}\ }
+\]
+이는 근사가 아니라 \(\R\)의 정의를 옮겨 쓴 항등식이며, 어떤 전제도 필요하지 않다.
+\end{proposition}
+
+\(y\)가 표준화되어 \(\operatorname{Var}(y)=1\)이고 설명 분산 \(\operatorname{Var}(X\bbeta)\le1\)이므로, \textbf{계수 노름을 키울 수 있는 유일한 경로는 \(\R(\bbeta)\)를 낮추는 것이다.}
+
+\subsubsection{결론이 의존하는 전제}
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{4.6cm}p{4.0cm}p{2.4cm}p{3.2cm}@{}}
+\toprule
+\textbf{전제} & \textbf{쓰임} & \textbf{V14} & \textbf{real 파이프라인}\\
+\midrule
+1. \(X\) 컬럼 표준화 & \(\operatorname{diag}(G)=1\)\ \(\Rightarrow\)\ \(\operatorname{tr}(G_{SS})=k\) & 성립 & 성립\\
+2. \(y\) 표준화 & \(\operatorname{Var}(X\bbeta)\le1\) & 성립 (엄밀) & 근사 --- 3/41 위반, 최대 1.25\\
+3. \(\bbeta\)가 \(G\)와 독립 & \(\mathbb{E}[\R(\bbeta)]=1\) & 성립 & \textbf{불성립}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{V14와 real을 가르는 것은 오직 전제 3이다.} LASSO 해는 Gram 행렬을 관측한 뒤 결정되므로 저고유값 방향에 정렬될 수 있으나, V14의 랜덤 support는 구조적으로 그럴 수 없다.
+
+\begin{notebox}
+\small
+참고로 \verb|beta /= signal_std|(신호 분산 정규화)는 전제 목록에 없다. \(y\)의 최종 표준화가 스케일을 흡수하므로 결론에 관여하지 않는다. 수치 실험에서 scale \(=1,5,30\)에 대해 유효 계수가 소수점 6자리까지 동일했다.
+\end{notebox}
+
+\subsection{명제 2 --- 무작위 support에서 \(\R\)은 1에 집중한다}
+
+\begin{lemma}[부분행렬의 고유값 평균]
+\(X\)를 표준화하면 \(\operatorname{diag}(G)=1\)이므로, 임의의 \(k\)개 부분집합 \(S\)에 대하여 \(\operatorname{tr}(G_{SS})=k\). 따라서 \(G_{SS}\)의 고유값 평균은 부분집합 선택과 무관하게 항상 정확히 1이다.
+\end{lemma}
+
+\(G_{SS}\)의 고유분해를 \(\{\lambda_i,v_i\}\), \(u=\bbeta/\lVert\bbeta\rVert\)라 하면
+\[
+\R(\bbeta)=\sum_{i=1}^{k}\lambda_i w_i,\qquad w_i=\langle u,v_i\rangle^{2},\qquad \sum_i w_i=1 .
+\]
+즉 \(\R\)은 고유값의 가중평균이며, 가중치는 \(\bbeta\)가 각 고유방향에 정렬된 정도다.
+
+\begin{proposition}[집중]
+\(\bbeta\)를 \(G\)와 독립적으로 등방 추출하면 \(\mathbb{E}[w_i]=1/k\)이므로
+\[
+\R(\bbeta)\ \longrightarrow\ \frac{1}{k}\sum_{i=1}^{k}\lambda_i=1 .
+\]
+이는 \textbf{설계행렬의 조건수와 무관하다.}
+\end{proposition}
+
+정렬 확률은 \(\langle u,v_1\rangle^{2}\sim\mathrm{Beta}\!\left(\tfrac12,\tfrac{k-1}{2}\right)\)에서
+\[
+P\!\left(w_1>1-\epsilon\right)\sim\epsilon^{(k-1)/2}
+\]
+로 \(k\)에 대해 지수적으로 감소한다.
+
+\begin{corollary}
+\(\lVert\bbeta\rVert_2=\sqrt{\le1/\approx1}\lesssim1\). V14의 support 추출이 \(G\)와 독립인 한 이 상한은 깨지지 않는다.
+\end{corollary}
+
+\subsubsection{차원이 높아질수록 상한은 더 단단해진다}
+
+직관과 반대로, feature 수가 늘면 약한 방향을 찾기가 \emph{더} 어려워진다. 약한 방향의 개수는 늘지만 각각이 받는 가중치가 \(1/k\)로 줄어들어, \(\R\)이 평균으로 더 강하게 수렴하기 때문이다. 고유값이 급감하는 상관구조에서 무작위 방향 20{,}000개를 추출해 측정한 결과는 다음과 같다.
+
+\begin{center}
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+\(k\) & 최소 고유값 & \(\R\) 중앙 & \(\R\) 최솟값 & 최솟값/최소고유값 & \(P(w_1>0.9)\)\\
+\midrule
+8 & \(4.3\times10^{-2}\) & 0.969 & 0.063 & 1배 & \(3.2\times10^{-4}\)\\
+16 & \(5.1\times10^{-8}\) & 0.904 & 0.018 & \(3.5\times10^{5}\)배 & \(3.2\times10^{-8}\)\\
+32 & \(2.9\times10^{-10}\) & 0.946 & 0.088 & \(3.0\times10^{8}\)배 & \(3.2\times10^{-16}\)\\
+64 & \(2.3\times10^{-11}\) & 0.974 & 0.175 & \(7.7\times10^{9}\)배 & \(3.3\times10^{-32}\)\\
+128 & \(9.5\times10^{-12}\) & 0.985 & 0.367 & \(3.9\times10^{10}\)배 & \(3.2\times10^{-64}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\(k=128\)에서는 최소 고유값이 \(9.5\times10^{-12}\)로 존재하지만, 20{,}000회 추출 중 최선이 \(0.367\)에 그친다. 약한 방향이 \emph{존재하나} 무작위로는 도달하지 못한다.
+
+실측이 이를 뒷받침한다. \(k=905\)인 태스크에서 \(\lVert\bbeta\rVert_2=0.9833\), \(\max_j\lvert\beta_j\rvert=0.0777\)로, 계수 개수가 늘수록 개별 계수만 축소되고 노름은 1에 머문다.
+
+\subsection{측정 --- V14 baseline 재생성}
+
+네 조건으로 총 65개 태스크를 재생성했다. outcome이 certificate index의 홀짝으로 결정되어 정확히 절반이 비선형 SCM 응답이며, 해당 태스크에는 \(\bbeta\)가 존재하지 않는다.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llrrl@{}}
+\toprule
+\textbf{배치 폴더} & \textbf{shape} & \textbf{태스크} & \textbf{\(\bbeta\) 측정} & \textbf{목적}\\
+\midrule
+\verb|out_v14_test| & \(N{=}200,\ P{=}16\) & 20 & 10 & 저차원\\
+\verb|out_v14_highp| & \(N{=}131,\ P{=}620\) & 25 & 12 & 중차원\\
+\verb|out_v14_bnn| & \(N{=}800,\ P{=}3000\) & 8 & 4 & BNN 확장 경로\\
+\verb|out_v14_natural| & shape 미고정 & 12 & 6 & 실제 학습 조건\\
+\midrule
+\textbf{합계} & & \textbf{65} & \textbf{32} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{실측 결과}
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+& \textbf{중앙값} & \textbf{최소} & \textbf{최대}\\
+\midrule
+\(\lVert\bbeta\rVert_2\) & 0.9998 & 0.8540 & 1.1435\\
+\(\max_j\lvert\beta_j\rvert\) & 0.7346 & 0.0777 & \textbf{1.0000}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\(\max_j\lvert\beta_j\rvert>6\)인 태스크는 \(0/32\)이다. Direct96 정의역 \([0,6]\) 중 실제로 탐색된 구간은 \([0,1.00]\), 즉 \(17\%\)에 불과하다. V14의 \(\bbeta\) 생성 로직만 분리해 1{,}200회 독립 재현한 결과도 최대 \(1.0143\), 6 초과 0개로 동일하다.
+
+\subsubsection{\(k=1\) 특수 케이스 --- 근사 없는 검증}
+
+\(k=1\)이면 계수가 하나뿐이므로 \(\operatorname{Var}(X\bbeta)=\beta_1^2 G_{11}=\beta_1^2\)이고, V14가 이를 1로 정규화하므로 \(\lvert\beta_1\rvert=1\)이 \textbf{등식으로} 성립한다. 통계적 논증이 개입하지 않는다.
+
+\begin{center}
+\small
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+\(N\) & \(P\) & \(\max_j\lvert\beta_j\rvert\) & 1과의 차이\\
+\midrule
+200 & 16 & 0.999984 & \(1.6\times10^{-5}\)\\
+131 & 620 & 1.000040 & \(4.0\times10^{-5}\)\\
+131 & 620 & 1.000037 & \(3.7\times10^{-5}\)\\
+131 & 620 & 1.000040 & \(4.0\times10^{-5}\)\\
+131 & 620 & 0.999895 & \(1.1\times10^{-4}\)\\
+800 & 3{,}000 & 1.000004 & \(4.0\times10^{-6}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\(N\)과 \(P\)가 서로 다른 6개 태스크가 동일한 값에 수렴한다. 표본 변동이 아니라 구조적 귀결이다. 잔차는 float32 저장과 표준화 과정의 수치 오차 범위다.
+
+\subsection{수정 방향}
+
+두 수정은 곱셈적으로 작용하며, 한쪽만 적용하면 개선폭이 2배 이하에 머문다.
+
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{\(X\) 구조} & \textbf{무작위 계수 (현행)} & \textbf{정렬 계수 (수정)}\\
+\midrule
+V14 유사 (독립) & 1.02 & \(4.9\times10^{-1}\)\\
+매끄러운 기저 추가 & 0.84 & \(\mathbf{9.7\times10^{-5}}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.35em]
+\item \textbf{\(X\) 생성.} feature 노이즈 rate를 태스크마다 샘플링하거나 매끄러운 스펙트럼 계열을 추가한다. 현행 노이즈는 노이즈 후 Gram이 \(G'=DGD+\operatorname{diag}\!\left(v_j/(1+v_j)\right)\) 형태가 되어 최소고유값에 하한 \(\approx1/(P\cdot\text{rate})\)을 만든다.
+\item \textbf{계수 생성.} support를 \(G_{SS}\)의 최소 고유벡터 방향으로 혼합해 추출한다. 혼합 강도를 \([0,1]\) 균등으로 두면 현행과 완전 정렬 사이를 연속적으로 덮는다.
+\end{enumerate}
+
+\subsection{효과 없음이 검증된 수정}
+
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em,itemsep=0.3em]
+\item \verb|beta /= signal_std| 제거 또는 \(\bbeta\)에 임의 스케일 곱하기 --- \(y\)의 최종 표준화가 스케일을 흡수한다.
+\item support 선택 로직만 변경 --- 최소고유값이 \(4.09\times10^{-1}\)에서 \(1.13\times10^{-1}\)로 3.6배 내려갈 뿐이다.
+\item BNN 확장분의 상관 감사 강화 --- \(P>2048\) 경로의 탐욕 최소고유값 \(8.31\times10^{-2}\)로 SCM core 경로(\(1.13\times10^{-1}\))와 유의미한 차이가 없다.
+\end{enumerate}
+
+% =====================================================================
+\section{2순위 --- penalty의 sparsity 능력 손실}
+
+V20은 \(r=\lambda\cdot\max\rho'/\lambda_{\max}\)로 정의하고 \(r\in[10^{-6},1]\)로 제한한다. 계수가 정확히 0이 되는 원점 KKT 조건은
+\[
+\frac{\lvert X_j^\top y\rvert}{N}\le\lambda\rho'(0)
+\]
+이고, 모든 계수를 0으로 만들려면 좌변의 최대값 \(\lambda_{\max}\)를 넘겨야 한다. 정의를 대입하면
+\[
+\boxed{\ r\cdot\kappa\ \ge\ 1,\qquad \kappa=\frac{\rho'(0)}{\max\rho'}\ }
+\]
+\(r\le1\)이므로 \(\kappa<1\)이면 어떤 \(r\)로도 zero-KKT 지점에 도달할 수 없다. 아키텍처 문서 한계 6번이 이를 직접 인정하며, 한계 7번(regularizer 부재로 인한 penalty collapse)과 8번(concavity 미보장)이 이를 보강한다.
+
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{penalty 형태} & \(\rho'(0)\) & \(\max\rho'\) & \(\kappa\) & nnz@\(r{=}1\) & nnz@\(r{=}0.1\)\\
+\midrule
+LASSO (\(\rho'\) 상수) & 0.1667 & 0.1667 & 1.000 & 0 & 5\\
+MCP-like (\(\rho'\) 급감) & 0.6645 & 0.6645 & 1.000 & 0 & 5\\
+SCAD-like & 0.4252 & 0.4252 & 1.000 & 0 & 5\\
+ridge-like (\(\rho'\propto t\)) & 0.0000 & 0.3333 & \textbf{0.000} & \textbf{60} & \textbf{60}\\
+collapse (\(\rho'\) 완만증가) & 0.0769 & 0.2564 & 0.300 & 4 & 5\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\(N=200\), \(P=60\), 진짜 support \(k=5\). \(\kappa=0\)이면 \(r\)을 어떻게 주어도 60개 전부 살아남는다. \textbf{다만 이 실험에서 \(\max\lvert\beta\rvert\)는 오히려 소폭 컸다(0.705 대 0.641). \(\kappa\)의 지문은 dense이지 max 감소가 아니다.} 검증 시 nnz를 먼저 확인해야 한다.
+
+\textbf{V14와의 연관.} \(\kappa\) 상한 구조 자체는 V20의 스케일링 정의에서 나오며 V14와 무관하다. 다만 selector의 학습 신호가 held-out MSE뿐이고 V14 학습 태스크의 정확히 50\%가 비선형 SCM 응답(CV \(R^2\) 중앙 0.241)이므로, 예측 오차를 최소화하는 최선이 ridge-like 형태로 수렴할 유인이 있다. 미검증이다.
+
+% =====================================================================
+\section{3순위 --- shape 사전분포의 하한}
+
+V14는 \(P<50\)인 태스크를 생성할 수 없다. shape 계약 검증이 이를 거부하며 \verb|--force-p|로도 우회되지 않는다(실행으로 확인).
+
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+& \textbf{\(P\) 범위} & \textbf{\(P\) 중앙} & \textbf{\(P<50\)} & \textbf{영향}\\
+\midrule
+이전 벤치마크 41개 & 3 -- 1{,}638 & 446 & \textcolor{acc}{17 / 41} & 생성 확률 정확히 0\\
+\textcolor{mut}{새 벤치마크 13개} & \textcolor{mut}{689 -- 3{,}972} & \textcolor{mut}{1{,}024} & \textcolor{mut}{0 / 13} & \textcolor{mut}{해당 없음}\\
+V14 사전분포 & 392 -- 122{,}324 & 9{,}984 & 확률 0 & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{현재 13개 벤치마크에서는 이 하한이 구속력을 갖지 않는다.} corr 제거율 40\% 조건으로 저차원 분광 데이터가 제외된 결과이며, 향후 벤치마크가 확장되면 다시 문제가 된다.
+
+\subsection{난이도 이중봉}
+
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& \textbf{CV \(R^2\) 중앙값} & \textbf{대응 SNR}\\
+\midrule
+V14 linear 브랜치 & 0.908 & 9.9\\
+\textbf{새 벤치마크 13개} & \textbf{0.535} & \textbf{1.3}\\
+V14 tabicl 브랜치 & 0.241 & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+새 벤치마크는 \(0.2<R^2<0.9\) 조건으로 선정되었다. V14의 선형 브랜치는 이 밴드 상단을, 비선형 브랜치는 하단을 벗어난다. \(R^2=\text{snr}/(1+\text{snr})\)이므로 이 분포는 \verb|LINEAR_SNR_MIN|\(=0.2\), \verb|LINEAR_SNR_MAX|\(=50\) 두 상수가 결정한다.
+
+브랜치당 10 태스크 측정이며, \(N\)이 작을 때 태스크별 \(R^2\)가 \(\pm0.17\) 수준으로 흔들리므로 소수점 세 자리까지 신뢰해서는 안 된다.
+
+% =====================================================================
+\section{확정 / 미확정}
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{7.2cm}lp{5.4cm}@{}}
+\toprule
+\textbf{항목} & \textbf{상태} & \textbf{근거}\\
+\midrule
+V14 학습 데이터의 \(\max_j\lvert\beta_j\rvert\le1.00\) & \textcolor{grn}{\textbf{확정}} & 실측 32 + 재현 1{,}200 + 항등식\\
+Direct96 정의역의 83\%가 미탐색 & \textcolor{grn}{\textbf{확정}} & 위와 동일\\
+\(k=1\) 태스크가 이론값 1에 수렴 & \textcolor{grn}{\textbf{확정}} & 6개, 오차 \(<1.1\times10^{-4}\)\\
+\(P<50\) 생성 확률 0 & \textcolor{grn}{\textbf{확정}} & 코드 하드가드 + 실행 확인\\
+난이도 이중봉 (0.91 / 0.24) & 강함 & 브랜치당 10 태스크\\
+\midrule
+KALBI가 real에서 산출하는 \(\bbeta\) & \textcolor{acc}{\textbf{미측정}} & 추론을 수행하지 않았다\\
+penalty가 실제로 ridge-like인지 (\(\kappa\)) & \textcolor{acc}{\textbf{미측정}} & 추론 1회로 확인 가능\\
+새 13개 벤치마크의 계수 크기·조건수 & \textcolor{acc}{\textbf{미측정}} & 데이터 수령 직후\\
+이 불일치가 성능 저하의 원인인지 & \textcolor{acc}{\textbf{미확정}} & 인과 미검증\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =====================================================================
+\section{다음 단계 --- 재학습 없이 추론 1회로 판정 가능}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.35em]
+\item \textbf{13개 CV LASSO 기준선 생성.} \(\bbeta\) 크기, nnz, \(\lambda\) ratio, 부분 Gram 최소고유값.
+\item \textbf{KALBI를 13개에 추론.} 예측 \(\bbeta\)를 기준선과 대조한다.
+\item \textbf{dense 여부.} KALBI nnz / CV nnz 중앙값이 1.5배를 넘으면 2순위 지지, 0.7배 미만이면 기각.
+\item \textbf{바운드 포화.} 예측 \(\bbeta\) 중 \(\lvert\beta_j\rvert\ge5.9\)인 계수 개수.
+\item \textbf{penalty collapse.} \(\kappa\) 중앙값이 0.2 미만이면 2순위 확정, 0.7 이상이면 기각.
+\item \textbf{병리 여부 판정 (핵심).} \(\lVert X\hat\bbeta\rVert/\lVert X\bbeta^{\text{CV}}\rVert\approx1\)인데 계수 비율만 작다면, 조건수가 큰 설계에서 동등하게 좋은 다른 해를 고른 것이며 \textbf{병리가 아니다}. 박스 제약 최소제곱 수치 실험에서 자유해가 \(\max\lvert\beta\rvert=18.12\)를 요구하는 상황에서도 \(\lvert\beta\rvert\le6\) 제약해의 \(R^2\) 손실은 \(0.8011\to0.7984\), 즉 0.3\%에 불과했다.
+\end{enumerate}
+
+% =====================================================================
+\appendix
+\section{순위 변천사}
+
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}llp{2.2cm}p{6.6cm}@{}}
+\toprule
+\textbf{초기} & \textbf{항목} & \textbf{최종} & \textbf{변경 근거}\\
+\midrule
+1위 & 50/50 nonlinear 혼합 & 2순위 하위 & 측정 결과 V14 linear 브랜치 \(\lambda\)(0.0236)가 real(0.0351)보다 오히려 작음. selector에 \(\lambda\) teacher가 없어 전제 무효\\
+2위 & \(3k<N\) 가드 & 3순위 & 사실은 확정이나 커버리지 공백일 뿐 계수 축소의 메커니즘이 아님\\
+3위 & shape prior & 3순위 & 사실 확정. 같은 이유로 강등\\
+4위 & \verb|beta /= signal_std| & 1순위의 수학적 핵심 & 세 차례 뒤집힘. 철회 근거가 틀렸고, 복원 후 원인을 랜덤 support로 재특정\\
+(중간 1위) & 쌍별 상관 격차 & 기각 & 쌍별 상관은 조건수를 측정하지 못함. 조건수 1061 설계의 쌍별 상관이 0.59\\
+(중간 1위) & \(\lvert\beta\rvert\le6\) 클램프 & 1순위의 귀결 & 박스 제약 최적화의 \(R^2\) 손실이 0.3\%뿐. 계수 크기는 설명하나 성능은 설명 못 함\\
+(후보) & BNN 필터 느슨함 & 기각 & 탐욕 최소고유값이 SCM 경로와 차이 없음\\
+(후보) & feature noise iid & 1순위에 흡수 & 방향은 맞았으나 메커니즘은 다중공선성\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{기각된 가설 상세}
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em,itemsep=0.35em]
+\item \textbf{\(\lambda\)가 체계적으로 과대예측된다.} 측정된 CV 최적 \(\lambda\) ratio 중앙값은 V14 linear 0.0236, real 0.0351, V14 tabicl 0.1216이다. linear 브랜치는 오히려 real보다 작다. selector에 \(\lambda\) teacher가 없다는 사실이 확인된 뒤 전제 자체가 무효화되었다.
+\item \textbf{쌍별 최대 상관이 공선성 지표다.} 수치 실험에서 조건수 1061인 설계의 쌍별 최대 상관이 0.59였다. 0.95 쌍별 필터는 다중공선성을 통제하지 못한다. 올바른 지표는 부분 Gram의 최소고유값이다.
+\item \textbf{\texttt{beta /= signal\_std}를 제거하면 해결된다.} \(y\)의 최종 표준화가 스케일을 지우므로 효과가 없다.
+\item \textbf{계수 클램프가 예측을 파괴한다.} 자유해를 사후에 6으로 자르면 \(R^2\)가 \(-55\)까지 붕괴하나, KALBI는 처음부터 박스 안에서 최적화한다. 박스 제약 최소제곱의 \(R^2\) 손실은 0.3\%였다.
+\end{enumerate}
+
+\section{데이터 출처와 제한}
+
+\textbf{V14 측정값.} baseline 확인 후 재생성한 네 배치. \verb|out_v14_test| (20), \verb|out_v14_highp| (25), \verb|out_v14_bnn| (8), \verb|out_v14_natural| (12). 측정값은 각 배치의 \verb|manifest.json| 내 \verb|linear_beta_l2_norm|, \verb|linear_beta_max_abs|.
+
+\textbf{제한 사항.}
+\begin{itemize}[leftmargin=1.6em,itemsep=0.25em]
+\item real 데이터의 \(X\) 행렬에 접근하지 못했다. real 조건수는 역산값이며 상한이다.
+\item 앞의 세 배치는 force-shape이므로 V14의 자연 shape 분포를 대표하지 않는다. 자연 shape 배치를 별도로 포함한 이유다.
+\item 탐욕 support 선택은 휴리스틱이므로 진짜 최소고유값은 더 낮을 수 있다.
+\item 새 13개 벤치마크에 대한 측정은 아직 수행하지 않았다.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "v14.scmmixture.rolling.producer.config.v1",
+  "pipeline_version": "v14_kalbi_tabpfnv1_tabiclv2_scm_xy_50_50_rolling100gb_v1",
+  "source_version": "v14_scmmixture_cpu_rolling_producer_v1",
+  "project_dir": "/users/minsuk/fm-lm-lambda",
+  "control_root": "/users/sync_data/kalbi_tabpfnv1_tabiclv2_scm_xy_50_50_groupdrop095_100GB_seed88073400/rolling_control",
+  "pipeline_config_path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v14_scmmixture/pipeline_config_v14_scmmixture_rolling100gb.json",
+  "pipeline_config_sha256": "7196a1a59ebe2f4a79efa2bb4569b141f3f7e0d3efd0ded08498620dc5df4f8a",
+  "generator_sources": {
+    "tabpfn_v1": {
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabpfn_v1_causal_scm_mlp512_groupdrop095_scm_y_v2.py",
+      "sha256": "b327096cabd3e9016be344b86515cdcf346f86fa132ce043566acf125f0d5bd4",
+      "args": ["--official-repo", "/users/minsuk/fm-lm-lambda/external/TabPFN-v1.0.0"]
+    },
+    "tabicl_v2": {
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_graph_scm_mlp512_groupdrop095_scm_y_v5.py",
+      "sha256": "f819f09abe2b45b80cc4eddf1092fd212f798407dd99ba55834b292682c0bf52",
+      "args": ["--filter-unpredictable"]
+    }
+  },
+  "source_files": [
+    {
+      "label": "shape_sampler_helper",
+      "path": "/users/minsuk/fm-lm-lambda/exp122_shape_sampler.py",
+      "sha256": "79efa4e7eea257c39240421ad5656ac505540de83116db1a7817f77ccc619e19"
+    },
+    {
+      "label": "tabpfn_v1_runtime_adapter_and_corr_filter",
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabpfn_v1_causal_scm_mlp512_groupdrop095_sparse_linear_v1.py",
+      "sha256": "846384ac4b4497515248da767325d3aedb0ee77a4844dbd92fa997597bed650a"
+    },
+    {
+      "label": "official_tabpfn_v1_prior_checkpoint",
+      "path": "/users/minsuk/fm-lm-lambda/external/TabPFN-v1.0.0/tabpfn/models_diff/prior_diff_real_checkpoint_n_0_epoch_42.cpkt",
+      "sha256": "3c9aadaeddbf51462af8c0ee4b3ca3c697890f77e92318abbb0821b75261c392"
+    }
+  ],
+  "generator_common_args": [
+    "--n-min", "32", "--n-max", "20000",
+    "--main-n-min", "200", "--small-n-max", "199", "--small-n-probability", "0.10",
+    "--p-min", "50", "--p-max", "100000", "--max-cells", "24000000",
+    "--p-median", "10000", "--p-log-sigma", "0.75",
+    "--raw-n-median", "5700", "--n-log-sigma", "0.70",
+    "--direct-p-cap", "4096", "--core-oversample-factor", "1.5",
+    "--corr-threshold", "0.95", "--hidden-dim", "256", "--gaussian-dims", "16",
+    "--input-noise-variance-min", "0.001", "--input-noise-variance-max", "1.0",
+    "--output-noise-variance-min", "0.001", "--output-noise-variance-max", "0.25",
+    "--clip-value", "10.0", "--max-retries", "30"
+  ],
+  "bootstrap_staging_high_water_bytes": 102000000000,
+  "staging_high_water_bytes": 4000000000,
+  "active_target_bytes": 100000000000,
+  "retirement_grace_bytes": 10000000000,
+  "project_hard_cap_bytes": 130000000000,
+  "min_free_bytes": 300000000000,
+  "max_shard_bytes": 64000000,
+  "workers": [
+    {"worker_id":"tabpfn_00","prior":"tabpfn_v1","base_seed":88073400,"cpu_cores":[64,65,66,67],"threads":4},
+    {"worker_id":"tabpfn_01","prior":"tabpfn_v1","base_seed":188073419,"cpu_cores":[68,69,70,71],"threads":4},
+    {"worker_id":"tabpfn_02","prior":"tabpfn_v1","base_seed":288073438,"cpu_cores":[72,73,74,75],"threads":4},
+    {"worker_id":"tabpfn_03","prior":"tabpfn_v1","base_seed":388073457,"cpu_cores":[76,77,78,79],"threads":4},
+    {"worker_id":"tabpfn_04","prior":"tabpfn_v1","base_seed":488073476,"cpu_cores":[80,81,82,83],"threads":4},
+    {"worker_id":"tabpfn_05","prior":"tabpfn_v1","base_seed":588073495,"cpu_cores":[84,85,86,87],"threads":4},
+    {"worker_id":"tabpfn_06","prior":"tabpfn_v1","base_seed":688073514,"cpu_cores":[88,89,90,91],"threads":4},
+    {"worker_id":"tabpfn_07","prior":"tabpfn_v1","base_seed":788073533,"cpu_cores":[92,93,94,95],"threads":4},
+    {"worker_id":"tabicl_00","prior":"tabicl_v2","base_seed":888073552,"cpu_cores":[96,97,98,99],"threads":4},
+    {"worker_id":"tabicl_01","prior":"tabicl_v2","base_seed":988073571,"cpu_cores":[100,101,102,103],"threads":4},
+    {"worker_id":"tabicl_02","prior":"tabicl_v2","base_seed":1088073590,"cpu_cores":[104,105,106,107],"threads":4},
+    {"worker_id":"tabicl_03","prior":"tabicl_v2","base_seed":1188073609,"cpu_cores":[108,109,110,111],"threads":4},
+    {"worker_id":"tabicl_04","prior":"tabicl_v2","base_seed":1288073628,"cpu_cores":[112,113,114,115],"threads":4},
+    {"worker_id":"tabicl_05","prior":"tabicl_v2","base_seed":1388073647,"cpu_cores":[116,117,118,119],"threads":4},
+    {"worker_id":"tabicl_06","prior":"tabicl_v2","base_seed":1488073666,"cpu_cores":[120,121,122,123],"threads":4},
+    {"worker_id":"tabicl_07","prior":"tabicl_v2","base_seed":1588073685,"cpu_cores":[124,125,126,127],"threads":4}
+  ]
+}

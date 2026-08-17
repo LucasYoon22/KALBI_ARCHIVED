@@ -1,0 +1,73 @@
+{
+  "schema_version": "v14.tabicl_noisy.training.pipeline.v1",
+  "pipeline_version": "v14_kalbi_tabiclv2_sampled_response_noise_rolling100gb_v1",
+  "model": {
+    "beta_solver": "kalbi_v3_krylov_abfilm_learnedthreshold_k32_stages32_v1",
+    "selector": "v17_k32s32_direct96_penaltymlp3_hidden512_v2",
+    "global_effective_batch": 32,
+    "selector_update_every": 4,
+    "checkpoint_migration": "initialize joint weights and optimizer state from latest noiseless TabICLv2 checkpoint after noisy epoch-0 catalog validation"
+  },
+  "penalty": {
+    "canonical_contract": "v12_canonical_direct96_squareplus_positive_adjacent_integral_native196_meta4_relu2_exact_shared_v1",
+    "cache_size": 300000,
+    "native_dimension": 196,
+    "direct_parameter_dimension": 96
+  },
+  "data": {
+    "mixture_contract": "100 percent TabICLv2 paired graph SCM with sampled response error",
+    "priors": {
+      "tabicl_v2": {
+        "dataset_contract": "tabiclv2_graph_scm_xy_groupdrop095_sampled_noise_v6",
+        "latent_response_contract": "official_tabiclv2_graph_scm_y_center_scale_clip10_rescale_v1",
+        "response_contract": "official_tabiclv2_graph_scm_y_plus_sampled_error_clip10_rescale_v1",
+        "response_noise_contract": "capped_exp1_scale_mixture_centered_unit_error_additive_v1",
+        "active_min_bytes": 49000000000,
+        "active_max_bytes": 102000000000
+      }
+    },
+    "official_target_retained_as_latent_signal": true,
+    "filter_unpredictable_applied_before_response_noise": true,
+    "data_root": "/users/sync_data/kalbi_tabiclv2_scm_xy_noisyexp1mix_groupdrop095_100GB_seed420807355",
+    "active_target_bytes": 100000000000,
+    "active_min_bytes": 49000000000,
+    "active_max_bytes": 102000000000,
+    "n_min": 32,
+    "n_max": 20000,
+    "p_min": 50,
+    "p_max": 100000,
+    "max_cells": 24000000,
+    "correlation_threshold_exclusive": 0.95,
+    "direct_p_cap": 4096,
+    "mlp_hidden_dim": 256,
+    "mlp_output_features": 512,
+    "gaussian_input_dims": 16,
+    "response_noise": {
+      "sigma_distribution": "min(Exponential(scale=1), 3)",
+      "families": {
+        "gaussian": 0.35,
+        "student_t_df_3_to_10": 0.20,
+        "laplace": 0.15,
+        "contaminated_gaussian": 0.10,
+        "centered_lognormal": 0.10,
+        "heteroskedastic_gaussian": 0.10
+      },
+      "normalization": "empirically center and unit-scale each error vector before multiplying by sigma",
+      "final_target": "clip latent_signal + sigma * unit_error to +/-10, then center and unit-scale"
+    }
+  },
+  "rolling": {
+    "initial_catalog": "fresh noisy-response generation; no noiseless shard migration",
+    "trainer_reload_interval_updates": 100,
+    "checkpoint_after_reload": true,
+    "clear_all_dataloader_caches_on_reload": true,
+    "require_all_rank_ack": true,
+    "require_reload_verified_checkpoint_before_gc": true,
+    "refresh_target_bytes": 2000000000,
+    "rolling_staging_high_water_bytes": 4000000000,
+    "bootstrap_staging_high_water_bytes": 102000000000,
+    "retirement_grace_bytes": 10000000000,
+    "project_hard_cap_bytes": 130000000000,
+    "min_free_bytes": 300000000000
+  }
+}

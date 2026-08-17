@@ -1,0 +1,57 @@
+{
+  "schema_version": "v19.tabicl_v11_expvarnoise.training.pipeline.v1",
+  "pipeline_version": "v19_kalbi_tabiclv2_scm2048_bnn128_expvarnoise_v11_rolling100gb_v1",
+  "model": {
+    "beta_solver": "kalbi_v3_krylov_abfilm_learnedthreshold_k32_stages32_v1",
+    "selector": "v19_k32s32_fullp_local_and_cumulative_ridge_direct96_hidden512_v2",
+    "global_effective_batch": 32,
+    "selector_update_every": 4,
+    "checkpoint_migration": "continue Kalbi V3 beta, optimizer, and scheduler from latest V18 checkpoint; initialize V19 selector and selector optimizer from scratch"
+  },
+  "penalty": {
+    "canonical_contract": "v12_canonical_direct96_squareplus_positive_adjacent_integral_native196_meta4_relu2_exact_shared_v1",
+    "cache_size": 300000,
+    "native_dimension": 196,
+    "direct_parameter_dimension": 96
+  },
+  "data": {
+    "mixture_contract": "100 percent TabICLv2 V11 SCM2048 qfiltered core plus BNN128 extension with independent featurewise Exp(1) variance Gaussian error",
+    "dataset_contract": "tabiclv2_graph_scm2048_qfilter_bnn128_expvarnoise_v11",
+    "target_contract": "official_tabiclv2_graph_scm_y_qualityfilter_center_scale_clip10_rescale_v2",
+    "feature_noise_contract": "all_features_variance_iid_exponential_rate1_error_gaussian_v1",
+    "data_root": "/users/sync_data/kalbi_tabiclv2_scm2048_qfilter_bnn128_expvarnoise_v11_p100k_100GB_seed88076430",
+    "active_target_bytes": 100000000000,
+    "bootstrap_active_bytes": 1000000000,
+    "n_min": 32,
+    "n_max": 40000,
+    "p_min": 50,
+    "p_max": 100000,
+    "max_cells": 24000000,
+    "shape_medians": {
+      "p": 10000,
+      "raw_n": 5700
+    },
+    "scm_core_cap": 2048,
+    "scm_core_oversample_factor": 1.5,
+    "scm_core_exact_correlation_threshold_exclusive": 0.95,
+    "bnn_output_block": 128,
+    "bnn_hidden_dim": 64,
+    "bnn_parent_count_distribution": "round(exp(Uniform(log(8), log(128))))",
+    "feature_noise_variance_distribution": "Exponential(rate=1) independently per feature",
+    "feature_error_distribution": "Normal(0, feature_noise_variance) independently per sample",
+    "high_p_correlation_policy": "exact all-pair certificate on the noisy SCM2048 core plus deterministic 256-feature final-P sampled audit"
+  },
+  "rolling": {
+    "trainer_reload_interval_updates": 100,
+    "checkpoint_after_reload": true,
+    "clear_all_dataloader_caches_on_reload": true,
+    "require_all_rank_ack": true,
+    "require_reload_verified_checkpoint_before_gc": true,
+    "refresh_target_bytes": 2000000000,
+    "rolling_staging_high_water_bytes": 4000000000,
+    "bootstrap_staging_high_water_bytes": 102000000000,
+    "retirement_grace_bytes": 10000000000,
+    "project_hard_cap_bytes": 130000000000,
+    "min_free_bytes": 300000000000
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "design": "orthogonal X=sqrt(N)I; dense scalar global search",
+  "lambda_ratios": [
+    1.0,
+    0.5,
+    0.25
+  ],
+  "methods": {
+    "lasso": {
+      "kkt_max": 0.0,
+      "lambda_max": 2.0,
+      "lambda_max_zero_nnz": 0,
+      "max_beta_error_vs_dense_global_scalar_search": 6.661338147750939e-16,
+      "objective": 3.1262499999999998,
+      "raw_lambda": 0.5,
+      "solver_diagnostics": {
+        "all_stop_criteria_within_tolerance": true,
+        "convergence_warning_count": 0,
+        "max_iterations": 1,
+        "max_stop_criterion": 0.0,
+        "solver": "cached_gramcd_l1"
+      },
+      "status": "PASS",
+      "zero_objective": 5.718749999999999
+    },
+    "mcp": {
+      "kkt_max": 1.1102230246251565e-16,
+      "lambda_max": 2.0,
+      "lambda_max_zero_nnz": 0,
+      "max_beta_error_vs_dense_global_scalar_search": 7.771561172376096e-16,
+      "objective": 1.9324999999999999,
+      "raw_lambda": 0.5,
+      "solver_diagnostics": {
+        "all_stop_criteria_within_tolerance": true,
+        "max_iteration_budget": 1,
+        "max_stop_criterion": 1.6653345369377348e-16
+      },
+      "status": "PASS",
+      "zero_objective": 5.718749999999999
+    },
+    "scad": {
+      "kkt_max": 2.220446049250313e-16,
+      "lambda_max": 2.0,
+      "lambda_max_zero_nnz": 0,
+      "max_beta_error_vs_dense_global_scalar_search": 7.05882352947107e-06,
+      "objective": 2.5828676470588237,
+      "raw_lambda": 0.5,
+      "solver_diagnostics": {
+        "all_stop_criteria_within_tolerance": true,
+        "max_iteration_budget": 1,
+        "max_stop_criterion": 5.551115123125783e-17
+      },
+      "status": "PASS",
+      "zero_objective": 5.718749999999999
+    }
+  },
+  "objective_contract": "0.5/N ||y-X beta||^2 + sum_j p_lambda(|beta_j|)",
+  "solver": {
+    "lasso": "sklearn coordinate descent",
+    "mcp": "skglm GramCD",
+    "scad": "skglm GramCD"
+  },
+  "status": "PASS"
+}

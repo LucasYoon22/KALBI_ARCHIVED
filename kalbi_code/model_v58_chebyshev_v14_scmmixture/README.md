@@ -1,0 +1,40 @@
+# KALBI V58-Chebyshev V14 ISIS-Conditioned 50:50 Paired-SCM Rolling-100GB
+
+V14 is a two-pass lambda/penalty selector for high-dimensional sparse linear regression. A fixed canonical query first runs the exact production hard ISIS28 solver on training rows. The final selector consumes the ordered original-coordinate ISIS support path plus pilot residual/KKT, response-aligned X-y, and geometry features before emitting lambda and canonical Direct96 penalty parameters.
+
+The active corpus is byte-balanced between two paired-SCM priors: 50GB from the official TabPFN v1 causal MLP-SCM branch and 50GB from official TabICLv2 `graph_scm`. Within every task, X and y come from the same official causal draw. The paired response is standardized but never replaced by a controlled sparse-linear target.
+
+Key entry points:
+
+- `selector_v14_isisconditioned.py`: fixed pilot query, 460-D hard-ISIS28 path features, and final selector.
+- `train_joint_v14_isisconditioned_rolling.py`: 8-GPU rolling-100GB joint trainer.
+- `preflight_v14_actual_task.py`: actual-task two-update gradient/memory audit.
+- `launch_v14_isisconditioned_bigdata_joint.sh`: append-logged production launcher.
+- `launch_rolling_curator_v14.sh`: checkpoint-gated rolling curator.
+- `rolling_producer.py`: fail-closed graph-SCM X/y shard producer wrapper.
+- `launch_rolling_producer_v14_scmmixture.sh`: eight TabPFN-v1 plus eight TabICLv2 producers.
+- `launch_rolling_curator_v14_scmmixture.sh`: byte-balanced 50:50 curator.
+- `launch_v14_scmmixture_bigdata_joint.sh`: transfer-resumed mixture trainer launcher.
+- `launch_scmmixture_bootstrap_coordinator.sh`: per-prior byte/full-hash gate and automatic trainer start.
+
+The older V13 files are retained only as immutable base/provenance. V13 did not put ISIS inside the selector forward and must not be used as the V14 launcher.
+
+Core contracts:
+
+- pilot effective ratio 0.1 with the cache-mean canonical Direct96 penalty;
+- actual train-only hard ISIS28/TopK32 pilot;
+- 28 x 16 stage statistics plus 12 global residual/KKT statistics (460-D);
+- 570-D response-aligned X-y representation;
+- hidden width 512, MLP depth four, 8,759,949 selector parameters;
+- canonical squareplus-positive Direct96 to native196/meta4 output;
+- final actual-hard-ISIS28 solve trained only by held-out prediction loss;
+- no lambda-teacher Huber term and no five-point hard-grid teacher execution;
+- rolling catalog adoption/checkpoint every 500 updates with append-only logs.
+- dataset contracts `tabpfn_v1_causal_scm_xy_groupdrop095_v2` and `tabiclv2_graph_scm_xy_groupdrop095_v5`;
+- official response contracts `official_tabpfn_v1_causal_scm_y_center_scale_clip10_rescale_v1` and `official_tabiclv2_graph_scm_y_center_scale_clip10_rescale_v1`;
+- no synthetic support, coefficient vector, or artificial target SNR;
+- exact per-rank TabPFN/TabICL task alternation and 49--51GB active bytes per prior;
+- a new immutable data root/seed, so no old catalog can be adopted accidentally;
+- transfer-resume from immutable V14 step 1,000 checkpoint SHA256 `c6a17bafb9f94b56271afa2f8d83bd3aaf88e4796fbbf86682a3d1dbbe58fb68`;
+- strict continuation of beta, selector, both optimizers, beta scheduler, and stochastic sampler states;
+- deliberate reset of only the superseded catalog pointer/data stream before reading the new 50:50 SCM catalog.

@@ -1,0 +1,15 @@
+[program:v58chebyshev_v12_canonical_bigdata_30k_20260717]
+command=/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v12_canonical/launch_v12_canonical_bigdata_joint.sh
+directory=/users/minsuk/fm-lm-lambda
+environment=WARM_START="__WARM_START__",WARM_START_SHA256="__WARM_START_SHA256__",EXPECTED_PIPELINE_SHA256="__EXPECTED_PIPELINE_SHA256__",PENALTY_CACHE_SHA256="6a3fda8201de87d5e2078e6e56ad0c67e5ad2a27248865910cac8f0f36bfe1dc"
+autostart=false
+autorestart=unexpected
+startsecs=10
+startretries=3
+stopsignal=TERM
+stopwaitsecs=300
+stopasgroup=true
+killasgroup=true
+redirect_stderr=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0

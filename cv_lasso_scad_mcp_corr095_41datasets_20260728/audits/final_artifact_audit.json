@@ -1,0 +1,22 @@
+{
+  "baseline_task_count": 41,
+  "kalbi_bundle_count": 4,
+  "kalbi_tasks_per_bundle": 25,
+  "lasso_convergence_warning_count": 618,
+  "lasso_solution_path_count": 25,
+  "maximum_gamma_over_eta_raw_lambda_error": 1.5971110900458996e-07,
+  "maximum_kalbi_selected_projected_kkt": 0.4112627492094247,
+  "maximum_lasso_path_projected_kkt": 0.0006521278474433338,
+  "required_artifact_sha256": {
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/feature_filtering.png": "40b1a7396d4d4c5fe8d7ba6606f551017fa7b2f80d3c5df4b2a46b9075d926bb",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/method_rank.png": "96e52c8fca3e0176c66f98b25a5b6f21d354103d92760721c33340df260ce9ee",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/nmse_heatmap.png": "4df4612e37ebec4a9cdd01948ad793dfbdeba77370f97fa3225c05e12061c382",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/paired_nmse_scatter.png": "8b65f01081e7fd9491ffe389c236fe31789acc301aaf8e588c4d6214c9b732fd",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/solution_paths_representative6.pdf": "83428917d7463371bd280d894e7be91bf4342103c455e113125bd8aded3d20bf",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/figures/solution_paths_representative6.png": "231a6c7c53b194fde4f36e6581fe934b1470af6201aa056e8efdb026c333868c",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/metrics/aggregate_metrics.csv": "630c6eb29d21e61494202452661ab3d3f82bbbcb62278e419bf52eecf388df59",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/metrics/pairwise_statistics.csv": "b61d6023b13944a5b339b75d9808efb9fc48fa2709261f98a69fe9ff46e0211c",
+    "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728/metrics/per_task_metrics.csv": "05f88f9dd13808006bd540859b856cb1569524a701a6e2fe29cef4994abc11da"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,42 @@
+{
+  "dataset_count": 41,
+  "long_row_count": 123,
+  "maximum_retained_abs_correlation": 0.9499982284579784,
+  "method_count": 3,
+  "methods": [
+    {
+      "geometric_mean_normalized_test_mse": 0.34421997863649667,
+      "mean_normalized_test_mse": 0.45950564272714595,
+      "median_nnz_1e6": 16.0,
+      "median_normalized_test_mse": 0.4269614145787214,
+      "median_projected_kkt": 3.37138912377688e-07,
+      "median_runtime_seconds": 325.7311693059746,
+      "median_test_r2": 0.5683516366637589,
+      "method": "LASSO",
+      "task_count": 41
+    },
+    {
+      "geometric_mean_normalized_test_mse": 0.35270902663030196,
+      "mean_normalized_test_mse": 0.46661103300052736,
+      "median_nnz_1e6": 13.0,
+      "median_normalized_test_mse": 0.42127247765339193,
+      "median_projected_kkt": 3.5787326666906577e-07,
+      "median_runtime_seconds": 13.766757677018177,
+      "median_test_r2": 0.5741514104047729,
+      "method": "SCAD",
+      "task_count": 41
+    },
+    {
+      "geometric_mean_normalized_test_mse": 0.3814473383234786,
+      "mean_normalized_test_mse": 0.49115124421185613,
+      "median_nnz_1e6": 9.0,
+      "median_normalized_test_mse": 0.43140878795799575,
+      "median_projected_kkt": 3.4303129219093176e-07,
+      "median_runtime_seconds": 11.94409582897788,
+      "median_test_r2": 0.5611120702829161,
+      "method": "MCP",
+      "task_count": 41
+    }
+  ],
+  "status": "PASS"
+}

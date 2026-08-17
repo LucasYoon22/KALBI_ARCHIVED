@@ -1,0 +1,36 @@
+{
+  "contract": "reuse X.T@X and X.T@y; preserve GramCD epochs and warm start",
+  "methods": {
+    "lasso": {
+      "cached_seconds": 1.9433164549991488,
+      "max_cached_iterations": 6,
+      "max_cached_stop_criterion": 1.2206621130550488e-11,
+      "max_coefficient_error": 4.4861447889843475e-11,
+      "max_kkt_error": 4.178518642206086e-12,
+      "max_objective_error": 5.551115123125783e-17,
+      "original_seconds": 0.016266659018583596,
+      "status": "PASS"
+    },
+    "mcp": {
+      "cached_seconds": 0.0008092889911495149,
+      "max_cached_iterations": 8,
+      "max_cached_stop_criterion": 9.504598323661906e-11,
+      "max_coefficient_error": 0.0,
+      "max_kkt_error": 0.0,
+      "max_objective_error": 0.0,
+      "original_seconds": 5.303635443968233,
+      "status": "PASS"
+    },
+    "scad": {
+      "cached_seconds": 0.0009237490012310445,
+      "max_cached_iterations": 6,
+      "max_cached_stop_criterion": 1.3563997725293479e-11,
+      "max_coefficient_error": 0.0,
+      "max_kkt_error": 0.0,
+      "max_objective_error": 0.0,
+      "original_seconds": 2.222660163999535,
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,44 @@
+"""Run the immutable P<=100K producer with unadopted-only accounting."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Sequence
+
+from model_v58_chebyshev_v14_scmmixture import rolling_producer as producer
+from model_v58_chebyshev_v14_scmmixture.rolling_catalog import CatalogStore
+
+from .rolling_adopted_cache import load_cached_adopted_ids
+
+
+_ORIGINAL_STAGING_NPZ_BYTES = producer.staging_npz_bytes
+
+
+def _unadopted_staging_npz_bytes(
+    root: str | Path,
+    *,
+    adopted_shard_ids: set[int] | None = None,
+    prior: str | None = None,
+) -> int:
+    del adopted_shard_ids
+    root_path = Path(root).expanduser().resolve()
+    store = CatalogStore(
+        root_path / "rolling_control",
+        root_path,
+        priors=producer.PRIOR_KEYS,
+    )
+    adopted = load_cached_adopted_ids(store)
+    return _ORIGINAL_STAGING_NPZ_BYTES(
+        root_path,
+        adopted_shard_ids=adopted,
+        prior=prior,
+    )
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    producer.staging_npz_bytes = _unadopted_staging_npz_bytes
+    return producer.main(argv)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

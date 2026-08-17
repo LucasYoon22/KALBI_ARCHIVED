@@ -1,0 +1,56 @@
+{
+  "schema_version": "v14.scmresponse.training.pipeline.v1",
+  "pipeline_version": "v14_kalbi_tabiclv2_graph_scm_xy_rolling100gb_v1",
+  "model": {
+    "beta_solver": "v58cheb_native196_fixed_support_selector_gradient_chebyshev_rowbound_recurrence_v1",
+    "selector": "v14_isisconditioned_xyteacher_hidden512_direct96_v1",
+    "selector_internal_pilot_isis_stages": 28,
+    "final_beta_isis_stages": 28,
+    "selector_hidden_dim": 512,
+    "selector_mlp_depth": 4,
+    "warm_beta_from_joint_v11": true,
+    "warm_v11_selector_loaded": false
+  },
+  "penalty": {
+    "canonical_contract": "v12_canonical_direct96_squareplus_positive_adjacent_integral_native196_meta4_relu2_exact_shared_v1",
+    "random_beta_query_and_selector_share_one_builder": true,
+    "cache_size": 300000,
+    "native_dimension": 196,
+    "direct_parameter_dimension": 96,
+    "rho_at_six": 1.0,
+    "dead_knot_six_weight": 0.0
+  },
+  "data": {
+    "dataset_contract": "tabiclv2_graph_scm_xy_groupdrop095_v5",
+    "response_contract": "official_tabiclv2_graph_scm_y_center_scale_clip10_rescale_v1",
+    "official_target_retained": true,
+    "filter_unpredictable_graphs_and_datasets": true,
+    "data_root": "/users/sync_data/tabiclv2_graph_scm_y_groupdrop095_medianN2000_medianP10000_100GB_tailP100K_mlp512_gaussian16_seed88073200",
+    "active_target_bytes": 100000000000,
+    "active_min_bytes": 98000000000,
+    "active_max_bytes": 102000000000,
+    "n_min": 32,
+    "n_max": 20000,
+    "p_min": 50,
+    "p_max": 100000,
+    "max_cells": 24000000,
+    "correlation_threshold_exclusive": 0.95,
+    "direct_p_cap": 4096,
+    "mlp_hidden_dim": 256,
+    "mlp_output_features": 512,
+    "gaussian_input_dims": 16
+  },
+  "rolling": {
+    "trainer_reload_interval_updates": 500,
+    "checkpoint_after_reload": true,
+    "clear_all_dataloader_caches_on_reload": true,
+    "require_all_rank_ack": true,
+    "require_reload_verified_checkpoint_before_gc": true,
+    "refresh_target_bytes": 2000000000,
+    "rolling_staging_high_water_bytes": 4000000000,
+    "bootstrap_staging_high_water_bytes": 102000000000,
+    "retirement_grace_bytes": 10000000000,
+    "project_hard_cap_bytes": 130000000000,
+    "min_free_bytes": 300000000000
+  }
+}

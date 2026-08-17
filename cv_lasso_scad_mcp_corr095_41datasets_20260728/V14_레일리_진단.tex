@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+
+\usepackage{kotex}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black]{hyperref}
+
+\geometry{a4paper,margin=25mm}
+
+\newtheorem{lemma}{보조정리}
+\newtheorem{proposition}{명제}
+\newtheorem{corollary}{귀결}
+
+\newcommand{\Rq}{R(\beta)}
+\newcommand{\bhat}{\hat{\beta}}
+
+\title{V14 생성기의 레일리 몫 붕괴\\[2mm]
+\large 원인 규명과 생성기 수정}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+KALBI는 합성 데이터에서는 목표 해에 근접하지만 실제 데이터에서는 무너진다.
+원인은 계수의 크기나 페널티 정의역이 아니라 \textbf{레일리 몫}
+$\Rq = \mathrm{Var}(X\beta)/\|\beta\|^2$ 이다.
+V14 생성기는 구조적으로 $\Rq \approx 1$ 인 과제만 만들 수 있는 반면,
+실제 데이터의 $\Rq$ 는 $0.056$ 에서 $6.08$ 까지 100배 퍼져 있다.
+합성 과제 956개로 이 현상을 재현하고, 생성기를 수정하여
+$\Rq$ 의 범위를 $0.106$--$8.47$ 로 확장하였다.
+\end{abstract}
+
+%==========================================================================
+\section{레일리 몫의 정의}
+
+설계행렬 $X \in \mathbb{R}^{n \times p}$ 의 그람 행렬을
+$G = \frac{1}{n} X^\top X$ 라 할 때, 계수 벡터 $\beta$ 의 레일리 몫은
+
+\begin{equation}
+\Rq \;=\; \frac{\beta^\top G \beta}{\|\beta\|_2^2}
+      \;=\; \frac{\mathrm{Var}(X\beta)}{\|\beta\|_2^2}.
+\label{eq:def}
+\end{equation}
+
+$\Rq$ 는 스케일 불변이므로 $\beta$ 의 \emph{방향}만이 값을 결정한다.
+식~\eqref{eq:def} 를 다시 쓰면
+
+\begin{equation}
+\|\beta\|_2 \;=\; \sqrt{\frac{\mathrm{Var}(X\beta)}{\Rq}}
+\label{eq:norm}
+\end{equation}
+
+이며, 응답 $y$ 가 표준화되어 있으면 분자는 1을 넘기 어렵다.
+따라서 \textbf{계수의 크기는 사실상 $\Rq$ 가 결정한다.}
+
+본 연구에서 $\Rq$ 는 세 곳에서 계산되며 대상이 서로 다르다.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+기호 & $\beta$ & $X$ \\
+\midrule
+$R(\beta_{\mathrm{true}})$ & 생성기가 만든 계수 & 저장된 특징 행렬 전체 ($n$행) \\
+$R(\bhat_{\mathrm{KALBI}})$ & 모델이 출력한 계수 & 표준화된 학습 절반 \\
+$R(\bhat_{\mathrm{LASSO}})$ & CV LASSO 계수 & 동일 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+생성기는 신호를 항상 $\mathrm{Var}(X\beta) = 1$ 로 맞추므로
+(\texttt{beta /= np.std(signal)}), 참값에 대해서는
+
+\begin{equation}
+R(\beta_{\mathrm{true}}) = \frac{1}{\|\beta_{\mathrm{true}}\|_2^2}
+\end{equation}
+
+이 정확히 성립한다. 즉 참 레일리 몫과 계수 노름은 동일한 정보를 담는다.
+
+%==========================================================================
+\section{V14는 왜 $\Rq \approx 1$ 만 만드는가}
+
+\begin{lemma}[고유값 평균]
+$X$ 의 각 열이 표준화되어 있으면 $\mathrm{diag}(G) = \mathbf{1}$ 이다.
+따라서 임의의 크기 $k$ 인 부분집합 $S$ 에 대하여
+\[
+\mathrm{tr}(G_S) = k
+\qquad\Longrightarrow\qquad
+\frac{1}{k}\sum_{i=1}^{k} w_i = 1,
+\]
+여기서 $w_1 \le \cdots \le w_k$ 는 $G_S$ 의 고유값이다.
+\end{lemma}
+
+이 성질은 $X$ 의 조건수나 상관 구조와 무관하게 성립한다.
+고유분해 $G_S = V \operatorname{diag}(w) V^\top$ 에서 $\beta_S = Vc$ 로 두면
+
+\begin{equation}
+\Rq \;=\; \frac{\sum_i c_i^2 w_i}{\sum_i c_i^2},
+\label{eq:weighted}
+\end{equation}
+
+즉 \textbf{$\Rq$ 는 고유값들의 가중평균}이며 가중치는 $\beta$ 의 방향이 정한다.
+
+\begin{proposition}[V14의 구조적 제약]
+V14는 support를 균등 무작위로 뽑고 계수를 등방 분포에서 뽑는다.
+\begin{verbatim}
+support = rng.choice(p, size=k, replace=False)
+beta[support] = sample_coefficient_values(k, rng)
+\end{verbatim}
+이때 $\beta$ 는 고유기저에서 방향이 균등하므로
+$\mathbb{E}[c_i^2] = 1/k$ 이고, 식~\eqref{eq:weighted} 에 의해
+\[
+\mathbb{E}[\Rq] \;=\; \frac{1}{k}\sum_i w_i \;=\; 1 .
+\]
+\end{proposition}
+
+\begin{corollary}
+$\Rq$ 가 1에서 크게 벗어나려면 $\beta$ 가 특정 고유방향에 집중되어야 한다.
+무작위 support와 등방 계수로는 그 사건의 확률이
+$P(c_1^2 > 1-\varepsilon) \sim \varepsilon^{(k-1)/2}$ 로 지수적으로 작다.
+\end{corollary}
+
+\paragraph{측정.}
+V14가 생성한 32개 선형 과제에서 $\|\beta\|$ 는 $0.854$--$1.144$
+(중앙값 $0.9998$) 였고, $\max_j |\beta_j|$ 의 최댓값은 $1.0000$ 이었다.
+$k=1$ 인 과제 6개는 이론값 1에 소수점 여섯째 자리까지 일치했다
+($1.000000 \pm 1.1\times10^{-4}$). 우연이 아니라 구조적 결과이다.
+
+%==========================================================================
+\section{실제 데이터에서 무슨 일이 일어나는가}
+
+교수님이 선정한 13개 벤치마크에 동일 전처리
+(상수열 제거 $\to$ 학습 기준 표준화 $\to$ 상관 $0.95$ 그리디 필터)
+를 적용한 뒤 KALBI를 추론하였다.
+
+\begin{table}[h]
+\centering
+\caption{실제 13개 벤치마크의 레일리 몫과 KALBI 성능}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+$R(\bhat)$ & 데이터셋 수 & test $R^2$ 범위 & $R^2 < 0$ \\
+\midrule
+$< 1$  & 5 & $-59.77 \sim 0.567$ & 3 \\
+$> 1$  & 8 & $\phantom{-}0.312 \sim 0.686$ & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\Rq$ 는 $0.056$ 에서 $6.08$ 까지 분포하며,
+음의 $R^2$ 를 기록한 세 데이터셋이 정확히 $\Rq$ 하위 세 개였다.
+
+\paragraph{기각된 가설.}
+기존에 제기된 원인들은 측정으로 모두 배제되었다.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+가설 & 판정 & 근거 \\
+\midrule
+계수가 작게 나온다 & 기각 & $\|\bhat\|$ 중앙 $0.562$ $>$ CV LASSO $0.499$ \\
+Direct96 정의역 미탐색 & 기각 & 상한 6 도달 0회, $\max|\bhat_j| = 0.949$ \\
+$\lambda$ 과대 예측 & 기각 & 반대. $\mathrm{nnz} > N$ \\
+클램프 손실 & 기각 & 박스 내부 최적화, $R^2$ 손실 $0.3\%$ \\
+전처리 불일치 & 기각 & CV LASSO와 동일 파이프라인 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%==========================================================================
+\section{합성 데이터에 의한 재현}
+
+$n=13$ 은 상관관계를 인과로 보기에 부족하다.
+수정된 생성기로 합성 과제 956개를 만들고 \emph{기존} KALBI를 그대로 적용하였다.
+실제 데이터는 사용하지 않았다.
+과제 규모는 $N_{\mathrm{train}} \in [100, 2300]$, $P \in [620, 4000]$ 이다.
+
+\paragraph{신호 회수 효율.}
+잡음비 $s$ 에서 달성 가능한 최대 $R^2$ 는 $s/(1+s)$ 이므로,
+이를 천장으로 나눈 효율을 사용하면 SNR 교란이 제거된다.
+
+\begin{equation}
+\eta \;=\; \frac{R^2_{\text{test}}}{s/(1+s)}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{참 레일리 몫 구간별 신호 회수 효율 (합성 956개)}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+$R(\beta_{\mathrm{true}})$ & $n$ & 효율 $\eta$ 중앙값 & SNR 중앙값 \\
+\midrule
+$< 0.3$      &  79 & $\approx 0.00$ & 3.50 \\
+$0.3 \sim 0.6$ & 115 & $0.43$ & 2.24 \\
+$0.6 \sim 1$ & 290 & $0.83$ & 6.59 \\
+$1 \sim 2$   & 334 & $0.78$ & 1.90 \\
+$2 \sim 4$   &  79 & $0.83$ & 1.71 \\
+$> 4$        &  59 & $0.83$ & 2.46 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\Rq \ge 0.6$ 인 네 구간은 $0.78$--$0.83$ 으로 평평하고,
+$\Rq < 0.3$ 에서만 0으로 떨어진다.
+붕괴 구간의 SNR이 오히려 더 높다는 점이 SNR 설명을 배제한다.
+
+\paragraph{난이도 통제.}
+동일한 데이터와 동일한 분할에 CV LASSO를 적용하여 705개 과제를 대조하였다.
+
+\begin{table}[h]
+\centering
+\caption{CV LASSO 대조}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+$R(\beta_{\mathrm{true}})$ & $n$ & KALBI $R^2$ & LASSO $R^2$
+ & KALBI $R^2<0$ & LASSO $R^2<0$ \\
+\midrule
+$< 0.3$        &  55 & $0.022$ & $0.069$ & $49\%$ & $25\%$ \\
+$0.3 \sim 0.6$ &  87 & $0.304$ & $0.583$ & $24\%$ & $\phantom{0}8\%$ \\
+$0.6 \sim 1$   & 217 & $0.599$ & $0.705$ & $12\%$ & $\phantom{0}2\%$ \\
+$1 \sim 2$     & 246 & $0.546$ & $0.647$ & $15\%$ & $\phantom{0}1\%$ \\
+$2 \sim 4$     &  56 & $0.669$ & $0.757$ & $\phantom{0}5\%$ & $\phantom{0}0\%$ \\
+$> 4$          &  44 & $0.579$ & $0.636$ & $\phantom{0}2\%$ & $\phantom{0}0\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\Rq \in [0.3, 0.6]$ 에서 CV LASSO는 $R^2 = 0.583$ 을 달성하며 실패율이 $8\%$ 에
+그친다. \textbf{이 구간의 실패는 문제의 난이도가 아니라 모델의 한계이다.}
+다만 $\Rq < 0.3$ 에서는 CV LASSO도 $R^2 = 0.069$, 실패율 $25\%$ 로 저하되므로
+해당 구간은 실제로 식별이 어려운 영역이며 주장에서 제외한다.
+
+%==========================================================================
+\section{메커니즘: 출력 공간의 하한}
+
+KALBI가 \emph{출력한} 계수의 레일리 몫 $R(\bhat)$ 를 참값과 비교하였다.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}rrr@{}}
+\toprule
+$R(\beta_{\mathrm{true}})$ & $R(\bhat)$ & 배율 \\
+\midrule
+$0.188$ & $1.634$ & $8.7$ \\
+$0.424$ & $1.640$ & $3.9$ \\
+$0.952$ & $1.421$ & $1.5$ \\
+$6.057$ & $5.444$ & $0.9$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+로그-로그 회귀 기울기는
+
+\begin{equation}
+\frac{d \log R(\bhat)}{d \log R(\beta_{\mathrm{true}})} = 0.293
+\qquad (\text{완전 추종 시 } 1)
+\end{equation}
+
+이며, $R(\bhat)$ 의 최솟값은 $0.425$ 였다.
+참 레일리 몫이 $0.090$ 까지 내려가는 데 반해
+\textbf{모델의 출력 공간에는 그 영역이 존재하지 않는다.}
+참 $\Rq$ 중앙값 $0.359$ 인 과제군에 대해서도 $R(\bhat) = 1.634$ 를 출력한다.
+
+\paragraph{같은 정리가 두 번 작용한다.}
+참 $\Rq$ 가 낮은 구간에서 KALBI는 계수를 넓게 분산시킨다.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & $R(\beta_{\mathrm{true}}) < 0.3$ & $0.6 \sim 1$ \\
+\midrule
+$\mathrm{nnz}/N$   & $1.95$ & $1.00$ \\
+$\max_j|\bhat_j|$  & $0.122$ & $0.540$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+많은 좌표에 작은 값을 고르게 배분하는 것은 곧 등방 $\beta$ 이며,
+명제 1에 의해 등방 $\beta$ 는 $\Rq \approx 1$ 을 강제한다.
+즉 \textbf{모델이 학습 데이터의 구조적 편향을 출력 형태로 복제하고 있다.}
+
+\paragraph{부수 관측.}
+956개 과제 전체에서
+$\mathrm{nnz} > N$ 인 경우가 $65\%$ (625개),
+참 $k$ 대비 과선택 배율 중앙값이 34배였다.
+Direct96 정의역 $[0,6]$ 은 단 한 번도 상한에 도달하지 않았으며
+$\max_j|\bhat_j|$ 의 전체 최댓값은 $1.767$ 이었다.
+$P$ 를 ISIS 상한 1024 기준으로 나눈 실패율은
+$20\% \to 18\% \to 8\%$ 로, 특징 선별이 별도의 실패 경로가 아님을 보인다.
+
+%==========================================================================
+\section{생성기 수정}
+
+목표는 $\Rq$ 의 분포를 넓히는 것이다. 세 곳을 수정하였다.
+
+\subsection{support 크기 제한 완화}
+
+\begin{verbatim}
+max_support = min(p, int(0.60 * (n - 1)))   # 기존: (n - 1) // 3
+\end{verbatim}
+
+$\Rq$ 를 낮추려면 상관된 열이 다수 필요한데 기존 제한이 이를 봉쇄하고 있었다.
+$3k < N$ 강제 검사는 제거하고 메타데이터 플래그로 기록만 남긴다.
+
+\subsection{고유값 타깃팅}
+
+목표 $R^\star$ 를 로그균등 $[0.03, 30]$ 에서 추출하고,
+$w_a \le R^\star \le w_b$ 인 인접 고유값 쌍을 찾아
+
+\begin{equation}
+c_a^2 = \frac{w_b - R^\star}{w_b - w_a},
+\qquad
+c_b^2 = \frac{R^\star - w_a}{w_b - w_a}
+\end{equation}
+
+로 두면 $c_a^2 + c_b^2 = 1$ 이고 식~\eqref{eq:weighted} 에 의해
+$\Rq = R^\star$ 가 정확히 성립한다.
+고유기저에서 rank-2 가 되는 퇴화를 막기 위해 등방 성분을 $15\%$ 혼합한다.
+과제의 $85\%$ 에 적용하며 $k \le 768$ 인 경우로 한정한다.
+나머지는 기존 방식을 그대로 유지하므로 회귀 위험이 없다.
+
+\subsection{상관 블록 support}
+
+무작위 support의 부분 그람은 $w_{\max}$ 가 $2$--$3$ 에서 포화되어
+높은 $R^\star$ 가 절단된다. 씨앗 열 하나를 정하고 절대 상관 상위
+$k-1$ 개를 붙여 공통 인자를 공유하는 무리를 만든다.
+확률 $1/3$ 씩 무작위 / 블록 / 혼합을 사용한다.
+
+상관 $0.95$ 필터는 제약이 되지 않는다. 게르슈고린 원판 정리에 의해
+\begin{equation}
+w_{\max} \le 1 + (k-1)\,c
+\end{equation}
+이므로 $c = 0.95$, $k = 15$ 이면 상한이 $14.3$ 이다.
+실제로 $\Rq = 6$ 은 등상관 $\rho \approx 0.36$ 인 15개 열이면 달성된다.
+높은 $\Rq$ 는 중복 열이 아니라 완만한 공통 인자를 요구한다.
+
+\subsection{결과}
+
+\begin{table}[h]
+\centering
+\caption{생성기 수정 전후 (실제 V14 실행)}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & 수정 전 & 수정 후 \\
+\midrule
+$\Rq$ 범위        & 전부 $\approx 1$ & $0.106 \sim 8.47$ \\
+$\Rq < 1$ 비율    & $\approx 0\%$ & $45\%$ \\
+$\Rq > 3$ 비율    & $0\%$ & $13\%$ \\
+$\|\beta\|$ 최댓값 & $1.144$ & $3.08$ \\
+$k$ 최댓값        & $N/3$ & $0.57N$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+실제 13개 벤치마크의 범위 $[0.056, 6.08]$ 이
+수정 후 커버리지 $[0.106, 8.47]$ 에 거의 포함된다.
+
+%==========================================================================
+\section{결론과 한계}
+
+\paragraph{확인된 것.}
+\begin{enumerate}
+\itemsep2pt
+\item V14는 보조정리 1과 명제 1에 의해 $\Rq \approx 1$ 인 과제만 생성한다.
+      32개 과제 측정으로 확인하였다.
+\item 그 결과 KALBI의 출력 레일리 몫이 $0.425$ 에서 하한을 갖고
+      추종 기울기가 $0.293$ 에 그친다.
+\item $\Rq \in [0.3, 0.6]$ 에서 CV LASSO는 성공하고 KALBI만 실패한다
+      (705개 대조).
+\item 생성기 수정으로 $\Rq$ 커버리지를 $[0.106, 8.47]$ 로 확장하였다.
+\end{enumerate}
+
+\paragraph{한계.}
+\begin{enumerate}
+\itemsep2pt
+\item \textbf{개입 실험이 없다.} 수정된 데이터로 재학습하여
+      $\Rq < 0.6$ 성능이 실제로 향상되는지는 확인하지 않았다.
+      현 단계는 원인 규명이며 처방 효과는 예측이다.
+\item KALBI는 전 구간에서 CV LASSO에 뒤진다
+      ($\Rq \approx 1$ 부근에서도 $-0.10$).
+      격차가 저역에서 2.6배 확대되는 점은 본 가설과 일치하나,
+      기저 성능 차이 자체는 별도의 문제이다.
+      단, KALBI는 과제당 추론 1회이고 CV LASSO는
+      5-fold $\times$ 40 격자 = 200회 적합이므로
+      속도-정확도 절충의 정량화가 필요하다.
+\item $\Rq < 0.3$ 은 CV LASSO도 저하되는 영역이므로 주장에서 제외하였다.
+\item 참 $\Rq$ 는 전체 $n$행에서, 출력 $\Rq$ 는 학습 절반에서 계산되었다.
+      동일 분포이나 엄밀히 같은 그람 행렬은 아니다.
+\end{enumerate}
+
+\end{document}

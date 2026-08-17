@@ -1,0 +1,269 @@
+#!/usr/bin/env python3
+"""One-GPU V14 transfer-checkpoint prediction-only gradient preflight."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+from pathlib import Path
+import time
+
+import numpy as np
+import torch
+
+from .canonical_penalty_cache import CanonicalPenaltyCache
+from .model import build_model
+from .selector_v10 import summarize_encoded
+from .selector_v13_xyteacher import V13_RESPONSE_FEATURE_DIM, response_aligned_xy_features
+from .selector_v14_isisconditioned import (
+    DirectPenaltyMLPQuerySelectorV14ISISConditioned,
+    V14_MLP_DEPTH,
+    V14_ISIS_FEATURE_DIM,
+    V14_PILOT_EFFECTIVE_RATIO,
+    hard_isis28_path_features,
+)
+from .train_joint_v11_direct import grad_stats, tensor_gradient_stats
+from .train_joint_v14_isisconditioned_rolling import (
+    SELECTOR_RATIO_MAX,
+    SELECTOR_RATIO_MIN,
+    split_and_standardize_variable,
+)
+from train_fpk import _load_yaml
+
+
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise RuntimeError(message)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--task", type=Path, required=True)
+    parser.add_argument("--warm-start", type=Path, required=True)
+    parser.add_argument("--penalty-cache", type=Path, required=True)
+    parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--seed", type=int, default=202607171315)
+    args = parser.parse_args()
+
+    require(torch.cuda.is_available(), "CUDA is required")
+    torch.cuda.set_device(0)
+    device = torch.device("cuda:0")
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed_all(args.seed)
+    np.random.seed(args.seed % (2**32 - 1))
+    torch.cuda.reset_peak_memory_stats(0)
+
+    with np.load(args.task, allow_pickle=False) as payload:
+        x_np = np.asarray(payload["X"][0], dtype=np.float32)
+        y_np = np.asarray(payload["y"][0], dtype=np.float32)
+    xs, ys = [x_np], [y_np]
+    n, p = map(int, x_np.shape)
+
+    config = _load_yaml(str(args.config))
+    warm = torch.load(args.warm_start, map_location="cpu", weights_only=False)
+    model = build_model(config, device)
+    model.load_state_dict(warm["model_state_dict"], strict=True)
+    require(int(model.v46_isis_stages) == 28, "production ISIS28 is absent")
+    cache = CanonicalPenaltyCache(args.penalty_cache, args.seed + 101)
+    cache_report = cache.load(expected_count=300_000)
+    normalizer_report = {
+        "source": "preserved_from_v14_transfer_checkpoint",
+        "refit": False,
+    }
+
+    selector = DirectPenaltyMLPQuerySelectorV14ISISConditioned(
+        ds_feat_dim=9, t_feat_dim=528, krylov_dim=32, shape_dim=196,
+        hidden=512, depth=V14_MLP_DEPTH,
+        response_feat_dim=V13_RESPONSE_FEATURE_DIM,
+        isis_feat_dim=V14_ISIS_FEATURE_DIM,
+        lambda_min_ratio=SELECTOR_RATIO_MIN,
+        lambda_max_ratio=SELECTOR_RATIO_MAX,
+        initial_lambda_ratio=0.1,
+        derivative_floor=1e-6, squareplus_scale=0.02,
+        direct_head_init_std=1e-3,
+    )
+    require("selector_state_dict" in warm, "V14 transfer selector state is missing")
+    selector.load_state_dict(warm["selector_state_dict"], strict=True)
+    calibration = {"source": "V14 transfer checkpoint", "refit": False}
+    selector.to(device)
+    architecture = selector.architecture_report()
+    require(not hasattr(selector, "y_token_mlp"), "raw y token branch survived")
+    require(not hasattr(selector, "path_proj"), "reference path branch survived")
+
+    direct_parameters = list(selector.penalty_parameter_head.parameters())
+    direct_ids = {id(parameter) for parameter in direct_parameters}
+    other_parameters = [
+        parameter for parameter in selector.parameters()
+        if id(parameter) not in direct_ids
+    ]
+    optimizer = torch.optim.AdamW(
+        [
+            {"params": other_parameters, "lr": 3e-4,
+             "name": "selector_context_lambda_trunks"},
+            {"params": direct_parameters, "lr": 1e-5,
+             "name": "direct96_penalty_head"},
+        ],
+        weight_decay=0.0,
+    )
+    require(
+        "selector_optimizer_state_dict" in warm,
+        "V14 transfer selector optimizer state is missing",
+    )
+    optimizer.load_state_dict(warm["selector_optimizer_state_dict"])
+
+    model.eval()
+    for parameter in model.parameters():
+        parameter.requires_grad_(False)
+    split_generator = torch.Generator(device="cpu").manual_seed(args.seed + 301)
+    updates = []
+    for update in (1, 2):
+        optimizer.zero_grad(set_to_none=True)
+        x_train, y_train, x_test, y_test = split_and_standardize_variable(
+            xs, ys, generator=split_generator, device=device
+        )
+        started = time.perf_counter()
+        with torch.no_grad():
+            encoded = model.encode_dataset(model.precompute(x_train, y_train))
+            dataset_features, krylov_features = summarize_encoded(encoded, 528)
+            response = response_aligned_xy_features(encoded, x_train, y_train)
+            pilot_query = selector.fixed_pilot_query(encoded["lambda_max"].float())
+            pilot_aux = model.decode_queries(
+                encoded,
+                lambdas=pilot_query["lambdas"],
+                lambda_max=encoded["lambda_max"].float()[:, None],
+                penalty_shape_features=pilot_query["penalty_shape_features"],
+                penalty_d0=pilot_query["penalty_d0"],
+                return_aux=True,
+            )
+            isis = hard_isis28_path_features(
+                encoded, x_train, y_train, pilot_aux
+            )
+        require(response.shape == (1, V13_RESPONSE_FEATURE_DIM), "response width drift")
+        require(isis.shape == (1, V14_ISIS_FEATURE_DIM), "ISIS width drift")
+        active_stages = int(
+            pilot_aux["v56fast_isis_effective_stage_counts"][0, 0]
+        )
+        require(active_stages >= 1, "pilot hard ISIS selected no stage")
+        require(
+            abs(float(pilot_query["effective_lambda_ratio"][0]) - V14_PILOT_EFFECTIVE_RATIO)
+            <= 1e-6,
+            "pilot effective-ratio contract drift",
+        )
+        query = selector(
+            dataset_features, krylov_features,
+            encoded["lambda_max"].float(), response, isis,
+        )
+        for name in (
+            "penalty_shape_features", "penalty_d0", "lambdas", "lambda_ratio"
+        ):
+            query[name].retain_grad()
+        aux = model.decode_queries(
+            encoded,
+            lambdas=query["lambdas"],
+            lambda_max=encoded["lambda_max"].float()[:, None],
+            penalty_shape_features=query["penalty_shape_features"],
+            penalty_d0=query["penalty_d0"],
+            return_aux=True,
+        )
+        beta = aux["beta_q"][:, 0].float()
+        prediction = torch.einsum("bnp,bp->bn", x_test.float(), beta)
+        mse = (prediction - y_test.float()).square().mean(-1)
+        hard_loss = torch.log1p(0.5 * mse).mean()
+        loss = hard_loss
+        require(bool(torch.isfinite(loss)), "nonfinite V14 loss")
+        proposal = selector.penalty_parameter_head._last_parameter_proposal
+        require(proposal is not None, "Direct96 proposal missing")
+        loss.backward()
+        require(proposal.grad is not None, "Direct96 proposal gradient missing")
+        direct = proposal.grad.detach().float().reshape(-1, 96)
+        require(bool(torch.isfinite(direct).all()), "Direct96 gradient nonfinite")
+        gradients = {}
+        for name in (
+            "penalty_shape_features", "penalty_d0", "lambdas", "lambda_ratio"
+        ):
+            require(query[name].grad is not None, f"{name} gradient missing")
+            gradients[name] = tensor_gradient_stats(
+                [query[name].grad.detach().float()]
+            )
+            require(
+                math.isfinite(float(gradients[name]["norm"])),
+                f"{name} gradient nonfinite",
+            )
+        groups = {
+            "penalty_head": grad_stats(selector.penalty_parameter_head.parameters()),
+            "lambda_head": grad_stats(selector.lambda_head.parameters()),
+            "penalty_trunk": grad_stats(selector.penalty_net.parameters()),
+            "lambda_trunk": grad_stats(selector.lambda_net.parameters()),
+            "response_trunk": grad_stats(selector.response_net.parameters()),
+            "isis_trunk": grad_stats(
+                list(selector.isis_proj.parameters())
+                + list(selector.isis_net.parameters())
+            ),
+            "fusion_trunk": grad_stats(selector.fusion_net.parameters()),
+        }
+        require(
+            all(math.isfinite(float(value["norm"])) for value in groups.values()),
+            "parameter gradient nonfinite",
+        )
+        if update == 2:
+            require(
+                all(float(groups[name]["norm"]) > 0.0 for name in groups),
+                "step-two V14 group gradient is zero",
+            )
+        optimizer.step()
+        updates.append(
+            {
+                "update": update,
+                "seconds": time.perf_counter() - started,
+                "loss": float(loss.detach()),
+                "hard_loss": float(hard_loss.detach()),
+                "prediction_loss_only": True,
+                "lambda_teacher_used": False,
+                "selected_ratio": float(query["lambda_ratio"].detach()),
+                "selected_beta_nonzero_fraction": float((beta != 0.0).float().mean()),
+                "pilot_beta_nonzero_fraction": float(
+                    (pilot_aux["beta_q"][:, 0] != 0.0).float().mean()
+                ),
+                "pilot_active_isis_stages": active_stages,
+                "pilot_isis_feature_norm": float(isis.norm()),
+                "direct96_active_coordinates": int(
+                    (direct.abs().sum(0) != 0.0).sum()
+                ),
+                "output_gradients": gradients,
+                "group_gradients": groups,
+                "positivity_jacobian_min": float(
+                    query["penalty_positivity_jacobian_min"].min().detach()
+                ),
+                "min_drho": float(query["penalty_drho"].min().detach()),
+                "rho6_error": float(query["penalty_rho6_error"].max().detach()),
+            }
+        )
+
+    require(
+        not any(parameter.grad is not None for parameter in model.parameters()),
+        "frozen V58 received selector gradients",
+    )
+    report = {
+        "status": "PASS",
+        "task": str(args.task),
+        "shape": [n, p],
+        "cells": n * p,
+        "production_isis_stages": int(model.v46_isis_stages),
+        "architecture": architecture,
+        "cache": cache_report,
+        "calibration": calibration,
+        "normalizer_report": normalizer_report,
+        "updates": updates,
+        "peak_cuda_bytes": int(torch.cuda.max_memory_allocated(0)),
+        "peak_cuda_reserved_bytes": int(torch.cuda.max_memory_reserved(0)),
+        "total_cuda_bytes": int(torch.cuda.get_device_properties(0).total_memory),
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    print(json.dumps(report, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

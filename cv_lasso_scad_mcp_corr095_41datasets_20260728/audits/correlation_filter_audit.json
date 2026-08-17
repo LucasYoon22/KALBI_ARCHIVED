@@ -1,0 +1,10 @@
+{
+  "all_below_threshold": true,
+  "maximum_P_after": 1638,
+  "maximum_retained_abs_correlation": 0.9499982284579784,
+  "median_P_after": 446.0,
+  "minimum_P_after": 3,
+  "status": "PASS",
+  "task_count": 41,
+  "threshold": 0.95
+}

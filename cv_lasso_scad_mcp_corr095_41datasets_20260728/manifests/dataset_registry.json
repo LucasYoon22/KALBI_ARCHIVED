@@ -1,0 +1,3399 @@
+[
+  {
+    "N": 270,
+    "P_over_N": 3.7074074074074073,
+    "P_raw": 1001,
+    "P_screening_model": 1001,
+    "P_transformed": 1001,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.7381863109024004,
+    "best_screening_r2": 0.5374255324675687,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 165,
+    "elapsed_seconds": 0.7589938640594482,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.2861839185065664,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.286104679107666,
+        "inner_tuning_r2": 0.7598615518202305,
+        "parameters": {
+          "alpha": 0.01579967069636954,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 3.068575524987167,
+        "screening_r2": 0.6409262231549033
+      },
+      "lasso": {
+        "fit_seconds": 0.39927005767822266,
+        "inner_tuning_r2": 0.7425341306994061,
+        "parameters": {
+          "alpha": 0.017058364058346813
+        },
+        "screening_mse": 2.8208772897819574,
+        "screening_r2": 0.6699109882710794
+      },
+      "ridge": {
+        "fit_seconds": 0.027915239334106445,
+        "inner_tuning_r2": 0.776295672263593,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "repeated_context_median_r2": 0.7381863109024004,
+        "repeated_context_r2": [
+          0.6673107993834402,
+          0.8176820155395048,
+          0.768530450298327,
+          0.7381863109024004,
+          0.45592928932525334
+        ],
+        "screening_mse": 3.953072546888696,
+        "screening_r2": 0.5374255324675687
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9986225432770612,
+    "screen_rows_used": 55,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.9250628718008196,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesAnton785",
+    "status": "accepted",
+    "target": "Glucose",
+    "target_context_iqr": 4.656389951705933,
+    "target_context_mean": 3.4272820845697867,
+    "target_context_std": 4.091337010002342,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystesanton785__glucose",
+    "test_mse": 8.79172984789824,
+    "test_r2": 0.6581270065541024,
+    "test_rows_reserved": 50,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 28.194174743566837
+  },
+  {
+    "N": 270,
+    "P_over_N": 3.7074074074074073,
+    "P_raw": 1001,
+    "P_screening_model": 1001,
+    "P_transformed": 1001,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.857969632347034,
+    "best_screening_r2": 0.7395866786667418,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 165,
+    "elapsed_seconds": 0.25117039680480957,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.8780815575813438,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.11405587196350098,
+        "inner_tuning_r2": 0.6706943987673513,
+        "parameters": {
+          "alpha": 0.018317808370661194,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.45852020912803276,
+        "screening_r2": 0.7727171350846018
+      },
+      "lasso": {
+        "fit_seconds": 0.08268070220947266,
+        "inner_tuning_r2": 0.7793899329346415,
+        "parameters": {
+          "alpha": 0.07412693666587084
+        },
+        "screening_mse": 0.5115702375176311,
+        "screening_r2": 0.7464208842406954
+      },
+      "ridge": {
+        "fit_seconds": 0.024369478225708008,
+        "inner_tuning_r2": 0.847508961731835,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.857969632347034,
+        "repeated_context_r2": [
+          0.7670041320019284,
+          0.857969632347034,
+          0.9242501545103485,
+          0.7286089149017351,
+          0.893429815434084
+        ],
+        "screening_mse": 0.525357556549181,
+        "screening_r2": 0.7395866786667418
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9986225432770612,
+    "screen_rows_used": 55,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 7.659693274137898,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesAnton785",
+    "status": "accepted",
+    "target": "MagnesiumSulfate",
+    "target_context_iqr": 2.597600933164358,
+    "target_context_mean": 1.3753476377830587,
+    "target_context_std": 1.2821782701995723,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystesanton785__magnesiumsulfate",
+    "test_mse": 0.28106070558296564,
+    "test_r2": 0.8845224688284871,
+    "test_rows_reserved": 50,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.434128060316881
+  },
+  {
+    "N": 134,
+    "P_over_N": 40.83582089552239,
+    "P_raw": 5472,
+    "P_screening_model": 5472,
+    "P_transformed": 5472,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.7786780621936015,
+    "best_screening_r2": 0.923599995427556,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 81,
+    "elapsed_seconds": 3.9023988246917725,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.21765905856663803,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.5052075386047363,
+        "inner_tuning_r2": 0.6144899741635317,
+        "parameters": {
+          "alpha": 0.0022990645618029587,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.05935963015426822,
+        "screening_r2": 0.9239358316216457
+      },
+      "lasso": {
+        "fit_seconds": 1.424635887145996,
+        "inner_tuning_r2": 0.7287919955971605,
+        "parameters": {
+          "alpha": 0.002147669273225159
+        },
+        "repeated_context_median_r2": 0.7786780621936015,
+        "repeated_context_r2": [
+          0.7415788921600828,
+          0.7786780621936015,
+          0.8643756038583458,
+          0.8852438890149378,
+          0.7416494228697834
+        ],
+        "screening_mse": 0.05962171298115754,
+        "screening_r2": 0.923599995427556
+      },
+      "ridge": {
+        "fit_seconds": 0.04977679252624512,
+        "inner_tuning_r2": 0.694208439674165,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "screening_mse": 0.07773021311104095,
+        "screening_r2": 0.9003955381326032
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999986924641732,
+    "screen_rows_used": 27,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 11.445948642133986,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesKaiser",
+    "status": "accepted",
+    "target": "Acetate",
+    "target_context_iqr": 1.1141799688339233,
+    "target_context_mean": 0.7991701457994403,
+    "target_context_std": 0.755255101438579,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalysteskaiser__acetate",
+    "test_mse": 0.04586814218289158,
+    "test_r2": 0.9196525689801867,
+    "test_rows_reserved": 26,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.5743165049055702
+  },
+  {
+    "N": 134,
+    "P_over_N": 40.83582089552239,
+    "P_raw": 5472,
+    "P_screening_model": 5472,
+    "P_transformed": 5472,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.8655651364197952,
+    "best_screening_r2": 0.868519316959677,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 81,
+    "elapsed_seconds": 2.8954079151153564,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.280556376954777,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.7684686183929443,
+        "inner_tuning_r2": 0.7694893089278808,
+        "parameters": {
+          "alpha": 0.004939262187998868,
+          "l1_ratio": 0.2
+        },
+        "repeated_context_median_r2": 0.8655651364197952,
+        "repeated_context_r2": [
+          0.8655651364197952,
+          0.38995422419893333,
+          0.9175907204048389,
+          0.8675874850898272,
+          0.7169413283249939
+        ],
+        "screening_mse": 1.9441120456041854,
+        "screening_r2": 0.868519316959677
+      },
+      "lasso": {
+        "fit_seconds": 0.8361678123474121,
+        "inner_tuning_r2": 0.5884753968684568,
+        "parameters": {
+          "alpha": 0.021275233375159356
+        },
+        "screening_mse": 1.5077368753496754,
+        "screening_r2": 0.8980314562299573
+      },
+      "ridge": {
+        "fit_seconds": 0.04569578170776367,
+        "inner_tuning_r2": 0.6329795010156314,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 1.7440340859701893,
+        "screening_r2": 0.8820506290326993
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999986924641732,
+    "screen_rows_used": 27,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 7.832914429308214,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesKaiser",
+    "status": "accepted",
+    "target": "Glucose",
+    "target_context_iqr": 4.65500995516777,
+    "target_context_mean": 3.3169034680834524,
+    "target_context_std": 4.020030686664242,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalysteskaiser__glucose",
+    "test_mse": 2.0110669443560876,
+    "test_r2": 0.8867870839230672,
+    "test_rows_reserved": 26,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 17.779707493060876
+  },
+  {
+    "N": 399,
+    "P_over_N": 4.6992481203007515,
+    "P_raw": 1875,
+    "P_screening_model": 1875,
+    "P_transformed": 1875,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.85818247970708,
+    "best_screening_r2": 0.9287194380092598,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 239,
+    "elapsed_seconds": 0.8246614933013916,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.8924224032934736,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.35799527168273926,
+        "inner_tuning_r2": 0.8902829025422931,
+        "parameters": {
+          "alpha": 0.061948668386011714,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.85818247970708,
+        "repeated_context_r2": [
+          0.9389220837332497,
+          0.8579278606244889,
+          0.879260452753847,
+          0.7973253015037259,
+          0.85818247970708
+        ],
+        "screening_mse": 0.11421773038926922,
+        "screening_r2": 0.9287194380092598
+      },
+      "lasso": {
+        "fit_seconds": 0.28427910804748535,
+        "inner_tuning_r2": 0.8512016898458338,
+        "parameters": {
+          "alpha": 0.06480772806517987
+        },
+        "screening_mse": 0.11485266989152139,
+        "screening_r2": 0.9283231874061668
+      },
+      "ridge": {
+        "fit_seconds": 0.03650832176208496,
+        "inner_tuning_r2": 0.8548427431319823,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.13731098522714924,
+        "screening_r2": 0.914307488328336
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.999632206756183,
+    "screen_rows_used": 80,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.021482164243532,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesMetrohm",
+    "status": "accepted",
+    "target": "MagnesiumSulfate",
+    "target_context_iqr": 1.4367169907782227,
+    "target_context_mean": 0.7103892664949187,
+    "target_context_std": 1.1072944762352337,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystesmetrohm__magnesiumsulfate",
+    "test_mse": 1.1561550642841347,
+    "test_r2": 0.5053134686576795,
+    "test_rows_reserved": 80,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 3.060961822428458
+  },
+  {
+    "N": 275,
+    "P_over_N": 10.549090909090909,
+    "P_raw": 2901,
+    "P_screening_model": 2901,
+    "P_transformed": 2901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.9225279975402381,
+    "best_screening_r2": 0.8562825144456037,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 165,
+    "elapsed_seconds": 2.603607177734375,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.33124262776432406,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.1881463527679443,
+        "inner_tuning_r2": 0.9028241618640445,
+        "parameters": {
+          "alpha": 0.004562743833940975,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 6.4320027285219865,
+        "screening_r2": 0.8084406661146942
+      },
+      "lasso": {
+        "fit_seconds": 1.3034231662750244,
+        "inner_tuning_r2": 0.9168155131733365,
+        "parameters": {
+          "alpha": 0.004645871122988721
+        },
+        "screening_mse": 8.770400169631225,
+        "screening_r2": 0.7387979941376377
+      },
+      "ridge": {
+        "fit_seconds": 0.04382729530334473,
+        "inner_tuning_r2": 0.9231306567200703,
+        "parameters": {
+          "alpha": 0.0001
+        },
+        "repeated_context_median_r2": 0.9225279975402381,
+        "repeated_context_r2": [
+          0.9241552777535426,
+          0.9425486525483906,
+          0.9225279975402381,
+          0.9072381434669918,
+          0.9009988822869082
+        ],
+        "screening_mse": 4.825613247202387,
+        "screening_r2": 0.8562825144456037
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999227441166921,
+    "screen_rows_used": 55,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 3.4529492540595186,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesMettlerToledo",
+    "status": "accepted",
+    "target": "Glucose",
+    "target_context_iqr": 4.73406982421875,
+    "target_context_mean": 2.2024202915755184,
+    "target_context_std": 3.2092060981018062,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystesmettlertoledo__glucose",
+    "test_mse": 4.236882872555825,
+    "test_r2": 0.7754297336561038,
+    "test_rows_reserved": 55,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 23.152689770980608
+  },
+  {
+    "N": 275,
+    "P_over_N": 10.549090909090909,
+    "P_raw": 2901,
+    "P_screening_model": 2901,
+    "P_transformed": 2901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.9320852532161261,
+    "best_screening_r2": 0.8427666557912741,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 165,
+    "elapsed_seconds": 1.173712968826294,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.798189987629262,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.43241286277770996,
+        "inner_tuning_r2": 0.9530540540075824,
+        "parameters": {
+          "alpha": 0.014493147465137267,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.34363541572850503,
+        "screening_r2": 0.8648464935015354
+      },
+      "lasso": {
+        "fit_seconds": 0.6172380447387695,
+        "inner_tuning_r2": 0.9560090445105343,
+        "parameters": {
+          "alpha": 0.0009895268970814784
+        },
+        "screening_mse": 0.360842147694855,
+        "screening_r2": 0.8580790008212444
+      },
+      "ridge": {
+        "fit_seconds": 0.04924416542053223,
+        "inner_tuning_r2": 0.9635968622168585,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "repeated_context_median_r2": 0.9320852532161261,
+        "repeated_context_r2": [
+          0.8584086836338909,
+          0.9598868893592672,
+          0.9574865894354808,
+          0.9320852532161261,
+          0.9132349577055281
+        ],
+        "screening_mse": 0.3997746488668608,
+        "screening_r2": 0.8427666557912741
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999227441166921,
+    "screen_rows_used": 55,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 10.094825685211863,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesMettlerToledo",
+    "status": "accepted",
+    "target": "MagnesiumSulfate",
+    "target_context_iqr": 1.5264829993247986,
+    "target_context_mean": 1.04912499733495,
+    "target_context_std": 1.2205711710734104,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystesmettlertoledo__magnesiumsulfate",
+    "test_mse": 0.16293614624979866,
+    "test_r2": 0.9098678944246158,
+    "test_rows_reserved": 55,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.3102544951160473
+  },
+  {
+    "N": 133,
+    "P_over_N": 3.654135338345865,
+    "P_raw": 486,
+    "P_screening_model": 486,
+    "P_transformed": 486,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.7573352597191776,
+    "best_screening_r2": 0.7043911942280222,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 80,
+    "elapsed_seconds": 0.5651931762695312,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.36636120876741074,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.20154023170471191,
+        "inner_tuning_r2": 0.7501634214128019,
+        "parameters": {
+          "alpha": 0.004985991566199581,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.7573352597191776,
+        "repeated_context_r2": [
+          0.8494694318575151,
+          0.7573352597191776,
+          0.6955369663205064,
+          0.7752688309535098,
+          0.6116213884346391
+        ],
+        "screening_mse": 0.15072545068318136,
+        "screening_r2": 0.7043911942280222
+      },
+      "lasso": {
+        "fit_seconds": 0.18062067031860352,
+        "inner_tuning_r2": 0.6435696671691954,
+        "parameters": {
+          "alpha": 0.001306329505610218
+        },
+        "screening_mse": 0.13552880838471904,
+        "screening_r2": 0.734195459275701
+      },
+      "ridge": {
+        "fit_seconds": 0.021630287170410156,
+        "inner_tuning_r2": 0.706730742104134,
+        "parameters": {
+          "alpha": 0.01
+        },
+        "screening_mse": 0.1539510422052982,
+        "screening_r2": 0.69806503462167
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9993527088306352,
+    "screen_rows_used": 27,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 2.3772196815295215,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesTimegate",
+    "status": "accepted",
+    "target": "Acetate",
+    "target_context_iqr": 1.3320375382900238,
+    "target_context_mean": 0.8533759296988137,
+    "target_context_std": 0.8374370025164035,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystestimegate__acetate",
+    "test_mse": 0.13093520636302808,
+    "test_r2": 0.7038984447860654,
+    "test_rows_reserved": 26,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.4807405485163088
+  },
+  {
+    "N": 133,
+    "P_over_N": 3.654135338345865,
+    "P_raw": 486,
+    "P_screening_model": 486,
+    "P_transformed": 486,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.6599756644049167,
+    "best_screening_r2": 0.7002392109451567,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 80,
+    "elapsed_seconds": 0.7068228721618652,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.24525175819934625,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.1905956268310547,
+        "inner_tuning_r2": 0.7307653077214331,
+        "parameters": {
+          "alpha": 0.045813766790495994,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 6.300420042920337,
+        "screening_r2": 0.733225003225588
+      },
+      "lasso": {
+        "fit_seconds": 0.21984648704528809,
+        "inner_tuning_r2": 0.8659992568323485,
+        "parameters": {
+          "alpha": 0.0035213242554020725
+        },
+        "repeated_context_median_r2": 0.6599756644049167,
+        "repeated_context_r2": [
+          -0.23258479403084564,
+          0.8522001490567197,
+          0.5698629526143344,
+          0.6599756644049167,
+          0.7210271613984804
+        ],
+        "screening_mse": 7.07944487406287,
+        "screening_r2": 0.7002392109451567
+      },
+      "ridge": {
+        "fit_seconds": 0.0201416015625,
+        "inner_tuning_r2": 0.6008284332072211,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "screening_mse": 6.511473592929333,
+        "screening_r2": 0.7242884863363457
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9993527088306352,
+    "screen_rows_used": 27,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 2.3030066390715556,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesTimegate",
+    "status": "accepted",
+    "target": "Glucose",
+    "target_context_iqr": 4.872067630290985,
+    "target_context_mean": 3.2946067057549953,
+    "target_context_std": 3.810113233183883,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystestimegate__glucose",
+    "test_mse": 3.960779601805016,
+    "test_r2": 0.6972455373928371,
+    "test_rows_reserved": 26,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 13.999046067687154
+  },
+  {
+    "N": 385,
+    "P_over_N": 7.794805194805194,
+    "P_raw": 3001,
+    "P_screening_model": 3001,
+    "P_transformed": 3001,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.7659389751797704,
+    "best_screening_r2": 0.7661036752398256,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 235,
+    "elapsed_seconds": 5.113468170166016,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.22480252276667498,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 2.640105962753296,
+        "inner_tuning_r2": 0.7135737319769843,
+        "parameters": {
+          "alpha": 0.008866012678291438,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.07872146631423224,
+        "screening_r2": 0.708909745623441
+      },
+      "lasso": {
+        "fit_seconds": 2.309192180633545,
+        "inner_tuning_r2": 0.7866406473894927,
+        "parameters": {
+          "alpha": 0.002256844953732756
+        },
+        "screening_mse": 0.07425084909216516,
+        "screening_r2": 0.7254408541675467
+      },
+      "ridge": {
+        "fit_seconds": 0.06411480903625488,
+        "inner_tuning_r2": 0.8120705275355695,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "repeated_context_median_r2": 0.7659389751797704,
+        "repeated_context_r2": [
+          0.7659389751797704,
+          0.780146904820429,
+          0.788338416928038,
+          0.46548878951410344,
+          0.7055957335912062
+        ],
+        "screening_mse": 0.06325413294947305,
+        "screening_r2": 0.7661036752398256
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999784481897226,
+    "screen_rows_used": 75,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.06194115348847906,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesTornado",
+    "status": "accepted",
+    "target": "Acetate",
+    "target_context_iqr": 1.0792499780654907,
+    "target_context_mean": 0.6691531903962505,
+    "target_context_std": 0.5464782982871843,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystestornado__acetate",
+    "test_mse": 0.29357035214554067,
+    "test_r2": 0.05832823531228848,
+    "test_rows_reserved": 75,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.31296806838864677
+  },
+  {
+    "N": 385,
+    "P_over_N": 7.794805194805194,
+    "P_raw": 3001,
+    "P_screening_model": 3001,
+    "P_transformed": 3001,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.8224274791041448,
+    "best_screening_r2": 0.8223076625120231,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 235,
+    "elapsed_seconds": 6.342330455780029,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.41903392580502585,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.7454049587249756,
+        "inner_tuning_r2": 0.8318243736571327,
+        "parameters": {
+          "alpha": 0.005041572199314881,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 2.6711989462344006,
+        "screening_r2": 0.8344977590708995
+      },
+      "lasso": {
+        "fit_seconds": 2.023932933807373,
+        "inner_tuning_r2": 0.8681733580574745,
+        "parameters": {
+          "alpha": 0.022733253350504273
+        },
+        "repeated_context_median_r2": 0.8224274791041448,
+        "repeated_context_r2": [
+          0.8224274791041448,
+          0.8254368783764235,
+          0.8120983879180532,
+          0.7338331088352045,
+          0.8735374303582323
+        ],
+        "screening_mse": 2.8679465727303795,
+        "screening_r2": 0.8223076625120231
+      },
+      "ridge": {
+        "fit_seconds": 0.06204628944396973,
+        "inner_tuning_r2": 0.8235963905869419,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "screening_mse": 2.7082728272945946,
+        "screening_r2": 0.8322007342071953
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999784481897226,
+    "screen_rows_used": 75,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.0,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesTornado",
+    "status": "accepted",
+    "target": "Glucose",
+    "target_context_iqr": 4.049280107021332,
+    "target_context_mean": 2.6767434046623553,
+    "target_context_std": 3.1304702379068536,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystestornado__glucose",
+    "test_mse": 23.8678626743946,
+    "test_r2": -2.561765419562431,
+    "test_rows_reserved": 75,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 6.7118958085633675
+  },
+  {
+    "N": 385,
+    "P_over_N": 7.794805194805194,
+    "P_raw": 3001,
+    "P_screening_model": 3001,
+    "P_transformed": 3001,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.757463326149356,
+    "best_screening_r2": 0.4107739797230685,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 235,
+    "elapsed_seconds": 3.164447784423828,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.6210859630540477,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.2597227096557617,
+        "inner_tuning_r2": 0.810423912008015,
+        "parameters": {
+          "alpha": 0.014621029856581536,
+          "l1_ratio": 0.2
+        },
+        "repeated_context_median_r2": 0.757463326149356,
+        "repeated_context_r2": [
+          0.7616125936185247,
+          0.757463326149356,
+          0.7744615935697459,
+          0.7284042545450833,
+          0.6894945036386527
+        ],
+        "screening_mse": 0.6112771408199845,
+        "screening_r2": 0.4107739797230685
+      },
+      "lasso": {
+        "fit_seconds": 1.2000904083251953,
+        "inner_tuning_r2": 0.7042979110591863,
+        "parameters": {
+          "alpha": 0.014650530172697806
+        },
+        "screening_mse": 0.48637913643839087,
+        "screening_r2": 0.5311664320951256
+      },
+      "ridge": {
+        "fit_seconds": 0.05859208106994629,
+        "inner_tuning_r2": 0.773248829332441,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.6116146267351467,
+        "screening_r2": 0.4104486682245496
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_bioprocess_spectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999784481897226,
+    "screen_rows_used": 75,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.0,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace chlange/RamanSpectraBioprocessAnalystesTornado",
+    "status": "accepted",
+    "target": "MagnesiumSulfate",
+    "target_context_iqr": 2.9450730129610747,
+    "target_context_mean": 1.1033845276502456,
+    "target_context_std": 1.409399393292154,
+    "task_id": "hf_chlange_ramanspectrabioprocessanalystestornado__magnesiumsulfate",
+    "test_mse": 76.65175661922065,
+    "test_r2": -36.21707961623949,
+    "test_rows_reserved": 75,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.05980468714985
+  },
+  {
+    "N": 362,
+    "P_over_N": 4.754143646408839,
+    "P_raw": 1721,
+    "P_screening_model": 1721,
+    "P_transformed": 1721,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.382226614050285,
+    "best_screening_r2": 0.34343553428895857,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 216,
+    "elapsed_seconds": 3.6799099445343018,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.3761830749868968,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.9661769866943359,
+        "inner_tuning_r2": 0.4772689559120157,
+        "parameters": {
+          "alpha": 0.009240118743611912,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.08516636405736432,
+        "screening_r2": 0.2371160031551306
+      },
+      "lasso": {
+        "fit_seconds": 0.9490532875061035,
+        "inner_tuning_r2": 0.6292415069940285,
+        "parameters": {
+          "alpha": 0.00015691885162037486
+        },
+        "repeated_context_median_r2": 0.382226614050285,
+        "repeated_context_r2": [
+          0.1421562727181308,
+          0.39923506244680107,
+          0.2914869362682112,
+          0.382226614050285,
+          0.5539681487725392
+        ],
+        "screening_mse": 0.07329713107777522,
+        "screening_r2": 0.34343553428895857
+      },
+      "ridge": {
+        "fit_seconds": 0.06506752967834473,
+        "inner_tuning_r2": 0.46768582172991746,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.08655579089129296,
+        "screening_r2": 0.2246701096604048
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_multi_source_vegetation_hyperspectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999993067634371,
+    "screen_rows_used": 73,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.083971231640839,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace Avatarr05/GreenHyperSpectra",
+    "status": "accepted",
+    "target": "anth",
+    "target_context_iqr": 0.5445492355000003,
+    "target_context_mean": 1.3436843402083332,
+    "target_context_std": 0.4300222960493843,
+    "task_id": "hf_greenhyperspectra__anth",
+    "test_mse": 0.08974464116117427,
+    "test_r2": 0.5201469267823633,
+    "test_rows_reserved": 73,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.18727021295326685
+  },
+  {
+    "N": 1660,
+    "P_over_N": 1.0367469879518072,
+    "P_raw": 1721,
+    "P_screening_model": 1721,
+    "P_transformed": 1721,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.4920956009637817,
+    "best_screening_r2": 0.45372468233079544,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 1001,
+    "elapsed_seconds": 4.854610443115234,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.3541285810738076,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 2.0575008392333984,
+        "inner_tuning_r2": 0.288235161264935,
+        "parameters": {
+          "alpha": 0.004090493285778588,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 3.8543839831629474,
+        "screening_r2": 0.47009378576938055
+      },
+      "lasso": {
+        "fit_seconds": 2.2501115798950195,
+        "inner_tuning_r2": 0.35070863142675934,
+        "parameters": {
+          "alpha": 0.0010818355768905158
+        },
+        "screening_mse": 3.8462501112280583,
+        "screening_r2": 0.47121204209850653
+      },
+      "ridge": {
+        "fit_seconds": 0.21330475807189941,
+        "inner_tuning_r2": 0.45557180538605113,
+        "parameters": {
+          "alpha": 0.0001
+        },
+        "repeated_context_median_r2": 0.4920956009637817,
+        "repeated_context_r2": [
+          0.4368466979282627,
+          0.4300083307337048,
+          0.5021724243278829,
+          0.4920956009637817,
+          0.5039166028157056
+        ],
+        "screening_mse": 3.973448090014432,
+        "screening_r2": 0.45372468233079544
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_multi_source_vegetation_hyperspectroscopy",
+    "sampled_max_abs_feature_corr": 0.999999112657195,
+    "screen_rows_used": 334,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.7634982519196835,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace Avatarr05/GreenHyperSpectra",
+    "status": "accepted",
+    "target": "car",
+    "target_context_iqr": 3.5052136140000005,
+    "target_context_mean": 8.171477430828173,
+    "target_context_std": 3.096741861288853,
+    "task_id": "hf_greenhyperspectra__car",
+    "test_mse": 4.649594324055505,
+    "test_r2": 0.4329452842318191,
+    "test_rows_reserved": 325,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 8.199612137927673
+  },
+  {
+    "N": 1449,
+    "P_over_N": 1.1877156659765356,
+    "P_raw": 1721,
+    "P_screening_model": 1721,
+    "P_transformed": 1721,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.4841480079924848,
+    "best_screening_r2": 0.5377219033223866,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 873,
+    "elapsed_seconds": 3.9617395401000977,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.45174124955560113,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.8109018802642822,
+        "inner_tuning_r2": 0.44684919887647734,
+        "parameters": {
+          "alpha": 0.0031466907736924744,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 1.4976538804818227,
+        "screening_r2": 0.5198612854132402
+      },
+      "lasso": {
+        "fit_seconds": 1.6864032745361328,
+        "inner_tuning_r2": 0.426582459199328,
+        "parameters": {
+          "alpha": 0.0008507056118870898
+        },
+        "screening_mse": 1.4861878684209096,
+        "screening_r2": 0.5235372190612683
+      },
+      "ridge": {
+        "fit_seconds": 0.19394922256469727,
+        "inner_tuning_r2": 0.5070263440895935,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "repeated_context_median_r2": 0.4841480079924848,
+        "repeated_context_r2": [
+          0.508718965751448,
+          0.49750420298864084,
+          0.46084422075716047,
+          0.4841480079924848,
+          0.4768192969980194
+        ],
+        "screening_mse": 1.4419428475932161,
+        "screening_r2": 0.5377219033223866
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_multi_source_vegetation_hyperspectroscopy",
+    "sampled_max_abs_feature_corr": 0.9999986712425457,
+    "screen_rows_used": 292,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.0652444980135503,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace Avatarr05/GreenHyperSpectra",
+    "status": "accepted",
+    "target": "LAI",
+    "target_context_iqr": 2.653440607,
+    "target_context_mean": 3.485294864460481,
+    "target_context_std": 1.7837798632185922,
+    "task_id": "hf_greenhyperspectra__lai",
+    "test_mse": 1.510742141968409,
+    "test_r2": 0.5157958290353286,
+    "test_rows_reserved": 284,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 3.177060533223315
+  },
+  {
+    "N": 1128,
+    "P_over_N": 1.8156028368794326,
+    "P_raw": 2048,
+    "P_transformed": 2048,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.4834342643302747,
+    "best_screening_r2": 0.4191267378066621,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 676,
+    "elapsed_seconds": 0.6768548488616943,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.2993459015215192,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.27960872650146484,
+        "inner_tuning_r2": 0.45688872594331054,
+        "parameters": {
+          "alpha": 0.18132075431905825,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 2.060628579926996,
+        "screening_r2": 0.5553740528845152
+      },
+      "lasso": {
+        "fit_seconds": 0.22896671295166016,
+        "inner_tuning_r2": 0.4704954961148483,
+        "parameters": {
+          "alpha": 0.049858818167887446
+        },
+        "screening_mse": 2.0865858354150597,
+        "screening_r2": 0.5497732039890255
+      },
+      "ridge": {
+        "fit_seconds": 0.11052703857421875,
+        "inner_tuning_r2": 0.5215308131215868,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.4834342643302747,
+        "repeated_context_r2": [
+          0.5149011779862729,
+          0.5275702969896783,
+          0.4234752018985719,
+          0.33596833366287515,
+          0.4834342643302747
+        ],
+        "screening_mse": 2.6920697119822536,
+        "screening_r2": 0.4191267378066621
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_measurement",
+    "sampled_max_abs_feature_corr": 1.0,
+    "screen_rows_used": 225,
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.1677156800802129,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace scikit-fingerprints/MoleculeNet_ESOL",
+    "status": "accepted",
+    "target": "label",
+    "target_context_iqr": 2.71225,
+    "target_context_mean": -3.0541360946745564,
+    "target_context_std": 2.0360126994317764,
+    "task_id": "hf_moleculenet_esol_morgan2048",
+    "test_mse": 2.1954369451945412,
+    "test_r2": 0.5386848888028541,
+    "test_rows_reserved": 227,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 4.825294980698858
+  },
+  {
+    "N": 642,
+    "P_over_N": 3.190031152647975,
+    "P_raw": 2048,
+    "P_transformed": 2048,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.5678476238335084,
+    "best_screening_r2": 0.7704809381153803,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 385,
+    "elapsed_seconds": 0.3704493045806885,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.3201436299250336,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.11482024192810059,
+        "inner_tuning_r2": 0.7242837993947541,
+        "parameters": {
+          "alpha": 0.022597500197707215,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.5678476238335084,
+        "repeated_context_r2": [
+          0.35728491550983743,
+          0.5701814170877024,
+          0.5678476238335084,
+          0.4692678727854299,
+          0.6742835874779234
+        ],
+        "screening_mse": 4.167664145441988,
+        "screening_r2": 0.7704809381153803
+      },
+      "lasso": {
+        "fit_seconds": 0.08646726608276367,
+        "inner_tuning_r2": 0.6567050027587851,
+        "parameters": {
+          "alpha": 0.08897764972258225
+        },
+        "screening_mse": 3.7034211932747643,
+        "screening_r2": 0.7960474432725917
+      },
+      "ridge": {
+        "fit_seconds": 0.08088517189025879,
+        "inner_tuning_r2": 0.43776365344316537,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "screening_mse": 5.5815386802302,
+        "screening_r2": 0.6926169007259835
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_measurement",
+    "sampled_max_abs_feature_corr": 1.0,
+    "screen_rows_used": 128,
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.4105156932816183,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace scikit-fingerprints/MoleculeNet_FreeSolv",
+    "status": "accepted",
+    "target": "label",
+    "target_context_iqr": 4.35,
+    "target_context_mean": -3.6715064935064934,
+    "target_context_std": 3.801852154989643,
+    "task_id": "hf_moleculenet_freesolv_morgan2048",
+    "test_mse": 5.083602881790829,
+    "test_r2": 0.5851510103057558,
+    "test_rows_reserved": 129,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 12.29594114398156
+  },
+  {
+    "N": 225,
+    "P_over_N": 2.3733333333333335,
+    "P_raw": 534,
+    "P_screening_model": 534,
+    "P_transformed": 534,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.4943235689790918,
+    "best_screening_r2": 0.28115095651079425,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 135,
+    "elapsed_seconds": 0.6765749454498291,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.2889351830528492,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.3336985111236572,
+        "inner_tuning_r2": 0.40624917931399995,
+        "parameters": {
+          "alpha": 0.0004221928539752851,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.03148400075803728,
+        "screening_r2": 0.5634450126126873
+      },
+      "lasso": {
+        "fit_seconds": 0.27934694290161133,
+        "inner_tuning_r2": 0.2884322686075196,
+        "parameters": {
+          "alpha": 7.904361553674822e-05
+        },
+        "screening_mse": 0.03194572603868701,
+        "screening_r2": 0.5570427616529203
+      },
+      "ridge": {
+        "fit_seconds": 0.025345325469970703,
+        "inner_tuning_r2": 0.5632859875974034,
+        "parameters": {
+          "alpha": 0.01
+        },
+        "repeated_context_median_r2": 0.4943235689790918,
+        "repeated_context_r2": [
+          0.6591559298357095,
+          0.5531970614921485,
+          0.3584724121535079,
+          0.4943235689790918,
+          0.2725587143138467
+        ],
+        "screening_mse": 0.05184282503695037,
+        "screening_r2": 0.28115095651079425
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9999950380014847,
+    "screen_rows_used": 45,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.32234875365536875,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "cAu",
+    "target_context_iqr": 0.49999999999999994,
+    "target_context_mean": 0.4642962962962964,
+    "target_context_std": 0.28741643742973555,
+    "task_id": "hf_ramanbench_adenine_colloidal_gold__cau",
+    "test_mse": 0.06990643814840138,
+    "test_r2": 0.24376984722396422,
+    "test_rows_reserved": 45,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.09287086968449931
+  },
+  {
+    "N": 384,
+    "P_over_N": 4.8671875,
+    "P_raw": 1869,
+    "P_screening_model": 1869,
+    "P_transformed": 1869,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.7276584110345592,
+    "best_screening_r2": 0.7596132985778199,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 230,
+    "elapsed_seconds": 0.9958605766296387,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.34409436954282024,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.39917635917663574,
+        "inner_tuning_r2": 0.8686327201184854,
+        "parameters": {
+          "alpha": 0.05103071593279373,
+          "l1_ratio": 0.2
+        },
+        "repeated_context_median_r2": 0.7276584110345592,
+        "repeated_context_r2": [
+          0.709351896259806,
+          0.609587179600475,
+          0.8344871070502169,
+          0.7276584110345592,
+          0.8259854794553765
+        ],
+        "screening_mse": 2.575979012892993,
+        "screening_r2": 0.7596132985778199
+      },
+      "lasso": {
+        "fit_seconds": 0.4041097164154053,
+        "inner_tuning_r2": 0.8085296096459901,
+        "parameters": {
+          "alpha": 0.01481426857723582
+        },
+        "screening_mse": 2.9031337202866085,
+        "screening_r2": 0.7290836861192278
+      },
+      "ridge": {
+        "fit_seconds": 0.035993099212646484,
+        "inner_tuning_r2": 0.8210303505454539,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 2.622591988604255,
+        "screening_r2": 0.7552634419141515
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.999430468432658,
+    "screen_rows_used": 76,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 4.242558984239457,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Glucose (g/L)",
+    "target_context_iqr": 4.108132357000001,
+    "target_context_mean": 6.64542224671739,
+    "target_context_std": 2.756594631451117,
+    "task_id": "hf_ramanbench_ecoli_metabolites_dig4bio__glucose_g_l",
+    "test_mse": 1.5509704441394134,
+    "test_r2": 0.8092534575183095,
+    "test_rows_reserved": 78,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 8.252086930765676
+  },
+  {
+    "N": 384,
+    "P_over_N": 4.8671875,
+    "P_raw": 1869,
+    "P_screening_model": 1869,
+    "P_transformed": 1869,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.5795413763887749,
+    "best_screening_r2": 0.6343432975393091,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 230,
+    "elapsed_seconds": 1.6457343101501465,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.36415112003876937,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.8741810321807861,
+        "inner_tuning_r2": 0.6286080924359234,
+        "parameters": {
+          "alpha": 0.014169960429340506,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.5795413763887749,
+        "repeated_context_r2": [
+          0.48507249864247404,
+          0.7179774902820608,
+          0.5795413763887749,
+          0.6639481676805401,
+          0.36155468260170265
+        ],
+        "screening_mse": 0.16754238528685034,
+        "screening_r2": 0.6343432975393091
+      },
+      "lasso": {
+        "fit_seconds": 0.44324254989624023,
+        "inner_tuning_r2": 0.5641621353663726,
+        "parameters": {
+          "alpha": 0.016144360840478347
+        },
+        "screening_mse": 0.15435811292348012,
+        "screening_r2": 0.6631176136532861
+      },
+      "ridge": {
+        "fit_seconds": 0.034992218017578125,
+        "inner_tuning_r2": 0.42071687747318565,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.19864117930685046,
+        "screening_r2": 0.5664710247864274
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9993384869237104,
+    "screen_rows_used": 76,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 2.4293996565947005,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Magnesium Acetate (g/L)",
+    "target_context_iqr": 0.8843373779999999,
+    "target_context_mean": 1.6466510482086956,
+    "target_context_std": 0.6398286783191018,
+    "task_id": "hf_ramanbench_ecoli_metabolites_dig4bio__magnesium_acetate_g_l",
+    "test_mse": 0.1423336710016138,
+    "test_r2": 0.7084037732152302,
+    "test_rows_reserved": 78,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.5174811035000622
+  },
+  {
+    "N": 384,
+    "P_over_N": 4.8671875,
+    "P_raw": 1869,
+    "P_screening_model": 1869,
+    "P_transformed": 1869,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.6182105784416467,
+    "best_screening_r2": 0.6385980199491434,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 230,
+    "elapsed_seconds": 4.147276163101196,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.25154743064190876,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.5146777629852295,
+        "inner_tuning_r2": 0.5783109041795913,
+        "parameters": {
+          "alpha": 0.010004395798995284,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.10249753599339813,
+        "screening_r2": 0.6200311339797591
+      },
+      "lasso": {
+        "fit_seconds": 1.2930810451507568,
+        "inner_tuning_r2": 0.7404581443118129,
+        "parameters": {
+          "alpha": 0.008454375005321122
+        },
+        "repeated_context_median_r2": 0.6182105784416467,
+        "repeated_context_r2": [
+          0.6262718026025896,
+          0.7389536413289022,
+          0.6087307488968274,
+          0.5014824848367108,
+          0.6182105784416467
+        ],
+        "screening_mse": 0.09748907284518082,
+        "screening_r2": 0.6385980199491434
+      },
+      "ridge": {
+        "fit_seconds": 0.03683161735534668,
+        "inner_tuning_r2": 0.5260350459540862,
+        "parameters": {
+          "alpha": 0.0001
+        },
+        "screening_mse": 0.14030578266972887,
+        "screening_r2": 0.4798720903833916
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9993094077280663,
+    "screen_rows_used": 76,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 1.9696146014478464,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Sodium Acetate (g/L)",
+    "target_context_iqr": 0.7657508217499999,
+    "target_context_mean": 1.1668208640652176,
+    "target_context_std": 0.5306144871999033,
+    "task_id": "hf_ramanbench_ecoli_metabolites_dig4bio__sodium_acetate_g_l",
+    "test_mse": 0.10461242078502828,
+    "test_r2": 0.6632559661066973,
+    "test_rows_reserved": 78,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.31138922976474753
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.7813378861696254,
+    "best_screening_r2": 0.8643580740106176,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.27945876121520996,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7198877758182792,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.11219215393066406,
+        "inner_tuning_r2": 0.82439913574613,
+        "parameters": {
+          "alpha": 0.14714134512900043,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.7813378861696254,
+        "repeated_context_r2": [
+          0.6573509729006981,
+          0.7813378861696254,
+          0.8113055480326958,
+          0.7612353035563343,
+          0.8102805787396572
+        ],
+        "screening_mse": 1.386026024423011,
+        "screening_r2": 0.8643580740106176
+      },
+      "lasso": {
+        "fit_seconds": 0.08690881729125977,
+        "inner_tuning_r2": 0.7242675940063864,
+        "parameters": {
+          "alpha": 0.17917387119358122
+        },
+        "screening_mse": 1.4829751736260754,
+        "screening_r2": 0.8548702512069946
+      },
+      "ridge": {
+        "fit_seconds": 0.026784420013427734,
+        "inner_tuning_r2": 0.7131900450790201,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 1.2799513229991668,
+        "screening_r2": 0.8747389590346694
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9985882074034448,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 4.104534405546343,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Aromatics Content",
+    "target_context_iqr": 5.5,
+    "target_context_mean": 30.416326530612253,
+    "target_context_std": 3.365269612801795,
+    "task_id": "hf_ramanbench_fuel_benchtop__aromatics_content",
+    "test_mse": 3.3627541228826026,
+    "test_r2": 0.804095746927781,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 17.678417816106045
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.8387177147956799,
+    "best_screening_r2": 0.9199604328731467,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.3020162582397461,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.6858000046857881,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.13728690147399902,
+        "inner_tuning_r2": 0.8659627689128366,
+        "parameters": {
+          "alpha": 0.010568413427979081,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.005919873112312981,
+        "screening_r2": 0.9261098236590871
+      },
+      "lasso": {
+        "fit_seconds": 0.08391165733337402,
+        "inner_tuning_r2": 0.8788378649628537,
+        "parameters": {
+          "alpha": 0.011100193371085641
+        },
+        "repeated_context_median_r2": 0.8387177147956799,
+        "repeated_context_r2": [
+          0.6423088410329754,
+          0.8954148171879248,
+          0.770165433885558,
+          0.8387177147956799,
+          0.852469395968539
+        ],
+        "screening_mse": 0.006412545006920947,
+        "screening_r2": 0.9199604328731467
+      },
+      "ridge": {
+        "fit_seconds": 0.027416229248046875,
+        "inner_tuning_r2": 0.8683895375727624,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.013613123372135372,
+        "screening_r2": 0.8300848569835858
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9985610151883817,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 9.112020531312718,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Benzene Content",
+    "target_context_iqr": 0.3350000000000001,
+    "target_context_mean": 0.6089795918367348,
+    "target_context_std": 0.23526142556529975,
+    "task_id": "hf_ramanbench_fuel_benchtop__benzene_content",
+    "test_mse": 0.006542805758186166,
+    "test_r2": 0.9011077957265399,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.07823063306955437
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.21978999399105847,
+    "best_screening_r2": 0.4909428645387871,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.475006103515625,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.44791772866891083,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.1501460075378418,
+        "inner_tuning_r2": 0.48562480893427373,
+        "parameters": {
+          "alpha": 0.009882878929592947,
+          "l1_ratio": 0.2
+        },
+        "repeated_context_median_r2": 0.21978999399105847,
+        "repeated_context_r2": [
+          -1.2668565138913461,
+          0.4032485757073039,
+          -0.04744518888982796,
+          0.359315520461747,
+          0.21978999399105847
+        ],
+        "screening_mse": 17.04967067835099,
+        "screening_r2": 0.4909428645387871
+      },
+      "lasso": {
+        "fit_seconds": 0.10685610771179199,
+        "inner_tuning_r2": 0.3795514131284331,
+        "parameters": {
+          "alpha": 0.561843714942953
+        },
+        "screening_mse": 14.71961869790252,
+        "screening_r2": 0.560511925960538
+      },
+      "ridge": {
+        "fit_seconds": 0.02386307716369629,
+        "inner_tuning_r2": 0.04195677953887733,
+        "parameters": {
+          "alpha": 10000.0
+        },
+        "screening_mse": 25.95241506191209,
+        "screening_r2": 0.22513095302816888
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9986423484797146,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.0,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Density at 15\u00b0C",
+    "target_context_iqr": 5.5,
+    "target_context_mean": 747.0765306122449,
+    "target_context_std": 5.539244054746326,
+    "task_id": "hf_ramanbench_fuel_benchtop__density_at_15_c",
+    "test_mse": 13.89295769316513,
+    "test_r2": -0.1835635516429157,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 14.251211076267154
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.9103566747301401,
+    "best_screening_r2": 0.9238606913500897,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.25473546981811523,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.8923601290110323,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.09617090225219727,
+        "inner_tuning_r2": 0.91280922510849,
+        "parameters": {
+          "alpha": 0.18344669063761826,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.8369929412976715,
+        "screening_r2": 0.9179216726801827
+      },
+      "lasso": {
+        "fit_seconds": 0.08470869064331055,
+        "inner_tuning_r2": 0.9469534097453612,
+        "parameters": {
+          "alpha": 0.17591626224700646
+        },
+        "repeated_context_median_r2": 0.9103566747301401,
+        "repeated_context_r2": [
+          0.9089126497195177,
+          0.8895507109238048,
+          0.9558803824789726,
+          0.9103566747301401,
+          0.9186985402306451
+        ],
+        "screening_mse": 0.7764298564095233,
+        "screening_r2": 0.9238606913500897
+      },
+      "ridge": {
+        "fit_seconds": 0.026592254638671875,
+        "inner_tuning_r2": 0.9195123248851608,
+        "parameters": {
+          "alpha": 0.0001
+        },
+        "screening_mse": 1.125668695413561,
+        "screening_r2": 0.8896131626957569
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9986648234433648,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 12.802658958089333,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Ethanol Content (%)",
+    "target_context_iqr": 6.1,
+    "target_context_mean": 3.9616326530612254,
+    "target_context_std": 3.2495474390957546,
+    "task_id": "hf_ramanbench_fuel_benchtop__ethanol_content",
+    "test_mse": 0.6584308801230566,
+    "test_r2": 0.9275501913771528,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 9.194766170958177
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.714693464247396,
+    "best_screening_r2": 0.9551480017550743,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.2537705898284912,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.8381674906650401,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.09025311470031738,
+        "inner_tuning_r2": 0.8363512380098016,
+        "parameters": {
+          "alpha": 0.28279037824531,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.8176030252022519,
+        "screening_r2": 0.9584859280503952
+      },
+      "lasso": {
+        "fit_seconds": 0.07977867126464844,
+        "inner_tuning_r2": 0.8964932626330444,
+        "parameters": {
+          "alpha": 0.2575849574629916
+        },
+        "repeated_context_median_r2": 0.714693464247396,
+        "repeated_context_r2": [
+          0.8973946073064284,
+          0.714693464247396,
+          0.9017268267377776,
+          -0.17451622969225067,
+          0.7063458515695819
+        ],
+        "screening_mse": 0.8833421471142021,
+        "screening_r2": 0.9551480017550743
+      },
+      "ridge": {
+        "fit_seconds": 0.028070926666259766,
+        "inner_tuning_r2": 0.873856520871671,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 1.1045451401850577,
+        "screening_r2": 0.9439163444755042
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9984524997554411,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 29.779965985590362,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Ethyl Tert-Butyl Ether (ETBE)",
+    "target_context_iqr": 10.925,
+    "target_context_mean": 3.8448979591836743,
+    "target_context_std": 5.114188395901284,
+    "task_id": "hf_ramanbench_fuel_benchtop__ethyl_tert_butyl_ether_etbe",
+    "test_mse": 0.8035739626981246,
+    "test_r2": 0.9675113351175193,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 24.951943797927335
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.7739209898493485,
+    "best_screening_r2": 0.8570421315032872,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.291471004486084,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7915792387793857,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.09183263778686523,
+        "inner_tuning_r2": 0.8294403363325686,
+        "parameters": {
+          "alpha": 0.6727040472035721,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 1.0699960402834678,
+        "screening_r2": 0.8107196258101608
+      },
+      "lasso": {
+        "fit_seconds": 0.08554506301879883,
+        "inner_tuning_r2": 0.8356995504367366,
+        "parameters": {
+          "alpha": 0.03742632064675259
+        },
+        "repeated_context_median_r2": 0.7739209898493485,
+        "repeated_context_r2": [
+          0.6945634227500278,
+          0.9020442354779231,
+          0.7739209898493485,
+          0.674871135391953,
+          0.7960125141002995
+        ],
+        "screening_mse": 0.808136363178527,
+        "screening_r2": 0.8570421315032872
+      },
+      "ridge": {
+        "fit_seconds": 0.02597498893737793,
+        "inner_tuning_r2": 0.614064417237701,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 1.6078878823447476,
+        "screening_r2": 0.7155675268247772
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9980835247994936,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 4.021020725157196,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Methyl Tert-Butyl Ether (MTBE)",
+    "target_context_iqr": 1.0250000000000001,
+    "target_context_mean": 1.4244897959183676,
+    "target_context_std": 2.91267676960242,
+    "task_id": "hf_ramanbench_fuel_benchtop__methyl_tert_butyl_ether_mtbe",
+    "test_mse": 2.00483952994133,
+    "test_r2": 0.8008373088384947,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 10.068372859347823
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.9075683683831476,
+    "best_screening_r2": 0.8840008241115881,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.24507427215576172,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.8445298354251666,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.08174681663513184,
+        "inner_tuning_r2": 0.8694572486493315,
+        "parameters": {
+          "alpha": 0.17134780207850078,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 1.4318894710989687,
+        "screening_r2": 0.8885478223547179
+      },
+      "lasso": {
+        "fit_seconds": 0.06499910354614258,
+        "inner_tuning_r2": 0.9028437289102976,
+        "parameters": {
+          "alpha": 0.045553974823287206
+        },
+        "repeated_context_median_r2": 0.9075683683831476,
+        "repeated_context_r2": [
+          0.9400438271780969,
+          0.8256733623373029,
+          0.8883162687656941,
+          0.9088845430250972,
+          0.9075683683831476
+        ],
+        "screening_mse": 1.490307341857537,
+        "screening_r2": 0.8840008241115881
+      },
+      "ridge": {
+        "fit_seconds": 0.026578903198242188,
+        "inner_tuning_r2": 0.2267161779496596,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 2.00999083698842,
+        "screening_r2": 0.8435508743160951
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9980812989850016,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 5.108527940879313,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Olefins Content",
+    "target_context_iqr": 3.174999999999999,
+    "target_context_mean": 9.871428571428572,
+    "target_context_std": 3.2797150199742813,
+    "task_id": "hf_ramanbench_fuel_benchtop__olefins_content",
+    "test_mse": 1.8925340110908981,
+    "test_r2": 0.8362944379270447,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 11.596824729891958
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.40692772417547574,
+    "best_screening_r2": 0.5234785522056781,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.23840737342834473,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.6933887589471865,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.10695266723632812,
+        "inner_tuning_r2": 0.3346396546201752,
+        "parameters": {
+          "alpha": 0.10574191705411597,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.16788464655872626,
+        "screening_r2": 0.5425991571729224
+      },
+      "lasso": {
+        "fit_seconds": 0.0749208927154541,
+        "inner_tuning_r2": 0.47505345465114646,
+        "parameters": {
+          "alpha": 0.10323585461468696
+        },
+        "repeated_context_median_r2": 0.40692772417547574,
+        "repeated_context_r2": [
+          0.34528839901456043,
+          0.33905948089966365,
+          0.40692772417547574,
+          0.4169882429309484,
+          0.5267978584106688
+        ],
+        "screening_mse": 0.17490268348903515,
+        "screening_r2": 0.5234785522056781
+      },
+      "ridge": {
+        "fit_seconds": 0.026272058486938477,
+        "inner_tuning_r2": 0.4507772646942879,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.13248489670689795,
+        "screening_r2": 0.6390455907807153
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9983505349487142,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.5862685641075084,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Oxygen Content",
+    "target_context_iqr": 0.7075000000000005,
+    "target_context_mean": 2.5285714285714285,
+    "target_context_std": 0.5541715640927272,
+    "task_id": "hf_ramanbench_fuel_benchtop__oxygen_content",
+    "test_mse": 0.1627375219215514,
+    "test_r2": 0.3695897260861146,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.25915708283313327
+  },
+  {
+    "N": 179,
+    "P_over_N": 5.368715083798882,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.860730056962608,
+    "best_screening_r2": 0.8150931079955408,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 107,
+    "elapsed_seconds": 0.3245058059692383,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7988152106539534,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.12715768814086914,
+        "inner_tuning_r2": 0.8664227040661077,
+        "parameters": {
+          "alpha": 0.49298077742061314,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.39027915133194263,
+        "screening_r2": 0.8306899268191277
+      },
+      "lasso": {
+        "fit_seconds": 0.09027457237243652,
+        "inner_tuning_r2": 0.8826974827332091,
+        "parameters": {
+          "alpha": 0.13617488725170473
+        },
+        "repeated_context_median_r2": 0.860730056962608,
+        "repeated_context_r2": [
+          0.860730056962608,
+          0.8552242917615012,
+          0.8653982725049616,
+          0.7082997939049509,
+          0.9418703605060921
+        ],
+        "screening_mse": 0.4262316088531482,
+        "screening_r2": 0.8150931079955408
+      },
+      "ridge": {
+        "fit_seconds": 0.02826094627380371,
+        "inner_tuning_r2": 0.753971916541194,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.38149744165411004,
+        "screening_r2": 0.8344995894750311
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9982718023490001,
+    "screen_rows_used": 35,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 10.282442857107707,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Research Octane Number",
+    "target_context_iqr": 3.4099999999999966,
+    "target_context_mean": 97.8626168224299,
+    "target_context_std": 2.6674449031083802,
+    "task_id": "hf_ramanbench_fuel_benchtop__research_octane_number",
+    "test_mse": 0.5295187993406403,
+    "test_r2": 0.911366712629081,
+    "test_rows_reserved": 37,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 6.076374819469665
+  },
+  {
+    "N": 164,
+    "P_over_N": 5.859756097560975,
+    "P_raw": 961,
+    "P_screening_model": 961,
+    "P_transformed": 961,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.33600227974019303,
+    "best_screening_r2": 0.49960779482056406,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.20600080490112305,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.6025985704216704,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.04550504684448242,
+        "inner_tuning_r2": 0.47634896377963265,
+        "parameters": {
+          "alpha": 9.380644552447267,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 21798.81552771619,
+        "screening_r2": 0.15464332360484434
+      },
+      "lasso": {
+        "fit_seconds": 0.09088778495788574,
+        "inner_tuning_r2": 0.6481401192340451,
+        "parameters": {
+          "alpha": 40.45777446000321
+        },
+        "repeated_context_median_r2": 0.33600227974019303,
+        "repeated_context_r2": [
+          0.3180456000927896,
+          0.39477391084529945,
+          0.24831584113781646,
+          0.33600227974019303,
+          0.4261882609709856
+        ],
+        "screening_mse": 12903.378747451674,
+        "screening_r2": 0.49960779482056406
+      },
+      "ridge": {
+        "fit_seconds": 0.02516937255859375,
+        "inner_tuning_r2": 0.2928129646280725,
+        "parameters": {
+          "alpha": 10000.0
+        },
+        "screening_mse": 19937.52442218973,
+        "screening_r2": 0.22682407401172477
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9983865957613751,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.346514592708281,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Water Content",
+    "target_context_iqr": 261.25,
+    "target_context_mean": 324.11224489795916,
+    "target_context_std": 263.6369598230801,
+    "task_id": "hf_ramanbench_fuel_benchtop__water_content",
+    "test_mse": 18778.614311066824,
+    "test_r2": 0.2573418770095368,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 31123.61043805277
+  },
+  {
+    "N": 164,
+    "P_over_N": 11.591463414634147,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.36984543613298115,
+    "best_screening_r2": 0.6276969512076048,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.7291440963745117,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7165284556318297,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.2749519348144531,
+        "inner_tuning_r2": 0.48742974399797323,
+        "parameters": {
+          "alpha": 0.18782562890593368,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 0.030757557587571142,
+        "screening_r2": 0.507719087302235
+      },
+      "lasso": {
+        "fit_seconds": 0.17276215553283691,
+        "inner_tuning_r2": 0.7892630834137692,
+        "parameters": {
+          "alpha": 0.00019080522426104637
+        },
+        "repeated_context_median_r2": 0.36984543613298115,
+        "repeated_context_r2": [
+          0.6901076452785873,
+          0.36984543613298115,
+          -0.03835132982919354,
+          0.07867098569778486,
+          0.4656174515568634
+        ],
+        "screening_mse": 0.023261378143846104,
+        "screening_r2": 0.6276969512076048
+      },
+      "ridge": {
+        "fit_seconds": 0.03618288040161133,
+        "inner_tuning_r2": 0.6443261987805192,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 0.02509449033602857,
+        "screening_r2": 0.5983576208503193
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9999017011300645,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.7209136017530097,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Benzene Content",
+    "target_context_iqr": 0.43750000000000006,
+    "target_context_mean": 0.5493877551020409,
+    "target_context_std": 0.26126386820541087,
+    "task_id": "hf_ramanbench_fuel_handheld__benzene_content",
+    "test_mse": 0.031283626691241566,
+    "test_r2": 0.41891330338643995,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.061266941470465734
+  },
+  {
+    "N": 164,
+    "P_over_N": 11.591463414634147,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.6910763736411272,
+    "best_screening_r2": 0.6696538908612735,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.5562810897827148,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7916498621376321,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.21855473518371582,
+        "inner_tuning_r2": 0.6784310420626771,
+        "parameters": {
+          "alpha": 0.670966782759933,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 2.0554766944222957,
+        "screening_r2": 0.7755723549149943
+      },
+      "lasso": {
+        "fit_seconds": 0.14291763305664062,
+        "inner_tuning_r2": 0.8297712878041554,
+        "parameters": {
+          "alpha": 0.03653769748604412
+        },
+        "repeated_context_median_r2": 0.6910763736411272,
+        "repeated_context_r2": [
+          0.732814542414612,
+          0.6910763736411272,
+          0.4737390393541836,
+          0.41089413879936665,
+          0.7565998950169565
+        ],
+        "screening_mse": 3.025557427074311,
+        "screening_r2": 0.6696538908612735
+      },
+      "ridge": {
+        "fit_seconds": 0.03371715545654297,
+        "inner_tuning_r2": 0.7064721018733331,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "screening_mse": 1.4628325638822852,
+        "screening_r2": 0.840280326039876
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9998943508561611,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 3.6255720463012016,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Ethanol Content (%)",
+    "target_context_iqr": 4.5,
+    "target_context_mean": 3.693673469387755,
+    "target_context_std": 3.176611719399577,
+    "task_id": "hf_ramanbench_fuel_handheld__ethanol_content",
+    "test_mse": 2.2344698732663555,
+    "test_r2": 0.7838105233276733,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 11.570094406742289
+  },
+  {
+    "N": 164,
+    "P_over_N": 11.591463414634147,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.5020190784913443,
+    "best_screening_r2": 0.6527479472732851,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.45446276664733887,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7170176034305311,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.19550037384033203,
+        "inner_tuning_r2": 0.7105900181746696,
+        "parameters": {
+          "alpha": 0.12781907934507858,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 1.76794905989802,
+        "screening_r2": 0.7205030757763178
+      },
+      "lasso": {
+        "fit_seconds": 0.18452072143554688,
+        "inner_tuning_r2": 0.2876356363099425,
+        "parameters": {
+          "alpha": 0.1590558102965471
+        },
+        "screening_mse": 1.908082735134369,
+        "screening_r2": 0.698349195838748
+      },
+      "ridge": {
+        "fit_seconds": 0.034102678298950195,
+        "inner_tuning_r2": 0.7285422864773061,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.5020190784913443,
+        "repeated_context_r2": [
+          0.7615349080398268,
+          0.48228130834978455,
+          -0.009057050027732494,
+          0.5020190784913443,
+          0.5363539900241298
+        ],
+        "screening_mse": 2.1965320078961867,
+        "screening_r2": 0.6527479472732851
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9999056901924509,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.09615715593599777,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Methyl Tert-Butyl Ether (MTBE)",
+    "target_context_iqr": 1.6,
+    "target_context_mean": 1.5989795918367347,
+    "target_context_std": 3.0836466253102977,
+    "task_id": "hf_ramanbench_fuel_handheld__methyl_tert_butyl_ether_mtbe",
+    "test_mse": 5.641034384647576,
+    "test_r2": 0.0877220528236119,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 6.468908604258031
+  },
+  {
+    "N": 164,
+    "P_over_N": 11.591463414634147,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.3674323233568868,
+    "best_screening_r2": 0.6228610712766521,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.514380931854248,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.6922632394130848,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.2728385925292969,
+        "inner_tuning_r2": 0.6711971630478302,
+        "parameters": {
+          "alpha": 0.38480277115248734,
+          "l1_ratio": 0.2
+        },
+        "repeated_context_median_r2": 0.3674323233568868,
+        "repeated_context_r2": [
+          -0.02466486139712054,
+          0.3674323233568868,
+          0.5648181525476927,
+          0.2245034448244937,
+          0.6371875167733203
+        ],
+        "screening_mse": 0.08216645550753332,
+        "screening_r2": 0.6228610712766521
+      },
+      "lasso": {
+        "fit_seconds": 0.15571975708007812,
+        "inner_tuning_r2": 0.5618801282618513,
+        "parameters": {
+          "alpha": 0.1077389929711367
+        },
+        "screening_mse": 0.08775385673843261,
+        "screening_r2": 0.5972152465717557
+      },
+      "ridge": {
+        "fit_seconds": 0.03667330741882324,
+        "inner_tuning_r2": 0.26809749712856823,
+        "parameters": {
+          "alpha": 0.01
+        },
+        "screening_mse": 0.22848730988436922,
+        "screening_r2": -0.0487425646439148
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9998952773314066,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.9176587936990744,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Oxygen Content",
+    "target_context_iqr": 0.685,
+    "target_context_mean": 2.532142857142857,
+    "target_context_std": 0.577827122653021,
+    "task_id": "hf_ramanbench_fuel_handheld__oxygen_content",
+    "test_mse": 0.1680139483959189,
+    "test_r2": 0.47853079844770163,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 0.32278526410564223
+  },
+  {
+    "N": 179,
+    "P_over_N": 10.620111731843576,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.7702942296130769,
+    "best_screening_r2": 0.5396716831670888,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 107,
+    "elapsed_seconds": 0.4957108497619629,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.7754389950065324,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.27343058586120605,
+        "inner_tuning_r2": 0.6822420319934658,
+        "parameters": {
+          "alpha": 0.4013254396570849,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 4.988747959347578,
+        "screening_r2": 0.43515006802353184
+      },
+      "lasso": {
+        "fit_seconds": 0.1438448429107666,
+        "inner_tuning_r2": 0.641389365428018,
+        "parameters": {
+          "alpha": 0.40900437968378917
+        },
+        "screening_mse": 4.981583820553726,
+        "screening_r2": 0.4359612261223881
+      },
+      "ridge": {
+        "fit_seconds": 0.03641533851623535,
+        "inner_tuning_r2": 0.6918312421535255,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.7702942296130769,
+        "repeated_context_r2": [
+          0.7702942296130769,
+          0.8308347608805358,
+          0.8404376742954883,
+          0.42713726192854273,
+          0.6953474644924642
+        ],
+        "screening_mse": 4.065614283061935,
+        "screening_r2": 0.5396716831670888
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9998822924301155,
+    "screen_rows_used": 35,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.9179540821713089,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Research Octane Number",
+    "target_context_iqr": 2.625,
+    "target_context_mean": 97.80672897196261,
+    "target_context_std": 2.345131674640811,
+    "task_id": "hf_ramanbench_fuel_handheld__research_octane_number",
+    "test_mse": 2.7047670432714703,
+    "test_r2": 0.4786110839171376,
+    "test_rows_reserved": 37,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 5.1882493710060835
+  },
+  {
+    "N": 164,
+    "P_over_N": 11.591463414634147,
+    "P_raw": 1901,
+    "P_screening_model": 1901,
+    "P_transformed": 1901,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.23294759503577744,
+    "best_screening_r2": 0.31501505822632103,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 98,
+    "elapsed_seconds": 0.30903100967407227,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.5060525722249095,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.07737994194030762,
+        "inner_tuning_r2": 0.11203396091613804,
+        "parameters": {
+          "alpha": 7.1940929699780805,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 51055.04896123609,
+        "screening_r2": 0.36350146836413155
+      },
+      "lasso": {
+        "fit_seconds": 0.1584923267364502,
+        "inner_tuning_r2": 0.07259810931871169,
+        "parameters": {
+          "alpha": 0.09304325494154145
+        },
+        "screening_mse": 57921.276873307215,
+        "screening_r2": 0.27790084564748896
+      },
+      "ridge": {
+        "fit_seconds": 0.03286910057067871,
+        "inner_tuning_r2": 0.2552262430038469,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.23294759503577744,
+        "repeated_context_r2": [
+          0.23294759503577744,
+          -0.21162235650901184,
+          -0.03508941657542919,
+          0.2942343660380424,
+          0.36327210657639686
+        ],
+        "screening_mse": 54944.25831601379,
+        "screening_r2": 0.31501505822632103
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9998943936604074,
+    "screen_rows_used": 32,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.26287485666798366,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Water Content",
+    "target_context_iqr": 217.5,
+    "target_context_mean": 296.1020408163265,
+    "target_context_std": 194.8002372812073,
+    "task_id": "hf_ramanbench_fuel_handheld__water_content",
+    "test_mse": 54474.446095164196,
+    "test_r2": 0.20815590339771473,
+    "test_rows_reserved": 34,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 69632.90356959112
+  },
+  {
+    "N": 344,
+    "P_over_N": 5.953488372093023,
+    "P_raw": 2048,
+    "P_screening_model": 2048,
+    "P_transformed": 2048,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.23894351054532448,
+    "best_screening_r2": 0.47925053053066946,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "screen_pass_but_locked_test_not_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 206,
+    "elapsed_seconds": 4.91963005065918,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.1675635237799777,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.7117254734039307,
+        "inner_tuning_r2": 0.46507646883632525,
+        "parameters": {
+          "alpha": 0.0010791353145601478,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.23894351054532448,
+        "repeated_context_r2": [
+          0.03873123322657879,
+          0.3447778512145744,
+          0.23894351054532448,
+          -0.3982471996238022,
+          0.4865340736790791
+        ],
+        "screening_mse": 1.106770331737099,
+        "screening_r2": 0.47925053053066946
+      },
+      "lasso": {
+        "fit_seconds": 1.409733533859253,
+        "inner_tuning_r2": 0.23436855594798423,
+        "parameters": {
+          "alpha": 0.0010284110975816636
+        },
+        "screening_mse": 1.1197970649816535,
+        "screening_r2": 0.4731212874244026
+      },
+      "ridge": {
+        "fit_seconds": 0.053067922592163086,
+        "inner_tuning_r2": 0.22223829222875002,
+        "parameters": {
+          "alpha": 0.01
+        },
+        "screening_mse": 1.13487563427474,
+        "screening_r2": 0.4660266294501443
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9996662861578383,
+    "screen_rows_used": 68,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.0,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Adenosin",
+    "target_context_iqr": 2.4644130958824992,
+    "target_context_mean": 2.722799636512199,
+    "target_context_std": 1.4040381211841282,
+    "task_id": "hf_ramanbench_ht_raman_bio_catalysis_axp__adenosin",
+    "test_mse": 3.3007435979580344,
+    "test_r2": -0.7498634951926173,
+    "test_rows_reserved": 70,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.2625496125222213
+  },
+  {
+    "N": 344,
+    "P_over_N": 5.953488372093023,
+    "P_raw": 2048,
+    "P_screening_model": 2048,
+    "P_transformed": 2048,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "elastic_net",
+    "best_repeated_context_median_r2": 0.3932089765648453,
+    "best_screening_r2": 0.4969427968319923,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 206,
+    "elapsed_seconds": 5.336129665374756,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.09895078173261278,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 2.127368927001953,
+        "inner_tuning_r2": 0.5481492050081351,
+        "parameters": {
+          "alpha": 0.0023366185022668327,
+          "l1_ratio": 0.8
+        },
+        "repeated_context_median_r2": 0.3932089765648453,
+        "repeated_context_r2": [
+          0.31661305725692657,
+          0.4322041160811231,
+          0.31808530656642997,
+          0.3932089765648453,
+          0.5490209383170354
+        ],
+        "screening_mse": 1.1321757454234664,
+        "screening_r2": 0.4969427968319923
+      },
+      "lasso": {
+        "fit_seconds": 1.4502320289611816,
+        "inner_tuning_r2": 0.04309720590963595,
+        "parameters": {
+          "alpha": 0.0030192831576340393
+        },
+        "screening_mse": 1.1299394982431157,
+        "screening_r2": 0.4979364237107582
+      },
+      "ridge": {
+        "fit_seconds": 0.05272388458251953,
+        "inner_tuning_r2": 0.3817233981996099,
+        "parameters": {
+          "alpha": 0.01
+        },
+        "screening_mse": 1.2633067018251485,
+        "screening_r2": 0.4386776622512274
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9996798662437817,
+    "screen_rows_used": 68,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 0.8929745174054485,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "ADP",
+    "target_context_iqr": 2.264813884014,
+    "target_context_mean": 2.5370346410124265,
+    "target_context_std": 1.387391172307825,
+    "task_id": "hf_ramanbench_ht_raman_bio_catalysis_axp__adp",
+    "test_mse": 1.1018490098450444,
+    "test_r2": 0.47173087075117026,
+    "test_rows_reserved": 70,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.0858329331539682
+  },
+  {
+    "N": 344,
+    "P_over_N": 5.953488372093023,
+    "P_raw": 2048,
+    "P_screening_model": 2048,
+    "P_transformed": 2048,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "lasso",
+    "best_repeated_context_median_r2": 0.7622315330026646,
+    "best_screening_r2": 0.9034177932705179,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 206,
+    "elapsed_seconds": 4.617437124252319,
+    "evidence_tier": "standard",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.1446290971450353,
+    "minimum_finite_context_screen": 200,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 1.5785887241363525,
+        "inner_tuning_r2": 0.7881378815353209,
+        "parameters": {
+          "alpha": 0.0011113629043614428,
+          "l1_ratio": 0.8
+        },
+        "screening_mse": 0.2132334653465174,
+        "screening_r2": 0.8921907064434973
+      },
+      "lasso": {
+        "fit_seconds": 1.3505277633666992,
+        "inner_tuning_r2": 0.849456929402693,
+        "parameters": {
+          "alpha": 0.0012153142241471215
+        },
+        "repeated_context_median_r2": 0.7622315330026646,
+        "repeated_context_r2": [
+          0.7622315330026646,
+          0.8821565551648187,
+          0.3910426345805895,
+          0.6426735383114213,
+          0.9059153161878418
+        ],
+        "screening_mse": 0.19102767444578092,
+        "screening_r2": 0.9034177932705179
+      },
+      "ridge": {
+        "fit_seconds": 0.0522305965423584,
+        "inner_tuning_r2": 0.385293908087749,
+        "parameters": {
+          "alpha": 0.0001
+        },
+        "screening_mse": 0.5376500422225005,
+        "screening_r2": 0.728168038077714
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9997755368495799,
+    "screen_rows_used": 68,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 5.774525551928199,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "ATP",
+    "target_context_iqr": 2.36213702677125,
+    "target_context_mean": 2.446325918309107,
+    "target_context_std": 1.4039759570340364,
+    "task_id": "hf_ramanbench_ht_raman_bio_catalysis_axp__atp",
+    "test_mse": 0.3163958428822318,
+    "test_r2": 0.8523881868427856,
+    "test_rows_reserved": 70,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 2.3127113951162483
+  },
+  {
+    "N": 81,
+    "P_over_N": 34.27160493827161,
+    "P_raw": 2776,
+    "P_screening_model": 2776,
+    "P_transformed": 2776,
+    "acceptance_rule": "screening R2 >= 0.2 and repeated context median R2 >= 0.15",
+    "accepted": true,
+    "best_model": "ridge",
+    "best_repeated_context_median_r2": 0.8926040624484485,
+    "best_screening_r2": 0.7828119417265759,
+    "categorical_train_only_onehot": false,
+    "confirmation_status": "locked_test_confirmed",
+    "context_row_cap": 12000,
+    "context_rows_used": 48,
+    "elapsed_seconds": 0.5602600574493408,
+    "evidence_tier": "exploratory_small_n_highdim",
+    "locked_test_row_cap": 5000,
+    "max_abs_marginal_corr_y": 0.5125347570413503,
+    "minimum_finite_context_screen": 60,
+    "model_family_selection": "highest context-only inner-tuning R2",
+    "models": {
+      "elastic_net": {
+        "fit_seconds": 0.24186110496520996,
+        "inner_tuning_r2": 0.9367900979620242,
+        "parameters": {
+          "alpha": 0.01667980522132799,
+          "l1_ratio": 0.2
+        },
+        "screening_mse": 1.5929294622410497,
+        "screening_r2": 0.941054313845963
+      },
+      "lasso": {
+        "fit_seconds": 0.2607688903808594,
+        "inner_tuning_r2": 0.8304357998775314,
+        "parameters": {
+          "alpha": 0.0660776045023737
+        },
+        "screening_mse": 4.695869976998913,
+        "screening_r2": 0.8262313024866033
+      },
+      "ridge": {
+        "fit_seconds": 0.02958512306213379,
+        "inner_tuning_r2": 0.9421564619365485,
+        "parameters": {
+          "alpha": 100.0
+        },
+        "repeated_context_median_r2": 0.8926040624484485,
+        "repeated_context_r2": [
+          0.9067586265816052,
+          0.8926040624484485,
+          0.8968560657986454,
+          0.8089988161089239,
+          0.5526813986027973
+        ],
+        "screening_mse": 5.869220963287903,
+        "screening_r2": 0.7828119417265759
+      }
+    },
+    "quality_ok": true,
+    "quality_reasons": [],
+    "reality_status": "empirical_spectroscopy_requires_original_license_review",
+    "sampled_max_abs_feature_corr": 0.9999942640408528,
+    "screen_rows_used": 16,
+    "screening_feature_selection": "all transformed features",
+    "screening_protocol": "real_regression_signal_screen_v2",
+    "screening_row_cap": 5000,
+    "screening_seed": 20260728,
+    "snr_proxy_from_test_r2": 8.394636668991472,
+    "snr_proxy_note": "predictive lower-bound proxy R2/(1-R2), not generative SNR",
+    "source": "HuggingFace HTW-KI-Werkstatt/RamanBench",
+    "status": "accepted",
+    "target": "Cell Dry Weight [g/L]",
+    "target_context_iqr": 8.298499999999946,
+    "target_context_mean": 6.410270833333326,
+    "target_context_std": 7.2206335516558084,
+    "task_id": "hf_ramanbench_ralstonia_fermentations__cell_dry_weight_g_l",
+    "test_mse": 5.252539833308375,
+    "test_r2": 0.8935562879934822,
+    "test_rows_reserved": 17,
+    "test_y_accessed_before_acceptance": false,
+    "zero_predictor_test_mse": 49.34572506681478
+  }
+]

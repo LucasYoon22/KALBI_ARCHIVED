@@ -1,0 +1,89 @@
+{
+  "schema_version": "v24.tabicl_v14_supportmix_snr0p2_50.training.pipeline.v1",
+  "pipeline_version": "v24_kalbi_tabiclv2_x_mixed50_tabicl_linear_pn50_strictn3_snr0p2to50_y_v14_rolling100gb_v1",
+  "model": {
+    "beta_solver": "kalbi_v6_exactDirect96proxPG10_eta4x_k32_stages32_v1",
+    "selector": "v23_v22geometry_independent_rawlambda_hidden512_frozen",
+    "global_effective_batch": 32,
+    "training_mode": "beta_only_checkpoint_continuation",
+    "checkpoint_transition": "continue beta model, optimizer, scheduler, RNG, and penalty sampler; reset only rolling catalog and stream state"
+  },
+  "penalty": {
+    "canonical_contract": "v12_canonical_direct96_squareplus_positive_adjacent_integral_native196_meta4_relu2_exact_shared_v1",
+    "cache_size": 300000,
+    "native_dimension": 196,
+    "direct_parameter_dimension": 96
+  },
+  "data": {
+    "mixture_contract": "50 percent official TabICLv2 response, 25 percent P-referenced controlled linear response conditioned on k<N/3, and 25 percent N-referenced controlled linear response with k<N/3",
+    "outcome_assignment": "parity(batch_seed + task_index), exact alternation within each worker stream",
+    "linear_support_reference_assignment": "bit1(batch_seed + task_index), exact P/N alternation among linear tasks",
+    "linear_support_strict_constraint": "k < N/3",
+    "linear_support_integer_cap": "min(P, floor((N-1)/3))",
+    "dataset_contract": "tabiclv2_graph_scm2048_qfilter_bnn128_expvarnoise_mixed50_tabicl_linear_supportmix_pn_strictn3_snr0p2to50_v14",
+    "target_contract": "mixed50_official_tabicl_or_controlled_linear_supportmix_pn50_strictn3_snr_loguniform_0p2_50_y_qualityfilter_center_scale_clip10_rescale_v3",
+    "tabicl_target_contract": "official_tabiclv2_graph_scm_y_qualityfilter_center_scale_clip10_rescale_v2",
+    "linear_target_contract": "controlled_linear_y_supportmix_pn50_strictn3_snr_loguniform_0p2_50_errorfamily_qualityfilter_center_scale_clip10_rescale_v3",
+    "feature_noise_contract": "all_features_variance_iid_exponential_rate1_error_gaussian_v1",
+    "data_root": "/users/sync_data/kalbi_tabiclv2_v14_mixed50_linear_pn50_strictn3_snr0p2to50_p100k_100GB_target3080_seed160076430",
+    "active_target_bytes": 100000000000,
+    "bootstrap_active_bytes": 1000000000,
+    "n_min": 32,
+    "n_max": 40000,
+    "p_min": 50,
+    "p_max": 100000,
+    "max_cells": 24000000,
+    "shape_medians": {
+      "p": 10000,
+      "raw_n": 5700
+    },
+    "scm_core_cap": 2048,
+    "scm_core_oversample_factor": 1.5,
+    "scm_core_exact_correlation_threshold_exclusive": 0.95,
+    "bnn_output_block": 128,
+    "bnn_hidden_dim": 64,
+    "bnn_parent_count_distribution": "round(exp(Uniform(log(8), log(128))))",
+    "feature_noise_variance_distribution": "Exponential(rate=1) independently per feature",
+    "feature_error_distribution": "Normal(0, feature_noise_variance) independently per sample",
+    "linear_support_regime_probabilities": {
+      "ultra_sparse_k1to4": 0.15,
+      "sparse_loguniform_k5to64": 0.20,
+      "moderate_fraction_1e-4_to_1e-2": 0.25,
+      "large_fraction_1e-2_to_0.2": 0.25,
+      "very_dense_fraction_0.2_to_1.0": 0.15
+    },
+    "linear_support_reference_probabilities": {
+      "p_based_conditional": 0.5,
+      "n_based": 0.5
+    },
+    "p_based_support_policy": "Draw from the original P-scale regime mixture and reject the entire draw unless k<N/3; never clip to the cap",
+    "n_based_support_policy": "Use the same regime probabilities on N scale, with very-dense support uniform on integer [ceil(0.2N), floor((N-1)/3)]",
+    "linear_snr_contract": "linear_target_snr_loguniform_0p2_50_v1",
+    "linear_snr_distribution": "log_uniform",
+    "linear_snr_min": 0.2,
+    "linear_snr_max": 50.0,
+    "linear_error_families": [
+      "gaussian",
+      "student_t",
+      "laplace",
+      "logistic",
+      "centered_lognormal",
+      "contaminated_gaussian",
+      "heteroskedastic_gaussian"
+    ],
+    "high_p_correlation_policy": "exact all-pair certificate on the noisy SCM2048 core plus deterministic 256-feature final-P sampled audit"
+  },
+  "rolling": {
+    "trainer_reload_interval_updates": 100,
+    "checkpoint_after_reload": true,
+    "clear_all_dataloader_caches_on_reload": true,
+    "require_all_rank_ack": true,
+    "require_reload_verified_checkpoint_before_gc": true,
+    "refresh_target_bytes": 2000000000,
+    "rolling_staging_high_water_bytes": 4000000000,
+    "bootstrap_staging_high_water_bytes": 102000000000,
+    "retirement_grace_bytes": 10000000000,
+    "project_hard_cap_bytes": 130000000000,
+    "min_free_bytes": 300000000000
+  }
+}

@@ -1,0 +1,4625 @@
+{
+  "catalog_pointer": {
+    "catalog_file": "CATALOG_EPOCH_00000068_57dbc17b5b4327e2.json",
+    "catalog_sha256": "57dbc17b5b4327e2337e1b4d6edd1e5267de18cd41ac6d42b9804aa24473c57b",
+    "epoch": 68,
+    "next_publish_not_before_utc": "2026-07-27T09:25:07.754244Z",
+    "published_at_utc": "2026-07-27T09:24:07.754244Z",
+    "trainer_reload_interval_updates": 500,
+    "version": "v12_canonical_current_pointer_v1"
+  },
+  "selection_seed": 202607270924,
+  "split_seed_base": 202607270925,
+  "task_count": 256,
+  "tasks": [
+    {
+      "bytes": 1529350,
+      "index": 0,
+      "n": 84,
+      "p": 8354,
+      "seed": 2178765379,
+      "sha256": "94bcfbd8b04443a45a4f4e4e7e7e1112bd44871a4fc12669ab032e864744e729",
+      "shard_id": 2704,
+      "split_seed": 202607270925,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48141440,
+      "index": 1,
+      "n": 2730,
+      "p": 8791,
+      "seed": 1959765377,
+      "sha256": "98c374940ef96344d176a5fef64cd42c18fd079a96c0f55d63294c96a43437d2",
+      "shard_id": 2894,
+      "split_seed": 202607270926,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48080046,
+      "index": 2,
+      "n": 8689,
+      "p": 2762,
+      "seed": 1781764843,
+      "sha256": "db1bcb620926433f26c55e6306ddb314f290003e0539ed87dbae83870640bd31",
+      "shard_id": 1468,
+      "split_seed": 202607270927,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48086462,
+      "index": 3,
+      "n": 5309,
+      "p": 4520,
+      "seed": 1799764897,
+      "sha256": "55cad4fdfab31e71aa17284664f0cd4fb384e8ceaeb080c7c64016e3621925ba",
+      "shard_id": 1565,
+      "split_seed": 202607270928,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48081336,
+      "index": 4,
+      "n": 8040,
+      "p": 2985,
+      "seed": 2056765013,
+      "sha256": "2bec31068ddf822696ae0419692d6c49c04a1b8f219c5716819df1efcbddfbdb",
+      "shard_id": 1670,
+      "split_seed": 202607270929,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 941468,
+      "index": 5,
+      "n": 48,
+      "p": 8479,
+      "seed": 1807764659,
+      "sha256": "a9b9471393bd1e5eb48d3087677aebd5580b518e0a971f2bac7764f1f967b54a",
+      "shard_id": 1020,
+      "split_seed": 202607270930,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 29487998,
+      "index": 6,
+      "n": 2253,
+      "p": 6520,
+      "seed": 2169765483,
+      "sha256": "b52aff3342ce654d0f4eeb690dadebcf7a695d55365f166f643d35b855108a6e",
+      "shard_id": 2741,
+      "split_seed": 202607270931,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48125534,
+      "index": 7,
+      "n": 3111,
+      "p": 7714,
+      "seed": 2204765719,
+      "sha256": "98afe2b9f069460fdf8e908abaa70492fa942ccdea263a100d9ec3fa0792ddcb",
+      "shard_id": 3658,
+      "split_seed": 202607270932,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48230316,
+      "index": 8,
+      "n": 1336,
+      "p": 17951,
+      "seed": 1899765066,
+      "sha256": "514e9d71db6220a54b9d2a46aaff59e63dc56d6c793e4d3d7bf994832da7ea3d",
+      "shard_id": 2004,
+      "split_seed": 202607270933,
+      "stratum": [
+        4,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 38522078,
+      "index": 9,
+      "n": 2147,
+      "p": 8938,
+      "seed": 2099765011,
+      "sha256": "6d89787379cd03f558e987b4f245fefdf2a1145b559217be0f9b59e933055a5d",
+      "shard_id": 1365,
+      "split_seed": 202607270934,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 736562,
+      "index": 10,
+      "n": 55,
+      "p": 5869,
+      "seed": 1906765087,
+      "sha256": "25dd573316efef4c91d8cc314d4b51c7473cf8eef912a3f244fbf94b091bdcb7",
+      "shard_id": 2060,
+      "split_seed": 202607270935,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 32040494,
+      "index": 11,
+      "n": 2990,
+      "p": 5342,
+      "seed": 1876764735,
+      "sha256": "17c181230f9d9f72fce025faeeb35912a09843d6b436d601363170489ea77959",
+      "shard_id": 1078,
+      "split_seed": 202607270936,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48133310,
+      "index": 12,
+      "n": 2789,
+      "p": 8604,
+      "seed": 1975765163,
+      "sha256": "2c1e3d9f758c9681b9410a3e6a6d8088a38b351f655cf2ce45e32ddbf73a86a1",
+      "shard_id": 2348,
+      "split_seed": 202607270937,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 19013324,
+      "index": 13,
+      "n": 8546,
+      "p": 1109,
+      "seed": 2112765312,
+      "sha256": "c4484a09ebf33030bf69a1a3a3a973fc77c09b09d589aab6ac6ffdeaa9707ce8",
+      "shard_id": 2273,
+      "split_seed": 202607270938,
+      "stratum": [
+        4,
+        6,
+        1,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 46052246,
+      "index": 14,
+      "n": 5451,
+      "p": 4216,
+      "seed": 1787764730,
+      "sha256": "2303e075a1b7f14e66e1b6cf1fe3060d65937b7f24204a98e78a62c1e70bfabd",
+      "shard_id": 1099,
+      "split_seed": 202607270939,
+      "stratum": [
+        4,
+        6,
+        3,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 481558,
+      "index": 15,
+      "n": 36,
+      "p": 5498,
+      "seed": 1848764913,
+      "sha256": "27174e9828b3678a248fbaddb3a95dbab3ee06ca9f106aeee710e5c4a29c6c8e",
+      "shard_id": 1593,
+      "split_seed": 202607270940,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 1077998,
+      "index": 16,
+      "n": 41,
+      "p": 11138,
+      "seed": 1921765001,
+      "sha256": "af155dd92d0d4b8493b7caa5c2b7fb6aba484b1f713854ec16239ac713a78be9",
+      "shard_id": 1899,
+      "split_seed": 202607270941,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 26333558,
+      "index": 17,
+      "n": 5843,
+      "p": 2248,
+      "seed": 1912765236,
+      "sha256": "88b510b703c02f3c30f7d835993c24d3f4c9d79b3908102bbc1c23f2e94f9c20",
+      "shard_id": 2442,
+      "split_seed": 202607270942,
+      "stratum": [
+        4,
+        6,
+        2,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 9220582,
+      "index": 18,
+      "n": 3415,
+      "p": 1344,
+      "seed": 2024764917,
+      "sha256": "a0e93a4143bfb8cae346e249c6c69f031fefb7774949142240961f19564634ff",
+      "shard_id": 1383,
+      "split_seed": 202607270943,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48080382,
+      "index": 19,
+      "n": 10195,
+      "p": 2354,
+      "seed": 1939765317,
+      "sha256": "b8f57f7d6502cb82e742917dcbf0eaa0cd3ffc74711aa3b58037f95b9c3ff935",
+      "shard_id": 2677,
+      "split_seed": 202607270944,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48078584,
+      "index": 20,
+      "n": 8580,
+      "p": 2797,
+      "seed": 2197765305,
+      "sha256": "f4ac26030097551c7655bb06cc43ab0596d4fff64fccadf841d0cbc49a229109",
+      "shard_id": 2287,
+      "split_seed": 202607270945,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 36883682,
+      "index": 21,
+      "n": 9626,
+      "p": 1912,
+      "seed": 2094765127,
+      "sha256": "31599b47063333b2cb1140f0c547473b681f1c515b6e3f2a73b87fcbe51b53b8",
+      "shard_id": 2020,
+      "split_seed": 202607270946,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 37800578,
+      "index": 22,
+      "n": 6827,
+      "p": 2763,
+      "seed": 1928764891,
+      "sha256": "44b81ceffaee24037eee68282e3ba931fb5aee475997e351b56d83b8e711691f",
+      "shard_id": 1369,
+      "split_seed": 202607270947,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 1549258,
+      "index": 23,
+      "n": 148,
+      "p": 4968,
+      "seed": 2127765095,
+      "sha256": "6c4093cedc730a544c03edcdc7d44bd19e00077ef1fa0696ffe4c7d9a562c5c8",
+      "shard_id": 1651,
+      "split_seed": 202607270948,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 18321118,
+      "index": 24,
+      "n": 4312,
+      "p": 2118,
+      "seed": 2012764881,
+      "sha256": "d197a9e9ec8afe0ea640f7e9bea56fc8dc913e3800c96bd61f106cddd8032ece",
+      "shard_id": 1179,
+      "split_seed": 202607270949,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48133702,
+      "index": 25,
+      "n": 2535,
+      "p": 9464,
+      "seed": 1914765111,
+      "sha256": "52af147a5be098b3d339d75ee5b4a8b3a2fbd0dc5d286a08fb4e9440c6d0e054",
+      "shard_id": 2100,
+      "split_seed": 202607270950,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48139730,
+      "index": 26,
+      "n": 2675,
+      "p": 8971,
+      "seed": 1943765067,
+      "sha256": "31b4f151bf09bdb918cb04b077d94a04e3983f7828c867b2771c18d3c5e4392d",
+      "shard_id": 2077,
+      "split_seed": 202607270951,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 13015094,
+      "index": 27,
+      "n": 7171,
+      "p": 904,
+      "seed": 1983765449,
+      "sha256": "979fa1ea78f989ebb41d3730ad53d87b232ee9d2e0278075a2db5804ebc3bd29",
+      "shard_id": 3072,
+      "split_seed": 202607270952,
+      "stratum": [
+        4,
+        5,
+        1,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 1109648,
+      "index": 28,
+      "n": 78,
+      "p": 6475,
+      "seed": 2269765390,
+      "sha256": "503e651d60d8965e11da245c6f22f7f483b1f39866223871735482c803789bbe",
+      "shard_id": 2725,
+      "split_seed": 202607270953,
+      "stratum": [
+        3,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 520394,
+      "index": 29,
+      "n": 32,
+      "p": 6560,
+      "seed": 1976765035,
+      "sha256": "8a430aec6e5df68c10e9dabedbf29e5f1ccaba5b5bd4a4a7fccdcdbeb8f4014e",
+      "shard_id": 1843,
+      "split_seed": 202607270954,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48097178,
+      "index": 30,
+      "n": 4680,
+      "p": 5128,
+      "seed": 1835765005,
+      "sha256": "4470c9ca7ec0f23762c5071fdeabee8b1fa3bef66faeed1f99a9b6ea14b18b20",
+      "shard_id": 1827,
+      "split_seed": 202607270955,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48123854,
+      "index": 31,
+      "n": 2924,
+      "p": 8206,
+      "seed": 2019765557,
+      "sha256": "04f165904a8aaeaf4a88529291cd8dd8071ceb9ae3a62ab4d9bf2c5a1dfaec95",
+      "shard_id": 3373,
+      "split_seed": 202607270956,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 17153414,
+      "index": 32,
+      "n": 3140,
+      "p": 2722,
+      "seed": 2265765771,
+      "sha256": "71196a9c194ea506e9a2e7ae7b90362412758ec00ba5dc6f0f7c72963c5aa703",
+      "shard_id": 3463,
+      "split_seed": 202607270957,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 34028402,
+      "index": 33,
+      "n": 13220,
+      "p": 1284,
+      "seed": 1876764997,
+      "sha256": "5abf20684aaa5dfe810f63c5902e86702229843f9a5531f578f33bfe7b21b497",
+      "shard_id": 1844,
+      "split_seed": 202607270958,
+      "stratum": [
+        4,
+        6,
+        0,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48108538,
+      "index": 34,
+      "n": 3676,
+      "p": 6528,
+      "seed": 1778764703,
+      "sha256": "31b86f6378afb694375ddb822ef20e1383f9674de637b21c73a38f051287941c",
+      "shard_id": 1018,
+      "split_seed": 202607270959,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48259614,
+      "index": 35,
+      "n": 1281,
+      "p": 18729,
+      "seed": 2185765269,
+      "sha256": "e025f06e709ff5e85047808d55761d30d5b4499d89707d90e81dbfcd027e6609",
+      "shard_id": 2214,
+      "split_seed": 202607270960,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 2372018,
+      "index": 36,
+      "n": 158,
+      "p": 7160,
+      "seed": 2197765567,
+      "sha256": "bdb2e16958c13ddecf2b0694b0ca66645d14c90606caf90e06a9ce7c25284dac",
+      "shard_id": 2934,
+      "split_seed": 202607270961,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48158978,
+      "index": 37,
+      "n": 2327,
+      "p": 10313,
+      "seed": 1791764873,
+      "sha256": "c7f6ca7ea409dbd2fa2c7a0a3ea53b1108040b632bb8d7e5a8705b888f973da6",
+      "shard_id": 1524,
+      "split_seed": 202607270962,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48143558,
+      "index": 38,
+      "n": 2493,
+      "p": 9625,
+      "seed": 2180765385,
+      "sha256": "615e763ee19f680b149f4e1bb47aabdf3506fa36fd7421b57f0bf2cc46c998e6",
+      "shard_id": 2712,
+      "split_seed": 202607270963,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1214954,
+      "index": 39,
+      "n": 62,
+      "p": 8740,
+      "seed": 1809764665,
+      "sha256": "ffc0f39292d47999c31dd8d160f3d78cbe25e86be8c0f1eef85ee82622e47718",
+      "shard_id": 1035,
+      "split_seed": 202607270964,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48089390,
+      "index": 40,
+      "n": 5589,
+      "p": 4294,
+      "seed": 2257765747,
+      "sha256": "d9432460eacc380bbebe53c4fcdf601f7c563e72db9e713374b8e3729bfc2356",
+      "shard_id": 3406,
+      "split_seed": 202607270965,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 41216318,
+      "index": 41,
+      "n": 5153,
+      "p": 3991,
+      "seed": 2268765649,
+      "sha256": "c288e962be8b5ee508df85416f45effd2cb8533e93ff53fa78a309bf0c0e170c",
+      "shard_id": 3380,
+      "split_seed": 202607270966,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48106526,
+      "index": 42,
+      "n": 3489,
+      "p": 6877,
+      "seed": 2227765657,
+      "sha256": "6d08e94b635fa710b3340c922b2471e4d7b7c6911e703543d71c3db04ce973e3",
+      "shard_id": 3189,
+      "split_seed": 202607270967,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 29969006,
+      "index": 43,
+      "n": 5566,
+      "p": 2686,
+      "seed": 2137765387,
+      "sha256": "f3c26b1306624420bf0e1df221d3f4810b4996b00eaca253ca1af33d32eef263",
+      "shard_id": 2448,
+      "split_seed": 202607270968,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 11026682,
+      "index": 44,
+      "n": 3615,
+      "p": 1519,
+      "seed": 2141765661,
+      "sha256": "a5e1772779160146e2093908708bfcd4964a764775a26531d25da48422d256f3",
+      "shard_id": 3684,
+      "split_seed": 202607270969,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48261818,
+      "index": 45,
+      "n": 1287,
+      "p": 18643,
+      "seed": 1737764711,
+      "sha256": "e77385fb657269f50467d61a6e366ab423672885adfd079ac55b8455778730f3",
+      "shard_id": 1118,
+      "split_seed": 202607270970,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48081606,
+      "index": 46,
+      "n": 5847,
+      "p": 4104,
+      "seed": 2033765337,
+      "sha256": "5126f18b073c4f9aad9106a0886836c0ee072338e2b874d8d2ebfbe4f588444c",
+      "shard_id": 2812,
+      "split_seed": 202607270971,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48289340,
+      "index": 47,
+      "n": 1214,
+      "p": 19769,
+      "seed": 1753764759,
+      "sha256": "d9063e105334b94a83908aa0fc2e4f8b907e067a788bbd8b671aa5d5caa55d84",
+      "shard_id": 1263,
+      "split_seed": 202607270972,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48140514,
+      "index": 48,
+      "n": 2635,
+      "p": 9107,
+      "seed": 2089764850,
+      "sha256": "7b206f5af96d0b46439c55df697c8f5fee26abf3dbe501598be0e9741384a8e5",
+      "shard_id": 1273,
+      "split_seed": 202607270973,
+      "stratum": [
+        4,
+        6,
+        4,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 24287596,
+      "index": 49,
+      "n": 7566,
+      "p": 1601,
+      "seed": 2226765523,
+      "sha256": "04d8e2dab6ac830e42cb743faaa79b2a1c72aa178f308b54d153f146d5c6ee1b",
+      "shard_id": 3049,
+      "split_seed": 202607270974,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48161264,
+      "index": 50,
+      "n": 2156,
+      "p": 11129,
+      "seed": 1884765021,
+      "sha256": "fc09852d79e56c3927708b491e4836ef7940e07185f85f831c3a8ee94de2ec9e",
+      "shard_id": 1898,
+      "split_seed": 202607270975,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48081072,
+      "index": 51,
+      "n": 11034,
+      "p": 2175,
+      "seed": 1803764909,
+      "sha256": "aa1407305bbc83bacf03563643959b9837cae6e41952ee25bcc19b7e6568abce",
+      "shard_id": 1617,
+      "split_seed": 202607270976,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 45477674,
+      "index": 52,
+      "n": 3095,
+      "p": 7327,
+      "seed": 2112765181,
+      "sha256": "fbd102c3bd71fcd21950bf4ce83241d0151d43dc5f4fe9bd46bf87b2cee5b213",
+      "shard_id": 2136,
+      "split_seed": 202607270977,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 1849360,
+      "index": 53,
+      "n": 40,
+      "p": 19581,
+      "seed": 2128765229,
+      "sha256": "2b8a0502fc11f0ac7effb0e2560dc0592c5c1bf501112085b3e2b66ea5732adf",
+      "shard_id": 2319,
+      "split_seed": 202607270978,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1307118,
+      "index": 54,
+      "n": 33,
+      "p": 16230,
+      "seed": 1828764853,
+      "sha256": "17a4d3e55ab232d900588d3366e07865ee4fd002fb0d075cbebbd0d515fdcaf4",
+      "shard_id": 1432,
+      "split_seed": 202607270979,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48180578,
+      "index": 55,
+      "n": 1956,
+      "p": 12268,
+      "seed": 2000764845,
+      "sha256": "d94a7d3b44fe0a42dd1618cff751086975aedf5935aeb6bbef176134c9b06172",
+      "shard_id": 1059,
+      "split_seed": 202607270980,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48114126,
+      "index": 56,
+      "n": 3375,
+      "p": 7110,
+      "seed": 1919765257,
+      "sha256": "ce5132e8c59f88eef18efc4266edd88b5268619c6817f4efddd3d5739b4aa8c3",
+      "shard_id": 2502,
+      "split_seed": 202607270981,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48077678,
+      "index": 57,
+      "n": 8528,
+      "p": 2814,
+      "seed": 2131765107,
+      "sha256": "086c5b735263f6d59d8a81e113a69edb8e7535ecb3ba07b95411582559327582",
+      "shard_id": 1664,
+      "split_seed": 202607270982,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48078566,
+      "index": 58,
+      "n": 7994,
+      "p": 3002,
+      "seed": 1921764739,
+      "sha256": "6ff7b4e80843e58f8d13339cbe47219e086e253c97584d312377172d75566ca0",
+      "shard_id": 1007,
+      "split_seed": 202607270983,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48147236,
+      "index": 59,
+      "n": 2366,
+      "p": 10141,
+      "seed": 2142765009,
+      "sha256": "223d8415a264bde53d4f53a439c392a74d19c9921faa144a161bfbaa8f78518b",
+      "shard_id": 1689,
+      "split_seed": 202607270984,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 40909166,
+      "index": 60,
+      "n": 10745,
+      "p": 1900,
+      "seed": 2289765843,
+      "sha256": "594417c71a313a5381aba6b59c4a55b742ee438e5bace7dc901bab04a29ffd7c",
+      "shard_id": 3633,
+      "split_seed": 202607270985,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 258558,
+      "index": 61,
+      "n": 43,
+      "p": 2498,
+      "seed": 2016765155,
+      "sha256": "ddc5ae76e7cc9ffd4c73879fc4533a2a0b1b04002b0ac2bb6aa50c98908abe43",
+      "shard_id": 2191,
+      "split_seed": 202607270986,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 17462974,
+      "index": 62,
+      "n": 10794,
+      "p": 806,
+      "seed": 1929765156,
+      "sha256": "f516e75238befa95c07a6045ff5e8b8c4338f43223bdb9fa304c01c7eaa3db43",
+      "shard_id": 2179,
+      "split_seed": 202607270987,
+      "stratum": [
+        4,
+        5,
+        0,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48107508,
+      "index": 63,
+      "n": 3978,
+      "p": 6033,
+      "seed": 2034765471,
+      "sha256": "8f48ea50accecd91ae91951c085ed8a0c1c99c51759ab6121afdf67e65243dea",
+      "shard_id": 3103,
+      "split_seed": 202607270988,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 37875140,
+      "index": 64,
+      "n": 8714,
+      "p": 2169,
+      "seed": 2165765209,
+      "sha256": "2094f5226211fc4b1edcbe7091a7a4ecddf5f36c323fc2b59a5f8b5ad9fa3644",
+      "shard_id": 2058,
+      "split_seed": 202607270989,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1042998,
+      "index": 65,
+      "n": 48,
+      "p": 9402,
+      "seed": 2211765347,
+      "sha256": "8554b8546ccfbbf7764fce9e8cf55f02d6297609d51fbf8dd0ae702fc61af07d",
+      "shard_id": 2372,
+      "split_seed": 202607270990,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48132962,
+      "index": 66,
+      "n": 2846,
+      "p": 8432,
+      "seed": 2085765493,
+      "sha256": "31f25d2b75222bb6bddd8c2fad60f7efda14080a75edf528c75fe04c706e25e0",
+      "shard_id": 3265,
+      "split_seed": 202607270991,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48082158,
+      "index": 67,
+      "n": 7233,
+      "p": 3318,
+      "seed": 2119765595,
+      "sha256": "d226c64d5af11234641665d4f7a858b937e3b2bac2d4f41a71fa4553394d08cc",
+      "shard_id": 3508,
+      "split_seed": 202607270992,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48098752,
+      "index": 68,
+      "n": 3972,
+      "p": 6041,
+      "seed": 2190765153,
+      "sha256": "988715967a808221eaba1ab96b37c2e0fab4eba62495402f8b851c53b211735d",
+      "shard_id": 2056,
+      "split_seed": 202607270993,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 14126318,
+      "index": 69,
+      "n": 4313,
+      "p": 1632,
+      "seed": 1980765309,
+      "sha256": "9abf48b1426f1b623249f256e6b9f7e4ff8d666bdd9bde6967fd003caf59965c",
+      "shard_id": 2601,
+      "split_seed": 202607270994,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 680718,
+      "index": 70,
+      "n": 33,
+      "p": 8400,
+      "seed": 2217765627,
+      "sha256": "effe4fd86482700a4261b49ce4a421cb5d846ce5ae0159b1df163caa49041d67",
+      "shard_id": 3088,
+      "split_seed": 202607270995,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48123770,
+      "index": 71,
+      "n": 2816,
+      "p": 8520,
+      "seed": 1929765287,
+      "sha256": "b22270f59a6c8ed7b8b08ac02a1e47b840e111cf8eb03b496429e3c54723969e",
+      "shard_id": 2584,
+      "split_seed": 202607270996,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48111178,
+      "index": 72,
+      "n": 3424,
+      "p": 7008,
+      "seed": 2014765411,
+      "sha256": "21ff6ec221e37a1d3b2ed6481ceeebc053605878bd6a220891885cf4d2e895c9",
+      "shard_id": 2946,
+      "split_seed": 202607270997,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48450822,
+      "index": 73,
+      "n": 751,
+      "p": 31952,
+      "seed": 1850765050,
+      "sha256": "354f9be2c5fd6ab7da377e405a08b92e97c43b15a909ebded39c5fa5e270b665",
+      "shard_id": 1942,
+      "split_seed": 202607270998,
+      "stratum": [
+        4,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48176642,
+      "index": 74,
+      "n": 2015,
+      "p": 11909,
+      "seed": 2163765203,
+      "sha256": "d7720bc2d95f6b10de304c5f3b0b28e2db8517fde0a94016a4a8dd521f4facbd",
+      "shard_id": 2045,
+      "split_seed": 202607270999,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 622708,
+      "index": 75,
+      "n": 64,
+      "p": 4323,
+      "seed": 2042765495,
+      "sha256": "ef304fe22194602093ee8d8d342639f79a9d122f8ca2b5737eeb695a18e87bcc",
+      "shard_id": 3152,
+      "split_seed": 202607271000,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 25473250,
+      "index": 76,
+      "n": 4776,
+      "p": 2660,
+      "seed": 2038765483,
+      "sha256": "2f4d56597076441e8cf363f080299c3f61b0509f0ffb6cd264c259c406978b22",
+      "shard_id": 3126,
+      "split_seed": 202607271001,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48126766,
+      "index": 77,
+      "n": 3097,
+      "p": 7749,
+      "seed": 2186765403,
+      "sha256": "c991adc861b9eca6f6eacd59c5a304d4bd6c69f089301653d152199669292763",
+      "shard_id": 2761,
+      "split_seed": 202607271002,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 26256206,
+      "index": 78,
+      "n": 7777,
+      "p": 1684,
+      "seed": 2021765432,
+      "sha256": "af592a1e1826638a4d8f3d9326765b04a1415685dcd51094376d61da5954e85a",
+      "shard_id": 3005,
+      "split_seed": 202607271003,
+      "stratum": [
+        4,
+        6,
+        1,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48095918,
+      "index": 79,
+      "n": 4241,
+      "p": 5658,
+      "seed": 2119764940,
+      "sha256": "af01ac770d19994e160f2151b593c7368c5543ce3ec688d6c61b4ba44ca069a0",
+      "shard_id": 1511,
+      "split_seed": 202607271004,
+      "stratum": [
+        4,
+        6,
+        3,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 1124810,
+      "index": 80,
+      "n": 94,
+      "p": 5524,
+      "seed": 1909764965,
+      "sha256": "839a198865783c283c03373ada3802c0fef9cec86be5b56888b51c5f0b33b7c3",
+      "shard_id": 1817,
+      "split_seed": 202607271005,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 800414,
+      "index": 81,
+      "n": 87,
+      "p": 4210,
+      "seed": 2028765453,
+      "sha256": "8385b34b4af5d24815f3fac672357b033dc5d84e5cc14ac76267e1eb8386c383",
+      "shard_id": 3063,
+      "split_seed": 202607271006,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48080018,
+      "index": 82,
+      "n": 7835,
+      "p": 3063,
+      "seed": 2020765560,
+      "sha256": "175d0d4ac0c34865e32a7119cb6f738d215d171929f74c807a0665049ddc6782",
+      "shard_id": 3378,
+      "split_seed": 202607271007,
+      "stratum": [
+        4,
+        6,
+        2,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48078958,
+      "index": 83,
+      "n": 9273,
+      "p": 2588,
+      "seed": 2211765609,
+      "sha256": "bdc431fbd12fad164df4340e96f7a0ffed742b593c301c41318337a30e3c951d",
+      "shard_id": 3038,
+      "split_seed": 202607271008,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 17327402,
+      "index": 84,
+      "n": 6915,
+      "p": 1249,
+      "seed": 2114764925,
+      "sha256": "861905956412c5333feb19598bbe074ff099d947d07b31475f0ffdfa07281842",
+      "shard_id": 1457,
+      "split_seed": 202607271009,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48080270,
+      "index": 85,
+      "n": 8882,
+      "p": 2702,
+      "seed": 1807764921,
+      "sha256": "38dd986b0c1aab0c632e5b21c5c7afda5ca459ad211043813728ee0e62320b5a",
+      "shard_id": 1646,
+      "split_seed": 202607271010,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48082490,
+      "index": 86,
+      "n": 10719,
+      "p": 2239,
+      "seed": 2111765047,
+      "sha256": "1017ee196ab0c6716cfd805d0d1d7362323dca744f26507c05d01949c7fbb3ce",
+      "shard_id": 1469,
+      "split_seed": 202607271011,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 45260738,
+      "index": 87,
+      "n": 8662,
+      "p": 2608,
+      "seed": 2072765323,
+      "sha256": "7182fb697b9c6193cd575385e541a8d4754a4d110a597962c186075ae0b1886a",
+      "shard_id": 2622,
+      "split_seed": 202607271012,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48253648,
+      "index": 88,
+      "n": 1378,
+      "p": 17415,
+      "seed": 2223765383,
+      "sha256": "968f468bdb5aa7935838f091e77da86d6c9401e022f0188e0c2cce16ed975dd0",
+      "shard_id": 2454,
+      "split_seed": 202607271013,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48076910,
+      "index": 89,
+      "n": 8921,
+      "p": 2690,
+      "seed": 1948765213,
+      "sha256": "acd59351c757996be6f5f4f1ce78f38fba5ecf644a0e94df56deb06c8253730c",
+      "shard_id": 2316,
+      "split_seed": 202607271014,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 12257134,
+      "index": 90,
+      "n": 1497,
+      "p": 4070,
+      "seed": 1902765075,
+      "sha256": "144f4788761a1df975f01dd19ec548c77800ac64d5b500d6f46f3563b7379752",
+      "shard_id": 2036,
+      "split_seed": 202607271015,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 6546908,
+      "index": 91,
+      "n": 968,
+      "p": 3351,
+      "seed": 2273765795,
+      "sha256": "4c575cc4f01b8d96b242a28006b13d6f3286a8184c450188492146742b6a801d",
+      "shard_id": 3510,
+      "split_seed": 202607271016,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 1440670,
+      "index": 92,
+      "n": 37,
+      "p": 16272,
+      "seed": 1942764802,
+      "sha256": "a6f41b264beb83203fb16c0adf68433d5ed0d79a1988b0492c1c2c2dc957e600",
+      "shard_id": 1143,
+      "split_seed": 202607271017,
+      "stratum": [
+        3,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 6529282,
+      "index": 93,
+      "n": 91,
+      "p": 33267,
+      "seed": 1917765251,
+      "sha256": "fcec67c884512ac709251501d8621bbf962f40da630322ad0b734cf9f83c066c",
+      "shard_id": 2486,
+      "split_seed": 202607271018,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48079886,
+      "index": 94,
+      "n": 6677,
+      "p": 3594,
+      "seed": 1817764689,
+      "sha256": "dbab73895508a0bfdcdf2d55bd9018656eaf8df71c3d65d9e8130fa0343a1aae",
+      "shard_id": 1095,
+      "split_seed": 202607271019,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48118336,
+      "index": 95,
+      "n": 3340,
+      "p": 7185,
+      "seed": 1988765333,
+      "sha256": "53ce95b37f0ffd970807d39e3ed7b780d4b2a42fa887f9987f52b0112f609eed",
+      "shard_id": 2707,
+      "split_seed": 202607271020,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 33385074,
+      "index": 96,
+      "n": 4507,
+      "p": 3695,
+      "seed": 2151765167,
+      "sha256": "d17a78e6d5d2906a27daca48043b92d7acf02d148a89ab597d97c9dbaf004109",
+      "shard_id": 1878,
+      "split_seed": 202607271021,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48083310,
+      "index": 97,
+      "n": 6201,
+      "p": 3870,
+      "seed": 1933765299,
+      "sha256": "ddee26024068605d9ac5adab0816f4cb40a6309447b1b76652d1c818bdc7249e",
+      "shard_id": 2649,
+      "split_seed": 202607271022,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48188402,
+      "index": 98,
+      "n": 1804,
+      "p": 13300,
+      "seed": 1969765145,
+      "sha256": "a05b220db400c0b19900f60661b387cb91ab14c63c14f8b438e5666d20f2141a",
+      "shard_id": 2276,
+      "split_seed": 202607271023,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48208738,
+      "index": 99,
+      "n": 1603,
+      "p": 14967,
+      "seed": 2025765575,
+      "sha256": "4a187240eedd8169dd8a471bb5ed41bf6ae2806cf1227ea4afaa7b99a9424465",
+      "shard_id": 3428,
+      "split_seed": 202607271024,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48174560,
+      "index": 100,
+      "n": 2132,
+      "p": 11257,
+      "seed": 2112765705,
+      "sha256": "796bfdf0e5a9a31fd2a33a86e921ba6a0cf550fc143ef1051c456894293f3fd0",
+      "shard_id": 3670,
+      "split_seed": 202607271025,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48128562,
+      "index": 101,
+      "n": 2791,
+      "p": 8597,
+      "seed": 2115765321,
+      "sha256": "eb041a39ec34af018ea505150d04f538df4e78bcf69236e071375ae95f21e4e1",
+      "shard_id": 2310,
+      "split_seed": 202607271026,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1694188,
+      "index": 102,
+      "n": 52,
+      "p": 14283,
+      "seed": 2170765093,
+      "sha256": "341a06f424ad38fa28d200f54ab268accfba83a62068283cfce19b882b02ae4c",
+      "shard_id": 1913,
+      "split_seed": 202607271027,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 37614896,
+      "index": 103,
+      "n": 5672,
+      "p": 3309,
+      "seed": 1881765143,
+      "sha256": "3ed73b3341196cd9cbe835f7a032c78918c023ff035f3afde6a591e2b5514c8a",
+      "shard_id": 2172,
+      "split_seed": 202607271028,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 23722358,
+      "index": 104,
+      "n": 3293,
+      "p": 3591,
+      "seed": 2218765237,
+      "sha256": "5982da715cf08ea4c44e8fb0f888cbf8848ae49faf9e4cb81403b5a447a5fe3b",
+      "shard_id": 2333,
+      "split_seed": 202607271029,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48084752,
+      "index": 105,
+      "n": 5770,
+      "p": 4159,
+      "seed": 2194765165,
+      "sha256": "7186ce5dfee54eca21cee1442956da06b9a32665b8f04fb9c14cb17b82f8ff41",
+      "shard_id": 2159,
+      "split_seed": 202607271030,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48080950,
+      "index": 106,
+      "n": 8559,
+      "p": 2804,
+      "seed": 1981764919,
+      "sha256": "cf64079b4968e3da7f96b9e03bb27c2d1c07d343ade7222127c4154334acd5d2",
+      "shard_id": 1347,
+      "split_seed": 202607271031,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48179582,
+      "index": 107,
+      "n": 2039,
+      "p": 11770,
+      "seed": 2180765123,
+      "sha256": "a1b29f604bcb115267301c73adde66804c10f115c3ae57eab5b4ea9b0be7e8e8",
+      "shard_id": 1989,
+      "split_seed": 202607271032,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 25229510,
+      "index": 108,
+      "n": 3077,
+      "p": 4087,
+      "seed": 1987764937,
+      "sha256": "7f8ed03d92ec98f2279ccc8bb39840510134a0ea537c2ad7898e1d0dfd412399",
+      "shard_id": 1382,
+      "split_seed": 202607271033,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48176030,
+      "index": 109,
+      "n": 1989,
+      "p": 12064,
+      "seed": 1918765123,
+      "sha256": "4921599e58bd3a2ee9a752aac4d8ddf6299f86376e9708e0cbfdb2ed94ec2086",
+      "shard_id": 2118,
+      "split_seed": 202607271034,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48146734,
+      "index": 110,
+      "n": 2521,
+      "p": 9519,
+      "seed": 1778764834,
+      "sha256": "f3d993085c3a18921c1611438a535c3bc4340cb3ba2ec973d7ade8a56ca0c8c1",
+      "shard_id": 1442,
+      "split_seed": 202607271035,
+      "stratum": [
+        4,
+        6,
+        4,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48080518,
+      "index": 111,
+      "n": 11892,
+      "p": 2018,
+      "seed": 2090765115,
+      "sha256": "e2868c64bbe587ec6f7f5b38bb3145a53a155a3fd8b2a3ecf5db31049cd15c81",
+      "shard_id": 1997,
+      "split_seed": 202607271036,
+      "stratum": [
+        4,
+        6,
+        1,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48161342,
+      "index": 112,
+      "n": 2341,
+      "p": 10252,
+      "seed": 2092765645,
+      "sha256": "5d8092dd8a28eb2908722d57b8e2f4f7588d2406e0d72b66d13275fc8d48f879",
+      "shard_id": 3527,
+      "split_seed": 202607271037,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48124328,
+      "index": 113,
+      "n": 3144,
+      "p": 7633,
+      "seed": 2096765657,
+      "sha256": "ff4a383ba722e4c55ecd085dcfc84d34d5b8287c80751f778e0d9011303e1de4",
+      "shard_id": 3566,
+      "split_seed": 202607271038,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 1246478,
+      "index": 114,
+      "n": 41,
+      "p": 12893,
+      "seed": 2170765617,
+      "sha256": "83a29ac6d60024b16c6085b26a33c0cd1de89d951aa29a4c37ea66d30455a858",
+      "shard_id": 3323,
+      "split_seed": 202607271039,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 624494,
+      "index": 115,
+      "n": 89,
+      "p": 3206,
+      "seed": 2077765469,
+      "sha256": "ecd8dc933a9e486663c0fc0e8ea3a8a70522a7cf9c41b98bbafdb6c9cb392efa",
+      "shard_id": 3192,
+      "split_seed": 202607271040,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 27152142,
+      "index": 116,
+      "n": 1831,
+      "p": 7382,
+      "seed": 2125765613,
+      "sha256": "46c20ec1b312d800ba09841049c3ea31806348cf757461ef607b2f8398913174",
+      "shard_id": 3579,
+      "split_seed": 202607271041,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48134114,
+      "index": 117,
+      "n": 2531,
+      "p": 9479,
+      "seed": 2176765373,
+      "sha256": "6cea6683f004a8f626ac828da715b654086d98929b2935e4ac74f838c30be3fb",
+      "shard_id": 2696,
+      "split_seed": 202607271042,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48080214,
+      "index": 118,
+      "n": 7621,
+      "p": 3149,
+      "seed": 2066765043,
+      "sha256": "4007014dc4b6f566ad99903fe59485540407453ab90469c39521db8f076742ec",
+      "shard_id": 1772,
+      "split_seed": 202607271043,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 3204508,
+      "index": 119,
+      "n": 198,
+      "p": 7793,
+      "seed": 2003765509,
+      "sha256": "00ccd1b5fe70a9cbc0f1953962d8a85756650b8c589bdeb3151f692ac3abfac6",
+      "shard_id": 3223,
+      "split_seed": 202607271044,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 3305594,
+      "index": 120,
+      "n": 86,
+      "p": 17724,
+      "seed": 1919764995,
+      "sha256": "68e5739e202fe48a61c5a18960b737bc34ef842086a255c01c5e7f00197a2c58",
+      "shard_id": 1891,
+      "split_seed": 202607271045,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 46002194,
+      "index": 121,
+      "n": 3971,
+      "p": 5779,
+      "seed": 1806764787,
+      "sha256": "c00f8684e65b2abe034cc8b3784a5572b5cacd5ab0bd111f6fca7996e4a8e1c7",
+      "shard_id": 1195,
+      "split_seed": 202607271046,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 3518514,
+      "index": 122,
+      "n": 64,
+      "p": 24716,
+      "seed": 1871764851,
+      "sha256": "b8075decdda363bd3cd8045862436b621abde73df31aab0a212ab7d34e717ce1",
+      "shard_id": 1566,
+      "split_seed": 202607271047,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 45565870,
+      "index": 123,
+      "n": 3289,
+      "p": 6909,
+      "seed": 2162765069,
+      "sha256": "d64455352bd7b21501154ac4dcf257009331c4d8b3fce92c947f0a506ef15565",
+      "shard_id": 1862,
+      "split_seed": 202607271048,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48106218,
+      "index": 124,
+      "n": 3763,
+      "p": 6377,
+      "seed": 2015765021,
+      "sha256": "b47cee743f96315433e74f51e83bb69cd3212f8cbf3fe02ee3fe98da07188be9",
+      "shard_id": 1568,
+      "split_seed": 202607271049,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 14373734,
+      "index": 125,
+      "n": 4615,
+      "p": 1552,
+      "seed": 2029765325,
+      "sha256": "234c462b369b08a9eb9e7d7bf8cccd89947fe3fa8b65498e970265f8074e3fbc",
+      "shard_id": 2782,
+      "split_seed": 202607271050,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 4724116,
+      "index": 126,
+      "n": 90,
+      "p": 24305,
+      "seed": 1809764927,
+      "sha256": "d771bdfe7553a88e4aafeb740b8fb48b8cb012dd4a5c1f8ccb424dcecfeb184c",
+      "shard_id": 1662,
+      "split_seed": 202607271051,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48123726,
+      "index": 127,
+      "n": 2929,
+      "p": 8192,
+      "seed": 2083765487,
+      "sha256": "a8321ace8457168d8c04272dc84edaee95b1d8af79e64326836df58b3ddd3fc7",
+      "shard_id": 3250,
+      "split_seed": 202607271052,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48148526,
+      "index": 128,
+      "n": 2505,
+      "p": 9580,
+      "seed": 1858764943,
+      "sha256": "a286841f679a2950a73747dad2f8ba0a35dea52d9e962282258d34d2c560166c",
+      "shard_id": 1691,
+      "split_seed": 202607271053,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48426610,
+      "index": 129,
+      "n": 771,
+      "p": 31115,
+      "seed": 1883764756,
+      "sha256": "134cd2961e1439d35d3f6d5a7b71d743af1c18f373c42a9a6489739301ddf9f1",
+      "shard_id": 1114,
+      "split_seed": 202607271054,
+      "stratum": [
+        4,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48149022,
+      "index": 130,
+      "n": 2305,
+      "p": 10409,
+      "seed": 2204765195,
+      "sha256": "0c3c9b12c7cc7aa3cc0f2694f77fdbdfa5730a43c49b63fe173f0b7793bad38f",
+      "shard_id": 2252,
+      "split_seed": 202607271055,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 866642,
+      "index": 131,
+      "n": 39,
+      "p": 9325,
+      "seed": 2134765247,
+      "sha256": "d098542b3fc7dcc485d523aa531a58834a25e9a76ae66dedb6aab39b0af6df19",
+      "shard_id": 2379,
+      "split_seed": 202607271056,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 46186294,
+      "index": 132,
+      "n": 5125,
+      "p": 4497,
+      "seed": 2070765055,
+      "sha256": "976734ce1383a464d64c61d05c7ff7c9fd04b6d3cba52416722e677eaddc29b0",
+      "shard_id": 1807,
+      "split_seed": 202607271057,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48118622,
+      "index": 133,
+      "n": 3149,
+      "p": 7620,
+      "seed": 2091764987,
+      "sha256": "02e771b9a7b4b7e5b572f2dc79ee5c719b959c035c87e44a1e1dc5361cdea280",
+      "shard_id": 1316,
+      "split_seed": 202607271058,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48082658,
+      "index": 134,
+      "n": 10643,
+      "p": 2255,
+      "seed": 2009765396,
+      "sha256": "8d6f8ff0818cdbb2ecf44c0d5f2345a7c245ed42c59eeafae854e3e5c0e67e6a",
+      "shard_id": 2864,
+      "split_seed": 202607271059,
+      "stratum": [
+        4,
+        6,
+        1,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48095438,
+      "index": 135,
+      "n": 4821,
+      "p": 4978,
+      "seed": 1892765176,
+      "sha256": "5b434b22e1b9b717c1048a4034aec8155f7cdfaf88f55cacb6cde70da0f8314f",
+      "shard_id": 2258,
+      "split_seed": 202607271060,
+      "stratum": [
+        4,
+        6,
+        3,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 1612104,
+      "index": 136,
+      "n": 40,
+      "p": 17057,
+      "seed": 1865764833,
+      "sha256": "751a7b46b04820ed46c3abb8b35c6d2a5a8472f723f59540ee030ac874766260",
+      "shard_id": 1527,
+      "split_seed": 202607271061,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 2213742,
+      "index": 137,
+      "n": 57,
+      "p": 17226,
+      "seed": 1967765401,
+      "sha256": "6ea0a170da9cc088ae853f260e25308b80bbc1ba6abd96d13a84b20702ba6314",
+      "shard_id": 2952,
+      "split_seed": 202607271062,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48082654,
+      "index": 138,
+      "n": 7207,
+      "p": 3330,
+      "seed": 2105764898,
+      "sha256": "af2373cfc63ecc2125992eaa622f38388a5165bba301247b15266e7085830421",
+      "shard_id": 1367,
+      "split_seed": 202607271063,
+      "stratum": [
+        4,
+        6,
+        2,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 32223818,
+      "index": 139,
+      "n": 7700,
+      "p": 2088,
+      "seed": 1957765109,
+      "sha256": "7b5050b378253d9c787e5ae5e630dc00914829afb6ee4d598ab9e233237ae76c",
+      "shard_id": 2206,
+      "split_seed": 202607271064,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 23701822,
+      "index": 140,
+      "n": 5137,
+      "p": 2301,
+      "seed": 2118764937,
+      "sha256": "a3649551e928b3e8eb2d655c30a4885173e45b8f514f932a7e7bb6f2d34a2110",
+      "shard_id": 1485,
+      "split_seed": 202607271065,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48081392,
+      "index": 141,
+      "n": 9752,
+      "p": 2461,
+      "seed": 1810764799,
+      "sha256": "2eae124cc6c30790de9cf86616c5de9ddb24c1f0a00ed43f6ebc213cbcbfa125",
+      "shard_id": 1207,
+      "split_seed": 202607271066,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 26899826,
+      "index": 142,
+      "n": 1187,
+      "p": 11259,
+      "seed": 2027765319,
+      "sha256": "ae098c446b9d95bcdad73480f46ad089343ff3dee211d8672d5f8c0f3baef25c",
+      "shard_id": 2768,
+      "split_seed": 202607271067,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48082958,
+      "index": 143,
+      "n": 7277,
+      "p": 3298,
+      "seed": 2016764893,
+      "sha256": "ffd31d1c151d9e0c13910236567c5f5665865582485ea59e8e05ac7e775b469d",
+      "shard_id": 1310,
+      "split_seed": 202607271068,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48123206,
+      "index": 144,
+      "n": 3314,
+      "p": 7242,
+      "seed": 2057765147,
+      "sha256": "903a78cedc88627b6d39043398721515702940371474ec33e3be7628300be0e2",
+      "shard_id": 1845,
+      "split_seed": 202607271069,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48123206,
+      "index": 145,
+      "n": 3314,
+      "p": 7242,
+      "seed": 1996765095,
+      "sha256": "cea1b21489f9041f48d3026e6c1f58de30d9b418d18ac4e71d65ff28ad26f7d3",
+      "shard_id": 2008,
+      "split_seed": 202607271070,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 2216962,
+      "index": 146,
+      "n": 46,
+      "p": 20832,
+      "seed": 2197765174,
+      "sha256": "5277118c16d31a70a7700c19253f4f103ac065365641d3002b4b5cd6998acbff",
+      "shard_id": 2170,
+      "split_seed": 202607271071,
+      "stratum": [
+        3,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 728648,
+      "index": 147,
+      "n": 38,
+      "p": 7999,
+      "seed": 1935765043,
+      "sha256": "fc02ff5729dd5481ec2d6caf23df742709479162c10b71d8e82585f8fc6ec1e8",
+      "shard_id": 2025,
+      "split_seed": 202607271072,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 16505276,
+      "index": 148,
+      "n": 2860,
+      "p": 2875,
+      "seed": 2235765681,
+      "sha256": "52ee8ec2fa85e09ec6da2f38c7e90cc706367c7d176ab82e97d13314fbbab55b",
+      "shard_id": 3240,
+      "split_seed": 202607271073,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 41963730,
+      "index": 149,
+      "n": 2572,
+      "p": 8132,
+      "seed": 2159765453,
+      "sha256": "884a7734e98bacbb3e31751bd6e9af43c6a67332840332e562378209fdb1ad39",
+      "shard_id": 2605,
+      "split_seed": 202607271074,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 42304046,
+      "index": 150,
+      "n": 6056,
+      "p": 3486,
+      "seed": 2123765607,
+      "sha256": "2290c5d620e6b1034c3b503bd4c534f4686d28d0f283c980d48027c5ce2c6422",
+      "shard_id": 3563,
+      "split_seed": 202607271075,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48093308,
+      "index": 151,
+      "n": 4508,
+      "p": 5323,
+      "seed": 1815764683,
+      "sha256": "0fa0edb9afc707b57e2d11e7aa6a3e3daed284888adffe0cb9925ba0042be57e",
+      "shard_id": 1079,
+      "split_seed": 202607271076,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 33454950,
+      "index": 152,
+      "n": 1330,
+      "p": 12506,
+      "seed": 1874764729,
+      "sha256": "68bbc5fed43c20227e083a831fa309a123a6f08297ade86fe12dd3554f04803e",
+      "shard_id": 1071,
+      "split_seed": 202607271077,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48287532,
+      "index": 153,
+      "n": 1110,
+      "p": 21609,
+      "seed": 2160765587,
+      "sha256": "27d68c2527e66a33baa040d115b055f2412eba647c1f224c273feaf9ce07f204",
+      "shard_id": 3255,
+      "split_seed": 202607271078,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48203442,
+      "index": 154,
+      "n": 1714,
+      "p": 14000,
+      "seed": 1970765017,
+      "sha256": "b27d8c1d9b3b199ee1bc7174ee5f9de88eef58707d9833e1021f7ccb70e3cf92",
+      "shard_id": 1813,
+      "split_seed": 202607271079,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48115514,
+      "index": 155,
+      "n": 3344,
+      "p": 7176,
+      "seed": 2248765589,
+      "sha256": "7bd58d5fb30604890042cb2968ebb1c2b90395f846cbae0b94970b9741fd41f5",
+      "shard_id": 3232,
+      "split_seed": 202607271080,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1524136,
+      "index": 156,
+      "n": 36,
+      "p": 17621,
+      "seed": 1885764893,
+      "sha256": "39b71dcfcff6b2be3d945d9c41fd203dea07ec15c60cf71e55f828ee777f1381",
+      "shard_id": 1636,
+      "split_seed": 202607271081,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 44511188,
+      "index": 157,
+      "n": 5588,
+      "p": 3975,
+      "seed": 2076764811,
+      "sha256": "6bd1b9628958365d515a2a077b9e2406058897716e7b981c02c4beda3e8cf2db",
+      "shard_id": 1169,
+      "split_seed": 202607271082,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48085158,
+      "index": 158,
+      "n": 5856,
+      "p": 4098,
+      "seed": 2272765661,
+      "sha256": "24f24f2d7520f7225cacabb2520f11c1c218c18e60dacadbd2966c9f39e55d07",
+      "shard_id": 3403,
+      "split_seed": 202607271083,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48096870,
+      "index": 159,
+      "n": 4884,
+      "p": 4914,
+      "seed": 2025765313,
+      "sha256": "1b743ce5148ad5f44afc019384168055625348f60c7c8be897b779aa887f087c",
+      "shard_id": 2757,
+      "split_seed": 202607271084,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48080114,
+      "index": 160,
+      "n": 8807,
+      "p": 2725,
+      "seed": 2199765311,
+      "sha256": "1cd4fffe415c692edd34539140daad46d71c57997cec6e7ddb3834a29c9c26c0",
+      "shard_id": 2300,
+      "split_seed": 202607271085,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48261098,
+      "index": 161,
+      "n": 1303,
+      "p": 18415,
+      "seed": 2116764931,
+      "sha256": "6ccfc322409e11fa18cc600348e33ad89231b9b7d64296b77c77bcf11a104149",
+      "shard_id": 1472,
+      "split_seed": 202607271086,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48087960,
+      "index": 162,
+      "n": 5740,
+      "p": 4181,
+      "seed": 1999765497,
+      "sha256": "225b71eec4ccb04d938f2f675985efcf0b0e4b95775106d5de862f8b0c261861",
+      "shard_id": 3195,
+      "split_seed": 202607271087,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48276362,
+      "index": 163,
+      "n": 1110,
+      "p": 21604,
+      "seed": 2115765059,
+      "sha256": "798fe65499f829d1220f9c3f19777f3195ed859986dd9e44daf7c48a510d4351",
+      "shard_id": 1573,
+      "split_seed": 202607271088,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48127766,
+      "index": 164,
+      "n": 2984,
+      "p": 8042,
+      "seed": 1997765098,
+      "sha256": "9e5854b624bc0d9e04341c932bd4ac43c83000bcdf7badb12f0ab273420b7148",
+      "shard_id": 2014,
+      "split_seed": 202607271089,
+      "stratum": [
+        4,
+        6,
+        4,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48165758,
+      "index": 165,
+      "n": 2051,
+      "p": 11698,
+      "seed": 2088765633,
+      "sha256": "b04a4c7a66be6c0a074bcfa02257eb9737bd81ec0125c86047409befba9443ea",
+      "shard_id": 3493,
+      "split_seed": 202607271090,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48144430,
+      "index": 166,
+      "n": 2461,
+      "p": 9750,
+      "seed": 1827764981,
+      "sha256": "aa338fc3bd90db91f99ee7db87cbfc5d5968463df9a5723d42dbf42ba1bff60b",
+      "shard_id": 1784,
+      "split_seed": 202607271091,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 1108206,
+      "index": 167,
+      "n": 37,
+      "p": 12494,
+      "seed": 1787764861,
+      "sha256": "eba21d9dc4387fda79593dca688999bf0ebb96824d620bcd8a14e6104a951619",
+      "shard_id": 1493,
+      "split_seed": 202607271092,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1123694,
+      "index": 168,
+      "n": 59,
+      "p": 8446,
+      "seed": 2220765505,
+      "sha256": "4fc344271853bfb9a5222a3408feabb3e3f1cf53b27bb5d135d86f854c1dd3d5",
+      "shard_id": 2998,
+      "split_seed": 202607271093,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48261494,
+      "index": 169,
+      "n": 1355,
+      "p": 17712,
+      "seed": 2027765057,
+      "sha256": "045bb1633efb59c667805b7f73434d6f4bab41da8c3781519f118468562c2df8",
+      "shard_id": 1630,
+      "split_seed": 202607271094,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48114034,
+      "index": 170,
+      "n": 3175,
+      "p": 7557,
+      "seed": 2037765349,
+      "sha256": "8d93be0672030206b0ce1028e2b3e114e48828f527dc075864cb5c4d168c7a04",
+      "shard_id": 2850,
+      "split_seed": 202607271095,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48250742,
+      "index": 171,
+      "n": 1391,
+      "p": 17252,
+      "seed": 2221765377,
+      "sha256": "55969a3d363c69854de90d10c635383a497cde8695bf1bc7c3bc040543d120ea",
+      "shard_id": 2440,
+      "split_seed": 202607271096,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 173152,
+      "index": 172,
+      "n": 40,
+      "p": 1749,
+      "seed": 2096765395,
+      "sha256": "9f96dd9374ce0efb218e02d9c2ef390c04c370eca04865ff2b458722b316a523",
+      "shard_id": 2783,
+      "split_seed": 202607271097,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 47243042,
+      "index": 173,
+      "n": 5924,
+      "p": 3980,
+      "seed": 2076765335,
+      "sha256": "73184f86e7a967c3ee2e0abb0fe2f62ab3d3434bce2b38d739d9eff4b056c176",
+      "shard_id": 2661,
+      "split_seed": 202607271098,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 1671158,
+      "index": 174,
+      "n": 53,
+      "p": 13853,
+      "seed": 2242765571,
+      "sha256": "cffb4eca9c501871f846493daed8eb3ec29c7a6032de8114da2c4da967996d84",
+      "shard_id": 3184,
+      "split_seed": 202607271099,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 31941962,
+      "index": 175,
+      "n": 2410,
+      "p": 6604,
+      "seed": 2242765309,
+      "sha256": "e8dce4b204d3985416aa2799ddef1cbc719f2f4a3183e11299af1673a66f04d9",
+      "shard_id": 2520,
+      "split_seed": 202607271100,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 13699990,
+      "index": 176,
+      "n": 1990,
+      "p": 3426,
+      "seed": 2039765617,
+      "sha256": "af55f2ebe153f06c024487e82d3a3947fada8fa2afafc381a3def72a1794294f",
+      "shard_id": 3590,
+      "split_seed": 202607271101,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48081518,
+      "index": 177,
+      "n": 8339,
+      "p": 2878,
+      "seed": 2161765197,
+      "sha256": "5e6bb460fc92029c68bed86ab6ad42fa75ca58f0aca04399c0ea391c5af2ed3b",
+      "shard_id": 1979,
+      "split_seed": 202607271102,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 575610,
+      "index": 178,
+      "n": 55,
+      "p": 4571,
+      "seed": 2054765531,
+      "sha256": "6d06011ff66bf3918074a1cc90de168cb33e2629bf394d924a73d3cf574fda91",
+      "shard_id": 3230,
+      "split_seed": 202607271103,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48148700,
+      "index": 179,
+      "n": 2510,
+      "p": 9561,
+      "seed": 2251765467,
+      "sha256": "8f88a0beac4040d479f8deaa5b874a9a6b211f60a3144303a05e11b202e42d18",
+      "shard_id": 2629,
+      "split_seed": 202607271104,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 31335734,
+      "index": 180,
+      "n": 2757,
+      "p": 5665,
+      "seed": 1977765431,
+      "sha256": "4e0ecf73a1c67573a5be3826429aa34abc90cb82f7afb3e799fe0629ca6a5044",
+      "shard_id": 3027,
+      "split_seed": 202607271105,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48188204,
+      "index": 181,
+      "n": 1952,
+      "p": 12295,
+      "seed": 1756764768,
+      "sha256": "b2ab488ef65e2ddbbbceb1f8ea4a750ad99faba20c4d49f88d1462d583b3294b",
+      "shard_id": 1286,
+      "split_seed": 202607271106,
+      "stratum": [
+        4,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48218198,
+      "index": 182,
+      "n": 1439,
+      "p": 16668,
+      "seed": 2240765303,
+      "sha256": "25a1ac01a63c2a994995dc993a26c6c15d2daa25814d1fd732a03d0ee835f11a",
+      "shard_id": 2501,
+      "split_seed": 202607271107,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 786452,
+      "index": 183,
+      "n": 32,
+      "p": 9971,
+      "seed": 2157765447,
+      "sha256": "41ef23ef1c4e64bca983fca41c1c608bc74d88d91452191b3484291b29959ad0",
+      "shard_id": 2594,
+      "split_seed": 202607271108,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 45077638,
+      "index": 184,
+      "n": 6067,
+      "p": 3708,
+      "seed": 1830764859,
+      "sha256": "4177b9dc77a5d811b4d81388fa3a0bdc5c85ff278dd65f215ba14857ea45c58d",
+      "shard_id": 1446,
+      "split_seed": 202607271109,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48128498,
+      "index": 185,
+      "n": 2963,
+      "p": 8099,
+      "seed": 2259765491,
+      "sha256": "754797269b303a95b828cc306bae9a6f869e7492e89cdaaf7c068597e516144c",
+      "shard_id": 2687,
+      "split_seed": 202607271110,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 28914170,
+      "index": 186,
+      "n": 7835,
+      "p": 1841,
+      "seed": 1941764930,
+      "sha256": "f44a01171582728f07d1b8c2d8a473fc51c943d1b2cb98b6fc9a42b59b290399",
+      "shard_id": 1519,
+      "split_seed": 202607271111,
+      "stratum": [
+        4,
+        6,
+        1,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48091780,
+      "index": 187,
+      "n": 5064,
+      "p": 4739,
+      "seed": 2144765408,
+      "sha256": "237e47aebe81b8bbbb5ccdaaec83b5cab62824f0d47898b0d8bc676728e18517",
+      "shard_id": 2504,
+      "split_seed": 202607271112,
+      "stratum": [
+        4,
+        6,
+        3,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 866348,
+      "index": 188,
+      "n": 38,
+      "p": 9529,
+      "seed": 2193765293,
+      "sha256": "8bc23c615bbc5a6c12f550a7c02cae3354b21176e3e7df09063493c21ade401b",
+      "shard_id": 2267,
+      "split_seed": 202607271113,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 659258,
+      "index": 189,
+      "n": 43,
+      "p": 6505,
+      "seed": 2013765277,
+      "sha256": "e9fc255f73393564432da74d2c7f46b0f3c1d4fbd4b6930b34940b10da3f86a2",
+      "shard_id": 2676,
+      "split_seed": 202607271114,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 32632214,
+      "index": 190,
+      "n": 6739,
+      "p": 2416,
+      "seed": 2011764878,
+      "sha256": "0c72f7ee6dc65e617b1bdfce931a1cc7df522b469fd05cdfd4b23c5ed7390fe3",
+      "shard_id": 1172,
+      "split_seed": 202607271115,
+      "stratum": [
+        4,
+        6,
+        2,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 25840438,
+      "index": 191,
+      "n": 6603,
+      "p": 1952,
+      "seed": 2073765457,
+      "sha256": "98db1b6aba1c54455e11c7625a2bff17bfb0534b534df600d0e68318957c47b0",
+      "shard_id": 3156,
+      "split_seed": 202607271116,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48079620,
+      "index": 192,
+      "n": 8794,
+      "p": 2729,
+      "seed": 1958764981,
+      "sha256": "b087bfc3fd56f95de7ba26aaa9baece456aa6dfd05d721a5e881aa3ef8730440",
+      "shard_id": 1742,
+      "split_seed": 202607271117,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48079238,
+      "index": 193,
+      "n": 9338,
+      "p": 2570,
+      "seed": 1857765071,
+      "sha256": "fba6f916eb0d37bf4ab9f5de52419dd86e149fa93e0c838cbb492ae9a234d8b4",
+      "shard_id": 1992,
+      "split_seed": 202607271118,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48173638,
+      "index": 194,
+      "n": 1923,
+      "p": 12476,
+      "seed": 1847764779,
+      "sha256": "656c539ac186023f01468c25fb4fb246486c287f3e66be4c17f194a157895c67",
+      "shard_id": 1421,
+      "split_seed": 202607271119,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 45271846,
+      "index": 195,
+      "n": 8400,
+      "p": 2690,
+      "seed": 1968765273,
+      "sha256": "9a03bff00ffb3bdf4b1b8a45674684df7a99d12499817add40036c342cfcd59d",
+      "shard_id": 2499,
+      "split_seed": 202607271120,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48138054,
+      "index": 196,
+      "n": 2524,
+      "p": 9506,
+      "seed": 2111765571,
+      "sha256": "991450794e9d3e55d6376e912a5bcca596e9e3e7bc6cbf80a884499df6ea9657",
+      "shard_id": 3447,
+      "split_seed": 202607271121,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48131874,
+      "index": 197,
+      "n": 2575,
+      "p": 9317,
+      "seed": 1968765011,
+      "sha256": "986b0d1e3737107ebbc18462747540aed7943ecc4ae86dc8cebe156108345b54",
+      "shard_id": 1796,
+      "split_seed": 202607271122,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 1209662,
+      "index": 198,
+      "n": 65,
+      "p": 8339,
+      "seed": 2180765516,
+      "sha256": "12528e66080572a57b6d23fc4dab99952465b001e7b5563552479a4f63f696eb",
+      "shard_id": 2810,
+      "split_seed": 202607271123,
+      "stratum": [
+        3,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 1846178,
+      "index": 199,
+      "n": 83,
+      "p": 10207,
+      "seed": 1917764727,
+      "sha256": "261d26ef9bf6b9a7fc75a7d30e93d25ba6d0bd91feb3e9074aadf55a227cff04",
+      "shard_id": 996,
+      "split_seed": 202607271124,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48100298,
+      "index": 200,
+      "n": 4146,
+      "p": 5788,
+      "seed": 2093765517,
+      "sha256": "4d9724f4324b40d58fb30b41475edf4b635d3abe05fd5a85b12e50f937948e6d",
+      "shard_id": 3316,
+      "split_seed": 202607271125,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48116846,
+      "index": 201,
+      "n": 3379,
+      "p": 7102,
+      "seed": 2129765625,
+      "sha256": "caff5aadc7b7c32a2dff0f761e643709643c3891c8ddc6aa336b6c39362f0383",
+      "shard_id": 3605,
+      "split_seed": 202607271126,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48098054,
+      "index": 202,
+      "n": 4760,
+      "p": 5042,
+      "seed": 1803764647,
+      "sha256": "d046b997f17fe441b7036c9c6d277cf7d2e5a9fca26c66f3f669bb868dfe067a",
+      "shard_id": 987,
+      "split_seed": 202607271127,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48087214,
+      "index": 203,
+      "n": 4905,
+      "p": 4892,
+      "seed": 1958765243,
+      "sha256": "e686a1488ed563ad2412545b2efea448e5629fbdeb001773d4d09f9f62e200e0",
+      "shard_id": 2426,
+      "split_seed": 202607271128,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48240406,
+      "index": 204,
+      "n": 1315,
+      "p": 18240,
+      "seed": 2188765409,
+      "sha256": "17f43b0dfadd84c5183b9874b5feff13754be7ae54db254714d6f679bc0e0b55",
+      "shard_id": 2769,
+      "split_seed": 202607271129,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48205440,
+      "index": 205,
+      "n": 1684,
+      "p": 14249,
+      "seed": 2150765295,
+      "sha256": "45e2ffc1100b4271c87f2d268281b71eda055703f160460cc6a5b7fbf5733afd",
+      "shard_id": 2516,
+      "split_seed": 202607271130,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48304462,
+      "index": 206,
+      "n": 1129,
+      "p": 21255,
+      "seed": 1996764833,
+      "sha256": "e5d1ecd7e5302375f6846d2e18325eecac46e8769f320e17132ae62b184dc270",
+      "shard_id": 1021,
+      "split_seed": 202607271131,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48113294,
+      "index": 207,
+      "n": 3212,
+      "p": 7470,
+      "seed": 1910764837,
+      "sha256": "7d755491eb70e89eff84abebf31d2ba0e883a28da88dc5d7ea2bcd712cbfb14c",
+      "shard_id": 1277,
+      "split_seed": 202607271132,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1732270,
+      "index": 208,
+      "n": 85,
+      "p": 9366,
+      "seed": 1833764737,
+      "sha256": "7f36b3513753edf4c55294df72d234b59e47bdd80b4ecc265c59e960aa31901a",
+      "shard_id": 1314,
+      "split_seed": 202607271133,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 30936930,
+      "index": 209,
+      "n": 2890,
+      "p": 5336,
+      "seed": 1843764767,
+      "sha256": "232418cf370fe781b3b762870d13ccd88a9abfc432be1d6a90fadf8d93bdca11",
+      "shard_id": 1397,
+      "split_seed": 202607271134,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48104594,
+      "index": 210,
+      "n": 3995,
+      "p": 6007,
+      "seed": 2092765121,
+      "sha256": "db8e7d0bb61f68e72d8eedfb3b2ce178a58846a2608d450f211de5f15a22ca78",
+      "shard_id": 2012,
+      "split_seed": 202607271135,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48086918,
+      "index": 211,
+      "n": 5123,
+      "p": 4684,
+      "seed": 2089764981,
+      "sha256": "a979d48fb606553033790c92917501e9e06959aed7fdb0f5fbb2a18e921af3f3",
+      "shard_id": 1276,
+      "split_seed": 202607271136,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 28598990,
+      "index": 212,
+      "n": 737,
+      "p": 19212,
+      "seed": 1995765223,
+      "sha256": "c9ea01bc81c1e6a79a697ff1ccaaf27d6c27ab36bde0b09add1b211e73739adf",
+      "shard_id": 2549,
+      "split_seed": 202607271137,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 38868610,
+      "index": 213,
+      "n": 4932,
+      "p": 3932,
+      "seed": 2148765289,
+      "sha256": "e0966fdeaa3269ef2c3b9a63ec8c1c33c6d4c27d5daec9edb56d11232fba8d22",
+      "shard_id": 2500,
+      "split_seed": 202607271138,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48249070,
+      "index": 214,
+      "n": 1426,
+      "p": 16830,
+      "seed": 2065765171,
+      "sha256": "a358dd5a5c32ee38a28a50d0adb7abf5e432d7929d026755aaa873080dafc38b",
+      "shard_id": 1909,
+      "split_seed": 202607271139,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 29338114,
+      "index": 215,
+      "n": 2356,
+      "p": 6204,
+      "seed": 2017765158,
+      "sha256": "43363fafa0b10baa53c86b47adc1ba752f5c8095502c68ed7ab92ff2b6e9c3ff",
+      "shard_id": 2194,
+      "split_seed": 202607271140,
+      "stratum": [
+        4,
+        6,
+        4,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48159620,
+      "index": 216,
+      "n": 2046,
+      "p": 11725,
+      "seed": 2100765145,
+      "sha256": "bc0ee17580a00eb83b5238331886f033213154b5810dedf7cb300f410747e250",
+      "shard_id": 2070,
+      "split_seed": 202607271141,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 20586998,
+      "index": 217,
+      "n": 2223,
+      "p": 4612,
+      "seed": 1943765329,
+      "sha256": "758f5ddc5455c9659831cd56459b95faabb2ed49946c78aee48d8d81d40f26fb",
+      "shard_id": 2735,
+      "split_seed": 202607271142,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 339966,
+      "index": 218,
+      "n": 37,
+      "p": 3764,
+      "seed": 1783764849,
+      "sha256": "aa7516e2f2f5e4156f7060d579aa611bfb37672c6e0a7cb694dabf95ad3c4a98",
+      "shard_id": 1478,
+      "split_seed": 202607271143,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 1226732,
+      "index": 219,
+      "n": 80,
+      "p": 6999,
+      "seed": 2006765125,
+      "sha256": "225d85ced022df2d96eeeaee6c0907d258871c7ab25e441c598dbee750c95744",
+      "shard_id": 2107,
+      "split_seed": 202607271144,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48335450,
+      "index": 220,
+      "n": 971,
+      "p": 24705,
+      "seed": 1852764925,
+      "sha256": "ee008e673261e8bb88c7b68bd4a13800a3a3bcad73fc9c4f97fa40431c4da406",
+      "shard_id": 1621,
+      "split_seed": 202607271145,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48111938,
+      "index": 221,
+      "n": 3363,
+      "p": 7135,
+      "seed": 1938764921,
+      "sha256": "c62ecf05e02dc5feeed24ea190c672c0637bc657661903b349616efd3cd99366",
+      "shard_id": 1488,
+      "split_seed": 202607271146,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48166110,
+      "index": 222,
+      "n": 2011,
+      "p": 11930,
+      "seed": 1907765221,
+      "sha256": "e86ba7a740a0c6fb8cf8fdce15f4467dbc731a8b9667d5657acb3409f1ab1905",
+      "shard_id": 2383,
+      "split_seed": 202607271147,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 1493310,
+      "index": 223,
+      "n": 64,
+      "p": 10454,
+      "seed": 2008765131,
+      "sha256": "0794d1fd6769b5aa5c1d6fbd4f5cd94edcfa2fa4c9518dfe60c474d0a74ad2d8",
+      "shard_id": 2143,
+      "split_seed": 202607271148,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48093538,
+      "index": 224,
+      "n": 4398,
+      "p": 5456,
+      "seed": 2005765515,
+      "sha256": "cc2ebd1d9be2df7a91a04865614bd59b5986a121a26891cc43c3a46e22bc22ed",
+      "shard_id": 3236,
+      "split_seed": 202607271149,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 372078,
+      "index": 225,
+      "n": 64,
+      "p": 2558,
+      "seed": 2212765219,
+      "sha256": "1f127fadbcf6bb344e64ad6614c0b50a44d8a530861370c3fdddc671a54b898e",
+      "shard_id": 2305,
+      "split_seed": 202607271150,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48124054,
+      "index": 226,
+      "n": 3007,
+      "p": 7980,
+      "seed": 2194765689,
+      "sha256": "5cd4cb1a260de84f545a7332d41e481fa056e2ef26a898b34dd9a63331cc9cef",
+      "shard_id": 3589,
+      "split_seed": 202607271151,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 24781166,
+      "index": 227,
+      "n": 4089,
+      "p": 3022,
+      "seed": 1995765485,
+      "sha256": "20a44b7f106c5edb505743d918bbac4822cc5a61e9d1df46dee4e846d0aa9c54",
+      "shard_id": 3154,
+      "split_seed": 202607271152,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 883838,
+      "index": 228,
+      "n": 77,
+      "p": 5208,
+      "seed": 2152765039,
+      "sha256": "91bd00044cd1e300c45f4d64c14fa72d44234d1299ccb12871b1c5487188038c",
+      "shard_id": 1739,
+      "split_seed": 202607271153,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48111884,
+      "index": 229,
+      "n": 3264,
+      "p": 7351,
+      "seed": 2067764915,
+      "sha256": "4bcac73d3aa483663a4c8b179730604f18edb69861c9ac18fe4f0aabe62585a5",
+      "shard_id": 1097,
+      "split_seed": 202607271154,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 48134448,
+      "index": 230,
+      "n": 2514,
+      "p": 9543,
+      "seed": 2133765375,
+      "sha256": "cf0843d435e8131a85a9370f7b968ae243187d90340081ce51a1bee1b83464d2",
+      "shard_id": 2423,
+      "split_seed": 202607271155,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48158328,
+      "index": 231,
+      "n": 2098,
+      "p": 11435,
+      "seed": 2222765380,
+      "sha256": "5c2dbddfe764b40170f6ef3c04c2f37f75183f88d8f347ccc054bde9adbafc13",
+      "shard_id": 2449,
+      "split_seed": 202607271156,
+      "stratum": [
+        4,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48155366,
+      "index": 232,
+      "n": 2134,
+      "p": 11242,
+      "seed": 1879764875,
+      "sha256": "938c3e2298f10f7e3222788aec68f5a0fbb9b0655bae9835b1d4f4edf359129c",
+      "shard_id": 1614,
+      "split_seed": 202607271157,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        2,
+        1
+      ]
+    },
+    {
+      "bytes": 3752162,
+      "index": 233,
+      "n": 47,
+      "p": 34661,
+      "seed": 2021765563,
+      "sha256": "1f67329ed87464a6a367da6c86ba55ca67f8569ac076bb30740931128aa9e499",
+      "shard_id": 3386,
+      "split_seed": 202607271158,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 48107578,
+      "index": 234,
+      "n": 3663,
+      "p": 6551,
+      "seed": 2225765651,
+      "sha256": "808ced6cd378bd38495c4d3198939d2389d5f92358fecd138abafed40f398a39",
+      "shard_id": 3160,
+      "split_seed": 202607271159,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 48120890,
+      "index": 235,
+      "n": 3375,
+      "p": 7111,
+      "seed": 2297765867,
+      "sha256": "a3108daf06c2abc9b309242b463c8317c9a0d5cfadb02913282b3866cd0d85b7",
+      "shard_id": 3710,
+      "split_seed": 202607271160,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48082560,
+      "index": 236,
+      "n": 10596,
+      "p": 2265,
+      "seed": 2099764880,
+      "sha256": "25fc6d2c29082ad76dcaf2190db8c3fc76255fa83e2c222cc4a6eedeb190248e",
+      "shard_id": 1321,
+      "split_seed": 202607271161,
+      "stratum": [
+        4,
+        6,
+        1,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 48095322,
+      "index": 237,
+      "n": 4866,
+      "p": 4932,
+      "seed": 2117765458,
+      "sha256": "78d545dcd177ff9cf8b2be20ebc16de5839d1888f94c8253a97b995c4ca47b6c",
+      "shard_id": 2973,
+      "split_seed": 202607271162,
+      "stratum": [
+        4,
+        6,
+        3,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 1190420,
+      "index": 238,
+      "n": 40,
+      "p": 12571,
+      "seed": 2074765329,
+      "sha256": "813332c94a314e045c49ace820fd51fcc74f950f86f135906e814b11274420bf",
+      "shard_id": 2655,
+      "split_seed": 202607271163,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 187400,
+      "index": 239,
+      "n": 34,
+      "p": 2179,
+      "seed": 1771764813,
+      "sha256": "9ceea09ebd5d3ddc7f07118e21bde3e122c75a3d69006e96b993324d6b3a9c25",
+      "shard_id": 1411,
+      "split_seed": 202607271164,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        4,
+        0
+      ]
+    },
+    {
+      "bytes": 48081614,
+      "index": 240,
+      "n": 7879,
+      "p": 3046,
+      "seed": 2039764962,
+      "sha256": "efc940854ee5733c5ba9f3e1556d10ffcc1bdd558521095b37124cf7778065ff",
+      "shard_id": 1507,
+      "split_seed": 202607271165,
+      "stratum": [
+        4,
+        6,
+        2,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 43389538,
+      "index": 241,
+      "n": 6903,
+      "p": 3137,
+      "seed": 1872764723,
+      "sha256": "346b8cb48adcd5f7d0fa1aa4f9d8b4e613d778e5c04d2fb1ddaa62b08c0ec484",
+      "shard_id": 1062,
+      "split_seed": 202607271166,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48164662,
+      "index": 242,
+      "n": 2227,
+      "p": 10776,
+      "seed": 2088764847,
+      "sha256": "9f4837ec14d65a8091a57035b0694719b2be9ace748ff28558e14333b63ac10d",
+      "shard_id": 1269,
+      "split_seed": 202607271167,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48081328,
+      "index": 243,
+      "n": 7048,
+      "p": 3405,
+      "seed": 2051765129,
+      "sha256": "07cc2882e2c81a64d69570e11f2578db0893eefea91279b53f4a278c7cfb9fcb",
+      "shard_id": 1803,
+      "split_seed": 202607271168,
+      "stratum": [
+        4,
+        6,
+        2,
+        "linear",
+        2,
+        0
+      ]
+    },
+    {
+      "bytes": 48130010,
+      "index": 244,
+      "n": 3071,
+      "p": 7815,
+      "seed": 2208765207,
+      "sha256": "31cc8cbbe11aed497a0a9df0b2049b46ead491987c6c43b33fa6330e36fd11e6",
+      "shard_id": 2291,
+      "split_seed": 202607271169,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48131426,
+      "index": 245,
+      "n": 2759,
+      "p": 8697,
+      "seed": 2103765023,
+      "sha256": "3403a1d8e7b10bcc97c6f7e98ce01bd01717f48fb6fa089f410cdf9be1d50c5d",
+      "shard_id": 1400,
+      "split_seed": 202607271170,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        1
+      ]
+    },
+    {
+      "bytes": 1640308,
+      "index": 246,
+      "n": 54,
+      "p": 13373,
+      "seed": 2081765612,
+      "sha256": "20037f405fe459074318fbc92bb06bdce8fbde4fb67b1530c3d242cc5c742253",
+      "shard_id": 3442,
+      "split_seed": 202607271171,
+      "stratum": [
+        3,
+        6,
+        5,
+        "tabicl",
+        255,
+        255
+      ]
+    },
+    {
+      "bytes": 3156458,
+      "index": 247,
+      "n": 68,
+      "p": 20984,
+      "seed": 2196765695,
+      "sha256": "4c0a32b834917936afa303846016c71c3a675fd0df1975db5fcf361d4ba90b34",
+      "shard_id": 3600,
+      "split_seed": 202607271172,
+      "stratum": [
+        3,
+        6,
+        5,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48109676,
+      "index": 248,
+      "n": 3642,
+      "p": 6589,
+      "seed": 2008765393,
+      "sha256": "8e959fed576cef26f574cb54d27bdf63eb4683dce870d803a1655065a5acd9ef",
+      "shard_id": 2859,
+      "split_seed": 202607271173,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 18219230,
+      "index": 249,
+      "n": 2069,
+      "p": 4384,
+      "seed": 2134764985,
+      "sha256": "3ea8463eaf82a27bbbaac9966ae4f772dc9661933c3290c48eaa0869e7a53f35",
+      "shard_id": 1634,
+      "split_seed": 202607271174,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        0,
+        0
+      ]
+    },
+    {
+      "bytes": 48086918,
+      "index": 250,
+      "n": 5744,
+      "p": 4178,
+      "seed": 2135765119,
+      "sha256": "d77f63aacc297b2d730cf7f7e3310d904cdc285a558bbe04e38591a591167673",
+      "shard_id": 1709,
+      "split_seed": 202607271175,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        4,
+        1
+      ]
+    },
+    {
+      "bytes": 48098640,
+      "index": 251,
+      "n": 4422,
+      "p": 5427,
+      "seed": 2112764919,
+      "sha256": "9bc81b569572797d213fafbbde89365b6fb5b6db089f1577c628a8976b0b74fb",
+      "shard_id": 1440,
+      "split_seed": 202607271176,
+      "stratum": [
+        4,
+        6,
+        3,
+        "linear",
+        1,
+        1
+      ]
+    },
+    {
+      "bytes": 48463894,
+      "index": 252,
+      "n": 645,
+      "p": 37157,
+      "seed": 2056765537,
+      "sha256": "1d6afc3fab1de8946349ef33822d2970b2291d2e21edde6ffecc0d719f10d499",
+      "shard_id": 3241,
+      "split_seed": 202607271177,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        1,
+        0
+      ]
+    },
+    {
+      "bytes": 48157406,
+      "index": 253,
+      "n": 2145,
+      "p": 11185,
+      "seed": 1745764735,
+      "sha256": "7cdc1088d7aff689df57ab49d00937ccc80119ffa055d8503bfe6cfd5a8cba86",
+      "shard_id": 1232,
+      "split_seed": 202607271178,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        0,
+        1
+      ]
+    },
+    {
+      "bytes": 349522,
+      "index": 254,
+      "n": 159,
+      "p": 1025,
+      "seed": 1926764885,
+      "sha256": "87eea2fd75fa37d4e034924a30cc581cf0105abda93ac030669dac9e79dbf4b2",
+      "shard_id": 1357,
+      "split_seed": 202607271179,
+      "stratum": [
+        4,
+        6,
+        5,
+        "linear",
+        3,
+        0
+      ]
+    },
+    {
+      "bytes": 48115498,
+      "index": 255,
+      "n": 3444,
+      "p": 6968,
+      "seed": 2080765609,
+      "sha256": "a911449529fd08948d5baff8248f9916b155d8b33ea760d42d15f2fb4e726258",
+      "shard_id": 3439,
+      "split_seed": 202607271180,
+      "stratum": [
+        4,
+        6,
+        4,
+        "linear",
+        3,
+        0
+      ]
+    }
+  ],
+  "version": "v24_scaler_task_manifest_v1"
+}

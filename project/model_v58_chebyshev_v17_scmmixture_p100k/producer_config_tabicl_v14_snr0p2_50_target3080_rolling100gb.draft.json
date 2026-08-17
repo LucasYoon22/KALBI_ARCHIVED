@@ -1,0 +1,109 @@
+{
+  "schema_version": "v14.scmmixture.rolling.producer.config.v1",
+  "pipeline_version": "v24_kalbi_tabiclv2_x_mixed50_tabicl_linear_pn50_strictn3_snr0p2to50_y_v14_rolling100gb_v1",
+  "source_version": "v24_tabiclv2_v14_supportmix_snr0p2_50_cpu_rolling_producer_v1",
+  "project_dir": "/users/minsuk/fm-lm-lambda",
+  "control_root": "/users/sync_data/kalbi_tabiclv2_v14_mixed50_linear_pn50_strictn3_snr0p2to50_p100k_100GB_target3080_seed160076430/rolling_control",
+  "pipeline_config_path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/pipeline_config_tabicl_v14_snr0p2_50_supportmix_rolling100gb.draft.json",
+  "pipeline_config_sha256": "4fd706b7b254eddb4a832b8107fa3379d128f152716c7ae9f142539064d7e707",
+  "generator_sources": {
+    "tabicl_v2": {
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_scm2048_qfilter_bnn128_mixedlinear_supportmix_v14.py",
+      "sha256": "d2548b21c63f220ec2d2c5f34bcf1a341e17b4440eb3db80f1ad3ad1029e812f",
+      "args": ["--filter-unpredictable"]
+    }
+  },
+  "source_files": [
+    {
+      "label": "shape_sampler_helper",
+      "path": "/users/minsuk/fm-lm-lambda/exp122_shape_sampler.py",
+      "sha256": "79efa4e7eea257c39240421ad5656ac505540de83116db1a7817f77ccc619e19"
+    },
+    {
+      "label": "tabicl_graph_wrapper",
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_graph_highdim_npz.py",
+      "sha256": "66ef1574b54cf186456dff8c3fc7f0dc9ad42dbc91b95bb63c87eed77122c4b3"
+    },
+    {
+      "label": "exact_correlation_and_activation_helpers",
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabpfn_v1_causal_scm_mlp512_groupdrop095_sparse_linear_v1.py",
+      "sha256": "846384ac4b4497515248da767325d3aedb0ee77a4844dbd92fa997597bed650a"
+    },
+    {
+      "label": "tabicl_v13_producer_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_producer_tabicl_v13_supportmix.py",
+      "sha256": "de8c09654413580a82894147a5ed013ed0c7ed04285803a3de8cf7c3728d3bff"
+    },
+    {
+      "label": "tabicl_v13_curator_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_curator_tabicl_v13_supportmix.py",
+      "sha256": "0cb8d4af359bd438a3797156324bc0b601fe513919c17517c8749772a24e69cd"
+    },
+    {
+      "label": "rolling_curator_base",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v14_scmmixture/rolling_curator.py",
+      "sha256": "5d16a4b70fbccc8e9f04c60856916f3a52b70eae170c5e913e23245308e78e4f"
+    },
+    {
+      "label": "rolling_catalog_base",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v14_scmmixture/rolling_catalog.py",
+      "sha256": "acb0c9837bc766a51fd7ebdcd5b0c441637739ef5cc65c215c27851b5ac1c2ac"
+    },
+    {
+      "label": "rolling_backpressure_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_producer_backpressure_fixed.py",
+      "sha256": "1d910ea05430456535c598c51481cc210c92f4bfd02c3f5d7e832038e9dddb52"
+    },
+    {
+      "label": "rolling_adopted_cache_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_adopted_cache.py",
+      "sha256": "df5a3023825d808d8229a9b28534cb994661213c89b766dcdec2450693c57887"
+    }
+  ],
+  "generator_common_args": [
+    "--n-min", "32",
+    "--n-max", "40000",
+    "--main-n-min", "200",
+    "--small-n-max", "199",
+    "--small-n-probability", "0.10",
+    "--p-min", "50",
+    "--p-max", "100000",
+    "--max-cells", "24000000",
+    "--p-median", "10000",
+    "--p-log-sigma", "0.75",
+    "--raw-n-median", "5700",
+    "--n-log-sigma", "0.70",
+    "--scm-core-cap", "2048",
+    "--core-oversample-factor", "1.5",
+    "--corr-threshold", "0.95",
+    "--bnn-hidden-dim", "64",
+    "--bnn-output-block", "128",
+    "--bnn-parent-min", "8",
+    "--bnn-parent-max", "128",
+    "--corr-audit-features", "256",
+    "--clip-value", "10.0",
+    "--min-y-unique-count", "10",
+    "--min-y-unique-ratio", "0.02",
+    "--max-y-dominant-ratio", "0.30",
+    "--min-y-standardized-iqr", "0.20",
+    "--y-round-decimals", "6",
+    "--max-retries", "30"
+  ],
+  "bootstrap_staging_high_water_bytes": 102000000000,
+  "staging_high_water_bytes": 4000000000,
+  "active_target_bytes": 100000000000,
+  "retirement_grace_bytes": 10000000000,
+  "project_hard_cap_bytes": 130000000000,
+  "min_free_bytes": 300000000000,
+  "max_shard_bytes": 64000000,
+  "workers": [
+    {"worker_id": "target3080_v14_00", "prior": "tabicl_v2", "base_seed": 1600764300, "cpu_cores": [32,33,34,35], "threads": 4},
+    {"worker_id": "target3080_v14_01", "prior": "tabicl_v2", "base_seed": 1650764319, "cpu_cores": [36,37,38,39], "threads": 4},
+    {"worker_id": "target3080_v14_02", "prior": "tabicl_v2", "base_seed": 1700764338, "cpu_cores": [40,41,42,43], "threads": 4},
+    {"worker_id": "target3080_v14_03", "prior": "tabicl_v2", "base_seed": 1750764357, "cpu_cores": [44,45,46,47], "threads": 4},
+    {"worker_id": "target3080_v14_04", "prior": "tabicl_v2", "base_seed": 1800764376, "cpu_cores": [48,49,50,51], "threads": 4},
+    {"worker_id": "target3080_v14_05", "prior": "tabicl_v2", "base_seed": 1850764395, "cpu_cores": [52,53,54,55], "threads": 4},
+    {"worker_id": "target3080_v14_06", "prior": "tabicl_v2", "base_seed": 1900764414, "cpu_cores": [56,57,58,59], "threads": 4},
+    {"worker_id": "target3080_v14_07", "prior": "tabicl_v2", "base_seed": 1950764433, "cpu_cores": [60,61,62,63], "threads": 4}
+  ]
+}

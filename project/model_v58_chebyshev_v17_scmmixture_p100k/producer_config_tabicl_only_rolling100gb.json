@@ -1,0 +1,88 @@
+{
+  "schema_version": "v14.scmmixture.rolling.producer.config.v1",
+  "pipeline_version": "v14_kalbi_tabiclv2_scm_xy_only_rolling100gb_v1",
+  "source_version": "v14_tabiclv2_only_cpu_rolling_producer_v1",
+  "project_dir": "/users/minsuk/fm-lm-lambda",
+  "control_root": "/users/sync_data/kalbi_tabiclv2_scm_xy_only_groupdrop095_100GB_seed1688073552/rolling_control",
+  "pipeline_config_path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/pipeline_config_tabicl_only_rolling100gb.json",
+  "pipeline_config_sha256": "b4126956cccf33509056d1faeac2db1e367bad24060231096a6ecda135b54c4e",
+  "generator_sources": {
+    "tabicl_v2": {
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_graph_scm_mlp512_groupdrop095_scm_y_v5.py",
+      "sha256": "f819f09abe2b45b80cc4eddf1092fd212f798407dd99ba55834b292682c0bf52",
+      "args": ["--filter-unpredictable"]
+    }
+  },
+  "source_files": [
+    {
+      "label": "shape_sampler_helper",
+      "path": "/users/minsuk/fm-lm-lambda/exp122_shape_sampler.py",
+      "sha256": "79efa4e7eea257c39240421ad5656ac505540de83116db1a7817f77ccc619e19"
+    },
+    {
+      "label": "tabicl_only_producer_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_producer_tabicl_only.py",
+      "sha256": "67b3d5b696fc588bfb289a65967136e92be2310a79bc6dea2920ae14442893ce"
+    },
+    {
+      "label": "tabicl_only_curator_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_curator_tabicl_only.py",
+      "sha256": "4593cf4df12be534ed09561eb6a3afa94d9201294253ccaf13e4efa116620cf8"
+    },
+    {
+      "label": "tabicl_only_bootstrap_migration",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/bootstrap_tabicl_only_from_mixed.py",
+      "sha256": "f21fdc52a419d9da609a75f09384605092b184bd0993dfb3795b2a87f351bb6c"
+    }
+  ],
+  "generator_common_args": [
+    "--n-min", "32",
+    "--n-max", "20000",
+    "--main-n-min", "200",
+    "--small-n-max", "199",
+    "--small-n-probability", "0.10",
+    "--p-min", "50",
+    "--p-max", "100000",
+    "--max-cells", "24000000",
+    "--p-median", "10000",
+    "--p-log-sigma", "0.75",
+    "--raw-n-median", "5700",
+    "--n-log-sigma", "0.70",
+    "--direct-p-cap", "4096",
+    "--core-oversample-factor", "1.5",
+    "--corr-threshold", "0.95",
+    "--hidden-dim", "256",
+    "--gaussian-dims", "16",
+    "--input-noise-variance-min", "0.001",
+    "--input-noise-variance-max", "1.0",
+    "--output-noise-variance-min", "0.001",
+    "--output-noise-variance-max", "0.25",
+    "--clip-value", "10.0",
+    "--max-retries", "30"
+  ],
+  "bootstrap_staging_high_water_bytes": 102000000000,
+  "staging_high_water_bytes": 4000000000,
+  "active_target_bytes": 100000000000,
+  "retirement_grace_bytes": 10000000000,
+  "project_hard_cap_bytes": 130000000000,
+  "min_free_bytes": 300000000000,
+  "max_shard_bytes": 64000000,
+  "workers": [
+    {"worker_id": "tabicl_00", "prior": "tabicl_v2", "base_seed": 1688073552, "cpu_cores": [64,65,66,67], "threads": 4},
+    {"worker_id": "tabicl_01", "prior": "tabicl_v2", "base_seed": 1788073571, "cpu_cores": [68,69,70,71], "threads": 4},
+    {"worker_id": "tabicl_02", "prior": "tabicl_v2", "base_seed": 1888073590, "cpu_cores": [72,73,74,75], "threads": 4},
+    {"worker_id": "tabicl_03", "prior": "tabicl_v2", "base_seed": 1988073609, "cpu_cores": [76,77,78,79], "threads": 4},
+    {"worker_id": "tabicl_04", "prior": "tabicl_v2", "base_seed": 2088073628, "cpu_cores": [80,81,82,83], "threads": 4},
+    {"worker_id": "tabicl_05", "prior": "tabicl_v2", "base_seed": 2188073647, "cpu_cores": [84,85,86,87], "threads": 4},
+    {"worker_id": "tabicl_06", "prior": "tabicl_v2", "base_seed": 2288073666, "cpu_cores": [88,89,90,91], "threads": 4},
+    {"worker_id": "tabicl_07", "prior": "tabicl_v2", "base_seed": 2388073685, "cpu_cores": [92,93,94,95], "threads": 4},
+    {"worker_id": "tabicl_08", "prior": "tabicl_v2", "base_seed": 2488073704, "cpu_cores": [96,97,98,99], "threads": 4},
+    {"worker_id": "tabicl_09", "prior": "tabicl_v2", "base_seed": 2588073723, "cpu_cores": [100,101,102,103], "threads": 4},
+    {"worker_id": "tabicl_10", "prior": "tabicl_v2", "base_seed": 2688073742, "cpu_cores": [104,105,106,107], "threads": 4},
+    {"worker_id": "tabicl_11", "prior": "tabicl_v2", "base_seed": 2788073761, "cpu_cores": [108,109,110,111], "threads": 4},
+    {"worker_id": "tabicl_12", "prior": "tabicl_v2", "base_seed": 2888073780, "cpu_cores": [112,113,114,115], "threads": 4},
+    {"worker_id": "tabicl_13", "prior": "tabicl_v2", "base_seed": 2988073799, "cpu_cores": [116,117,118,119], "threads": 4},
+    {"worker_id": "tabicl_14", "prior": "tabicl_v2", "base_seed": 3088073818, "cpu_cores": [120,121,122,123], "threads": 4},
+    {"worker_id": "tabicl_15", "prior": "tabicl_v2", "base_seed": 3188073837, "cpu_cores": [124,125,126,127], "threads": 4}
+  ]
+}

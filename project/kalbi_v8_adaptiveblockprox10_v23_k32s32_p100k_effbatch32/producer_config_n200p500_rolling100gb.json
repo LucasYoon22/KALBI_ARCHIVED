@@ -1,0 +1,272 @@
+{
+  "active_target_bytes": 100000000000,
+  "bootstrap_staging_high_water_bytes": 102000000000,
+  "control_root": "/users/sync_data/kalbi_tabpfnv1_tabiclv2_scm_xy_50_50_groupdrop095_N200_P500_100GB_seed88073500/rolling_control",
+  "generator_common_args": [
+    "--n-min",
+    "32",
+    "--n-max",
+    "20000",
+    "--main-n-min",
+    "200",
+    "--small-n-max",
+    "199",
+    "--small-n-probability",
+    "0.10",
+    "--p-min",
+    "50",
+    "--p-max",
+    "100000",
+    "--max-cells",
+    "24000000",
+    "--p-median",
+    "10000",
+    "--p-log-sigma",
+    "0.75",
+    "--raw-n-median",
+    "5700",
+    "--n-log-sigma",
+    "0.70",
+    "--direct-p-cap",
+    "4096",
+    "--core-oversample-factor",
+    "1.5",
+    "--corr-threshold",
+    "0.95",
+    "--hidden-dim",
+    "256",
+    "--gaussian-dims",
+    "16",
+    "--input-noise-variance-min",
+    "0.001",
+    "--input-noise-variance-max",
+    "1.0",
+    "--output-noise-variance-min",
+    "0.001",
+    "--output-noise-variance-max",
+    "0.25",
+    "--clip-value",
+    "10.0",
+    "--max-retries",
+    "30",
+    "--force-n",
+    "200",
+    "--force-p",
+    "500"
+  ],
+  "generator_sources": {
+    "tabicl_v2": {
+      "args": [
+        "--filter-unpredictable"
+      ],
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_graph_scm_mlp512_groupdrop095_exactp_v1.py",
+      "sha256": "ab80600fe22a72b0205f47929139325520a1897a28287dd50b86ca791e98acfd"
+    },
+    "tabpfn_v1": {
+      "args": [
+        "--official-repo",
+        "/users/minsuk/fm-lm-lambda/external/TabPFN-v1.0.0"
+      ],
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabpfn_v1_causal_scm_mlp512_groupdrop095_exactp_v1.py",
+      "sha256": "a3f490b116e9ed74742a2e821dff652288e811f10f217aec082450afbd872473"
+    }
+  },
+  "max_shard_bytes": 64000000,
+  "min_free_bytes": 300000000000,
+  "pipeline_config_path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_n200p500/pipeline_config_n200p500_rolling100gb.json",
+  "pipeline_config_sha256": "bbd10b7b1600fbeda0d08f9c6a503cb1860038a5d06a7183188640abf795a33f",
+  "pipeline_version": "v58_v17_kalbi_tabpfnv1_tabiclv2_scm_xy_50_50_groupdrop095_n200_p500_rolling100gb_v1",
+  "project_dir": "/users/minsuk/fm-lm-lambda",
+  "project_hard_cap_bytes": 130000000000,
+  "retirement_grace_bytes": 10000000000,
+  "schema_version": "v58.v17.n200p500.rolling.producer.config.v1",
+  "source_files": [
+    {
+      "label": "shape_sampler_helper",
+      "path": "/users/minsuk/fm-lm-lambda/exp122_shape_sampler.py",
+      "sha256": "79efa4e7eea257c39240421ad5656ac505540de83116db1a7817f77ccc619e19"
+    },
+    {
+      "label": "tabpfn_v1_runtime_adapter_and_corr_filter",
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabpfn_v1_causal_scm_mlp512_groupdrop095_sparse_linear_v1.py",
+      "sha256": "846384ac4b4497515248da767325d3aedb0ee77a4844dbd92fa997597bed650a"
+    },
+    {
+      "label": "official_tabpfn_v1_prior_checkpoint",
+      "path": "/users/minsuk/fm-lm-lambda/external/TabPFN-v1.0.0/tabpfn/models_diff/prior_diff_real_checkpoint_n_0_epoch_42.cpkt",
+      "sha256": "3c9aadaeddbf51462af8c0ee4b3ca3c697890f77e92318abbb0821b75261c392"
+    }
+  ],
+  "source_version": "v58_v17_n200p500_cpu_rolling_producer_v1",
+  "staging_high_water_bytes": 4000000000,
+  "workers": [
+    {
+      "base_seed": 88073500,
+      "cpu_cores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "prior": "tabpfn_v1",
+      "threads": 4,
+      "worker_id": "tabpfn_00"
+    },
+    {
+      "base_seed": 188073519,
+      "cpu_cores": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "prior": "tabpfn_v1",
+      "threads": 4,
+      "worker_id": "tabpfn_01"
+    },
+    {
+      "base_seed": 288073538,
+      "cpu_cores": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "prior": "tabpfn_v1",
+      "threads": 4,
+      "worker_id": "tabpfn_02"
+    },
+    {
+      "base_seed": 388073557,
+      "cpu_cores": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "prior": "tabpfn_v1",
+      "threads": 4,
+      "worker_id": "tabpfn_03"
+    },
+    {
+      "base_seed": 488073576,
+      "cpu_cores": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "prior": "tabpfn_v1",
+      "threads": 4,
+      "worker_id": "tabpfn_04"
+    },
+    {
+      "base_seed": 588073595,
+      "cpu_cores": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_00"
+    },
+    {
+      "base_seed": 688073614,
+      "cpu_cores": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_01"
+    },
+    {
+      "base_seed": 788073633,
+      "cpu_cores": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_02"
+    },
+    {
+      "base_seed": 888073652,
+      "cpu_cores": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_03"
+    },
+    {
+      "base_seed": 988073671,
+      "cpu_cores": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_04"
+    },
+    {
+      "base_seed": 1088073690,
+      "cpu_cores": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_05"
+    },
+    {
+      "base_seed": 1188073709,
+      "cpu_cores": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_06"
+    },
+    {
+      "base_seed": 1288073728,
+      "cpu_cores": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_07"
+    },
+    {
+      "base_seed": 1388073747,
+      "cpu_cores": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "prior": "tabicl_v2",
+      "threads": 4,
+      "worker_id": "tabicl_08"
+    }
+  ]
+}

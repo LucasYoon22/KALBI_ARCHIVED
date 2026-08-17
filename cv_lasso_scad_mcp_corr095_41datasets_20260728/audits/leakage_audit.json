@@ -1,0 +1,31 @@
+{
+  "baseline_static_test_y_after_method_freeze": true,
+  "bundle_id": "KALBI-D-v8-v24-s13100",
+  "runtime_test_y_permutation_sentinels": [
+    {
+      "output_identical": true,
+      "registry_index": 1,
+      "scaler_identical": true,
+      "status": "PASS",
+      "task_id": "hf_chlange_ramanspectrabioprocessanalystesanton785__glucose",
+      "test_y_changed": true
+    },
+    {
+      "output_identical": true,
+      "registry_index": 16,
+      "scaler_identical": true,
+      "status": "PASS",
+      "task_id": "hf_moleculenet_esol_morgan2048",
+      "test_y_changed": true
+    },
+    {
+      "output_identical": true,
+      "registry_index": 40,
+      "scaler_identical": true,
+      "status": "PASS",
+      "task_id": "hf_ramanbench_ht_raman_bio_catalysis_axp__atp",
+      "test_y_changed": true
+    }
+  ],
+  "status": "PASS"
+}

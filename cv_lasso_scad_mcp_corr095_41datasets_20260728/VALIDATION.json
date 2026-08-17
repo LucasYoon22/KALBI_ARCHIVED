@@ -1,0 +1,10 @@
+{
+  "coefficient_npz_count": 41,
+  "dataset_count": 41,
+  "long_row_count": 123,
+  "maximum_retained_abs_correlation": 0.9499982284579784,
+  "method_count": 3,
+  "preprocessing_npz_count": 41,
+  "raw_metric_json_count": 41,
+  "status": "PASS"
+}

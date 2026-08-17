@@ -1,0 +1,7 @@
+_to_delete/
+__pycache__/
+*.pyc
+.DS_Store
+.venv*/
+*.venv*/
+external/tabicl/.git/

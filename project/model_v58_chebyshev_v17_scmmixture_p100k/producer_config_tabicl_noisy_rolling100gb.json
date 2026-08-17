@@ -1,0 +1,105 @@
+{
+  "schema_version": "v14.scmmixture.rolling.producer.config.v1",
+  "pipeline_version": "v14_kalbi_tabiclv2_sampled_response_noise_rolling100gb_v1",
+  "source_version": "v14_tabiclv2_noisy_y_v6_cpu_rolling_producer_v1",
+  "project_dir": "/users/minsuk/fm-lm-lambda",
+  "control_root": "/users/sync_data/kalbi_tabiclv2_scm_xy_noisyexp1mix_groupdrop095_100GB_seed420807355/rolling_control",
+  "pipeline_config_path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/pipeline_config_tabicl_noisy_rolling100gb.json",
+  "pipeline_config_sha256": "8a478b46c83eb53bb4e25dd3ad0c35a8d0ab11f7c17eada22e5cc6e58aa8107d",
+  "generator_sources": {
+    "tabicl_v2": {
+      "path": "/users/minsuk/fm-lm-lambda/generate_tabiclv2_graph_scm_mlp512_groupdrop095_noisy_y_v6.py",
+      "sha256": "bf2194e7cf103e946f1bda0fbe60ac37591960c3c6d35748d4c153a7107f38ea",
+      "args": ["--filter-unpredictable"]
+    }
+  },
+  "source_files": [
+    {
+      "label": "shape_sampler_helper",
+      "path": "/users/minsuk/fm-lm-lambda/exp122_shape_sampler.py",
+      "sha256": "79efa4e7eea257c39240421ad5656ac505540de83116db1a7817f77ccc619e19"
+    },
+    {
+      "label": "tabicl_noisy_producer_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_producer_tabicl_noisy.py",
+      "sha256": "4eb5829219398ed43d0772bd0289db8888ad9e63ecd70902ea3ce9b7f377aee9"
+    },
+    {
+      "label": "tabicl_noisy_curator_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_curator_tabicl_noisy.py",
+      "sha256": "c5780db9cbd17502f04014fdf61915d62b570d8979b5b9c76365115db1423a34"
+    },
+    {
+      "label": "rolling_curator_base",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v14_scmmixture/rolling_curator.py",
+      "sha256": "5d16a4b70fbccc8e9f04c60856916f3a52b70eae170c5e913e23245308e78e4f"
+    },
+    {
+      "label": "rolling_catalog_base",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v14_scmmixture/rolling_catalog.py",
+      "sha256": "acb0c9837bc766a51fd7ebdcd5b0c441637739ef5cc65c215c27851b5ac1c2ac"
+    },
+    {
+      "label": "rolling_backpressure_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_producer_backpressure_fixed.py",
+      "sha256": "1d910ea05430456535c598c51481cc210c92f4bfd02c3f5d7e832038e9dddb52"
+    },
+    {
+      "label": "rolling_adopted_cache_runtime",
+      "path": "/users/minsuk/fm-lm-lambda/model_v58_chebyshev_v17_scmmixture_p100k/rolling_adopted_cache.py",
+      "sha256": "df5a3023825d808d8229a9b28534cb994661213c89b766dcdec2450693c57887"
+    }
+  ],
+  "generator_common_args": [
+    "--n-min", "32",
+    "--n-max", "20000",
+    "--main-n-min", "200",
+    "--small-n-max", "199",
+    "--small-n-probability", "0.10",
+    "--p-min", "50",
+    "--p-max", "100000",
+    "--max-cells", "24000000",
+    "--p-median", "10000",
+    "--p-log-sigma", "0.75",
+    "--raw-n-median", "5700",
+    "--n-log-sigma", "0.70",
+    "--direct-p-cap", "4096",
+    "--core-oversample-factor", "1.5",
+    "--corr-threshold", "0.95",
+    "--hidden-dim", "256",
+    "--gaussian-dims", "16",
+    "--input-noise-variance-min", "0.001",
+    "--input-noise-variance-max", "1.0",
+    "--output-noise-variance-min", "0.001",
+    "--output-noise-variance-max", "0.25",
+    "--clip-value", "10.0",
+    "--max-retries", "30",
+    "--response-noise-exp-scale", "1.0",
+    "--response-noise-sigma-cap", "3.0"
+  ],
+  "bootstrap_staging_high_water_bytes": 102000000000,
+  "staging_high_water_bytes": 4000000000,
+  "active_target_bytes": 100000000000,
+  "retirement_grace_bytes": 10000000000,
+  "project_hard_cap_bytes": 130000000000,
+  "min_free_bytes": 300000000000,
+  "max_shard_bytes": 64000000,
+  "workers": [
+    {"worker_id": "tabicl_noisy_00", "prior": "tabicl_v2", "base_seed": 420807355, "cpu_cores": [64,65,66,67], "threads": 4},
+    {"worker_id": "tabicl_noisy_01", "prior": "tabicl_v2", "base_seed": 470807374, "cpu_cores": [68,69,70,71], "threads": 4},
+    {"worker_id": "tabicl_noisy_02", "prior": "tabicl_v2", "base_seed": 520807393, "cpu_cores": [72,73,74,75], "threads": 4},
+    {"worker_id": "tabicl_noisy_03", "prior": "tabicl_v2", "base_seed": 570807412, "cpu_cores": [76,77,78,79], "threads": 4},
+    {"worker_id": "tabicl_noisy_04", "prior": "tabicl_v2", "base_seed": 620807431, "cpu_cores": [80,81,82,83], "threads": 4},
+    {"worker_id": "tabicl_noisy_05", "prior": "tabicl_v2", "base_seed": 670807450, "cpu_cores": [84,85,86,87], "threads": 4},
+    {"worker_id": "tabicl_noisy_06", "prior": "tabicl_v2", "base_seed": 720807469, "cpu_cores": [88,89,90,91], "threads": 4},
+    {"worker_id": "tabicl_noisy_07", "prior": "tabicl_v2", "base_seed": 770807488, "cpu_cores": [92,93,94,95], "threads": 4},
+    {"worker_id": "tabicl_noisy_08", "prior": "tabicl_v2", "base_seed": 820807507, "cpu_cores": [96,97,98,99], "threads": 4},
+    {"worker_id": "tabicl_noisy_09", "prior": "tabicl_v2", "base_seed": 870807526, "cpu_cores": [100,101,102,103], "threads": 4},
+    {"worker_id": "tabicl_noisy_10", "prior": "tabicl_v2", "base_seed": 920807545, "cpu_cores": [104,105,106,107], "threads": 4},
+    {"worker_id": "tabicl_noisy_11", "prior": "tabicl_v2", "base_seed": 970807564, "cpu_cores": [108,109,110,111], "threads": 4},
+    {"worker_id": "tabicl_noisy_12", "prior": "tabicl_v2", "base_seed": 1020807583, "cpu_cores": [112,113,114,115], "threads": 4},
+    {"worker_id": "tabicl_noisy_13", "prior": "tabicl_v2", "base_seed": 1070807602, "cpu_cores": [116,117,118,119], "threads": 4},
+    {"worker_id": "tabicl_noisy_14", "prior": "tabicl_v2", "base_seed": 1120807621, "cpu_cores": [120,121,122,123], "threads": 4},
+    {"worker_id": "tabicl_noisy_15", "prior": "tabicl_v2", "base_seed": 1170807640, "cpu_cores": [124,125,126,127], "threads": 4}
+  ]
+}

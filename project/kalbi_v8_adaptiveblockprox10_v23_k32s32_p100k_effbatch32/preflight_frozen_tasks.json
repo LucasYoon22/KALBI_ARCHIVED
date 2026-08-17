@@ -1,0 +1,34 @@
+{
+  "catalog_epoch": 63,
+  "catalog_sha256": "1d9d51e10d1252dadef7896504e040299b4fb492cdacc3025994572c3da97bf3",
+  "selection_rule": "closest absolute P to each predeclared target in catalog order; no performance inspection",
+  "tasks": [
+    {
+      "target_p": 500,
+      "shard_id": 930,
+      "n": 3728,
+      "p": 667,
+      "seed": 1985764800,
+      "sha256": "64949dc082812eb3973b8e928deb6330ccafd1e126238c8048d8e3f7b1b4a921",
+      "file": "64949dc082812eb3973b8e928deb6330ccafd1e126238c8048d8e3f7b1b4a921.npz"
+    },
+    {
+      "target_p": 10000,
+      "shard_id": 1186,
+      "n": 2400,
+      "p": 10000,
+      "seed": 1896764795,
+      "sha256": "59b8ef65fd06c993d9c59a7ac67cf7f10d89d7e9b695bc5f87e290282a20e983",
+      "file": "59b8ef65fd06c993d9c59a7ac67cf7f10d89d7e9b695bc5f87e290282a20e983.npz"
+    },
+    {
+      "target_p": 100000,
+      "shard_id": 1293,
+      "n": 240,
+      "p": 100000,
+      "seed": 1972764892,
+      "sha256": "5afa5ec3e179c3b0b131570a36df0d1e15e8caef67d8d525da79c9f79a5131a3",
+      "file": "5afa5ec3e179c3b0b131570a36df0d1e15e8caef67d8d525da79c9f79a5131a3.npz"
+    }
+  ]
+}

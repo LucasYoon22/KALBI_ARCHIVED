@@ -1,0 +1,95 @@
+{
+  "schema_version": "kalbi_cv_penalty_baseline_backup_v1",
+  "date": "2026-07-28",
+  "source_server": "ssh -p 4597 root@129.204.7.16",
+  "source_evaluation_root": "/users/minsuk/fm-lm-lambda/evaluations/real_pgtN_corr095_kalbi_versions_vs_cv_penalties_20260728",
+  "dataset_count": 41,
+  "methods": [
+    "CV-LASSO",
+    "CV-SCAD",
+    "CV-MCP"
+  ],
+  "result_rows": 123,
+  "preprocessing_contract": {
+    "fit_scope": "outer-training rows only",
+    "constant_and_nonfinite_filter": true,
+    "feature_standardization": "outer-training mean and population standard deviation",
+    "correlation_filter": "stable original-column order, retain only if abs correlation with every retained feature is strictly below 0.95",
+    "cv_fold_preprocessing_refit": true,
+    "outer_test_response_read_after_selection": true,
+    "maximum_retained_abs_correlation": 0.9499982284579784
+  },
+  "solver_contract": {
+    "folds": 5,
+    "lambda_ratio_grid_points": 100,
+    "lambda_ratio_min": 1e-6,
+    "lambda_ratio_max": 1.0,
+    "lasso_solver": "sklearn cyclic coordinate descent",
+    "lasso_tolerance": 1e-8,
+    "lasso_max_iterations": 30000,
+    "scad_a": 3.7,
+    "mcp_gamma": 3.0,
+    "nonconvex_solver": "cached-Gram coordinate descent",
+    "nonconvex_tolerance": 1e-7,
+    "nonconvex_max_epochs_per_lambda": 1000
+  },
+  "primary_entrypoint": "code/evaluate_real_pgtN_cv_baselines_gramcd.py",
+  "support_code": [
+    "code/real_pgtN_common.py",
+    "code/run_corr095_baseline_worker.sh",
+    "code/run_corr095_molecular16_parallel.sh",
+    "code/test_corr095_preprocessing.py",
+    "code/validate_cached_gramcd_parity.py",
+    "code/validate_gramcd_nonconvex_baselines.py",
+    "code/build_cv_baseline_tables.py",
+    "code/validate_local_bundle.py"
+  ],
+  "remote_code_sha256": {
+    "evaluate_real_pgtN_cv_baselines_gramcd.py": "2f3d5b46aefd5a93620097b236bf15410a3194e50b8a8aff20a1124654fc0e9b",
+    "real_pgtN_common.py": "e79d62471f6cd0754b89bcb5b4f86dd9e4f620d7441904852156b5b1a14718d6",
+    "run_corr095_baseline_worker.sh": "392d6ce980a4cf596e57d0760438b73e1a0d4fcf7d86dc168982ccfce1a18ce4",
+    "test_corr095_preprocessing.py": "233c52875dfe5e2e8802d9ec79d340e41501c69b5fedc960f484e1e4b16cdc25",
+    "validate_cached_gramcd_parity.py": "623f872ba361d3632b88d7599691a648652184b2e5c38b499bb114869deba73d",
+    "validate_gramcd_nonconvex_baselines.py": "66c44e994b7ede4fe74b5e4145072688e830a77c4dcf21e23c66be36e4abdd42"
+  },
+  "result_artifacts": {
+    "wide_table": "results/cv_lasso_scad_mcp_41_wide.csv",
+    "long_table": "results/cv_lasso_scad_mcp_41_long.csv",
+    "aggregate_table": "results/cv_lasso_scad_mcp_aggregate.csv",
+    "filtered_dataset_table": "results/datasets_41_after_corr095.csv",
+    "summary": "results/summary.json",
+    "raw_metric_json_count": 41,
+    "coefficient_and_cv_path_npz_count": 41,
+    "preprocessing_npz_count": 41
+  },
+  "aggregate_results": {
+    "LASSO": {
+      "median_nmse": 0.4270,
+      "geometric_mean_nmse": 0.3442,
+      "median_test_r2": 0.5684,
+      "median_nnz": 16
+    },
+    "SCAD": {
+      "median_nmse": 0.4213,
+      "geometric_mean_nmse": 0.3527,
+      "median_test_r2": 0.5742,
+      "median_nnz": 13
+    },
+    "MCP": {
+      "median_nmse": 0.4314,
+      "geometric_mean_nmse": 0.3814,
+      "median_test_r2": 0.5611,
+      "median_nnz": 9
+    }
+  },
+  "validation": {
+    "bundle_validation": "PASS",
+    "preprocessing_regression_test": "PASS",
+    "leakage_audit": "PASS",
+    "correlation_filter_audit": "PASS",
+    "l1_scad_mcp_numerical_validation": "PASS",
+    "core_code_matches_remote_sha256": true
+  },
+  "raw_datasets_included": false,
+  "raw_dataset_locations": "Recorded in manifests/dataset_registry.json and manifests/split_manifest.json"
+}

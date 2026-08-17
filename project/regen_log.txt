@@ -1,0 +1,129 @@
+### baseline 확인
+  noise_rate 전달 횟수: 0   (0 이면 baseline)
+
+### 기존 폴더 삭제
+  삭제 완료
+
+### 1/4  저차원  N=200 P=16   (20 batch)
+V14 supportmix SCM2048-qfilter-BNN128 generator start part=out_v14_test seed=88076230 start=0 threads=4 corr_device=cpu
+saved batch_000000.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.321419 dt=0.41s
+saved batch_000001.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.542758 dt=0.17s
+saved batch_000002.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.424734 dt=0.10s
+retry batch=3 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.090480 < 0.200000')
+saved batch_000003.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.493230 dt=0.21s
+saved batch_000004.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.236298 dt=0.11s
+retry batch=5 task=0 attempt=1/30: ValueError('official SCM response dominant ratio 0.395000 > 0.300000')
+saved batch_000005.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.596390 dt=0.24s
+saved batch_000006.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.544928 dt=0.14s
+saved batch_000007.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.761757 dt=0.45s
+retry batch=8 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=15, target=16, candidates=24')
+saved batch_000008.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.397871 dt=0.31s
+retry batch=9 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.001962 < 0.200000')
+retry batch=9 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=11, target=16, candidates=24')
+saved batch_000009.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.454876 dt=0.20s
+saved batch_000010.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.209566 dt=0.11s
+saved batch_000011.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.567301 dt=0.10s
+saved batch_000012.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.501645 dt=0.11s
+retry batch=13 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=4, target=16, candidates=24')
+saved batch_000013.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.867254 dt=0.12s
+saved batch_000014.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.395774 dt=0.09s
+saved batch_000015.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.660314 dt=0.08s
+saved batch_000016.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.647928 dt=0.23s
+retry batch=17 task=0 attempt=1/30: ValueError('official SCM response dominant ratio 0.670000 > 0.300000')
+retry batch=17 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=15, target=16, candidates=24')
+retry batch=17 task=0 attempt=3/30: ValueError('official SCM response unique count 3 < 10')
+saved batch_000017.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.425219 dt=0.40s
+saved batch_000018.npz N=200 P=16 bytes=14090 outcome=tabicl samplemaxcorr=0.335986 dt=0.19s
+retry batch=19 task=0 attempt=1/30: ValueError('official SCM response unique count 9 < 10')
+retry batch=19 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=10, target=16, candidates=24')
+saved batch_000019.npz N=200 P=16 bytes=14090 outcome=linear samplemaxcorr=0.215232 dt=0.22s
+### 2/4  중차원  N=131 P=620  (25 batch)
+V14 supportmix SCM2048-qfilter-BNN128 generator start part=out_v14_highp seed=88076230 start=0 threads=4 corr_device=cpu
+retry batch=0 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.002936 < 0.200000')
+saved batch_000000.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.650638 dt=7.33s
+saved batch_000001.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.669308 dt=1.94s
+saved batch_000002.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.744703 dt=6.23s
+retry batch=3 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=401, target=620, candidates=2480')
+saved batch_000003.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.850093 dt=1.79s
+saved batch_000004.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.789151 dt=2.26s
+saved batch_000005.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.659213 dt=1.48s
+saved batch_000006.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.887846 dt=1.26s
+retry batch=7 task=0 attempt=1/30: ValueError('official SCM response dominant ratio 0.725191 > 0.300000')
+saved batch_000007.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.757639 dt=15.32s
+saved batch_000008.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.789889 dt=2.19s
+saved batch_000009.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.821536 dt=9.84s
+saved batch_000010.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.706494 dt=3.98s
+saved batch_000011.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.844375 dt=3.23s
+retry batch=12 task=0 attempt=1/30: ValueError('official SCM response dominant ratio 0.717557 > 0.300000')
+saved batch_000012.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.816723 dt=6.30s
+retry batch=13 task=0 attempt=1/30: ValueError('official SCM response unique count 2 < 10')
+saved batch_000013.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.846764 dt=12.28s
+saved batch_000014.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.485789 dt=2.38s
+saved batch_000015.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.758059 dt=2.32s
+saved batch_000016.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.765774 dt=16.03s
+saved batch_000017.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.729135 dt=1.26s
+saved batch_000018.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.766009 dt=9.53s
+saved batch_000019.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.778483 dt=4.02s
+saved batch_000020.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.869655 dt=2.83s
+saved batch_000021.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.823721 dt=9.20s
+saved batch_000022.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.579443 dt=3.36s
+saved batch_000023.npz N=131 P=620 bytes=180230 outcome=linear samplemaxcorr=0.875764 dt=3.76s
+saved batch_000024.npz N=131 P=620 bytes=180230 outcome=tabicl samplemaxcorr=0.766942 dt=2.82s
+### 3/4  BNN경로 N=800 P=3000 (8 batch)
+V14 supportmix SCM2048-qfilter-BNN128 generator start part=out_v14_bnn seed=88076230 start=0 threads=4 corr_device=cpu
+retry batch=0 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.093516 < 0.200000')
+saved batch_000000.npz N=800 P=3000 bytes=4853786 outcome=tabicl samplemaxcorr=0.531308 dt=7.18s
+retry batch=1 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.093057 < 0.200000')
+retry batch=1 task=0 attempt=2/30: ValueError('official SCM response dominant ratio 0.357500 > 0.300000')
+retry batch=1 task=0 attempt=3/30: ValueError('official SCM response standardized IQR 0.173913 < 0.200000')
+saved batch_000001.npz N=800 P=3000 bytes=4853786 outcome=linear samplemaxcorr=0.515837 dt=12.46s
+saved batch_000002.npz N=800 P=3000 bytes=4853786 outcome=tabicl samplemaxcorr=0.626127 dt=9.40s
+saved batch_000003.npz N=800 P=3000 bytes=4853786 outcome=linear samplemaxcorr=0.413362 dt=6.43s
+retry batch=4 task=0 attempt=1/30: ValueError('official SCM response dominant ratio 0.550000 > 0.300000')
+saved batch_000004.npz N=800 P=3000 bytes=4853786 outcome=tabicl samplemaxcorr=0.688719 dt=38.12s
+saved batch_000005.npz N=800 P=3000 bytes=4853786 outcome=linear samplemaxcorr=0.583124 dt=17.75s
+retry batch=6 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=639, target=2048, candidates=3072')
+retry batch=6 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=107, target=2048, candidates=3072')
+retry batch=6 task=0 attempt=3/30: ValueError('official SCM response unique count 2 < 16')
+retry batch=6 task=0 attempt=4/30: RuntimeError('SCM qfilter retained too few core features: accepted=688, target=2048, candidates=3072')
+saved batch_000006.npz N=800 P=3000 bytes=4853786 outcome=tabicl samplemaxcorr=0.687906 dt=14.42s
+retry batch=7 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=1388, target=2048, candidates=3072')
+retry batch=7 task=0 attempt=2/30: ValueError('official SCM response standardized IQR 0.000386 < 0.200000')
+retry batch=7 task=0 attempt=3/30: ValueError('official SCM response standardized IQR 0.156350 < 0.200000')
+saved batch_000007.npz N=800 P=3000 bytes=4853786 outcome=linear samplemaxcorr=0.721831 dt=21.66s
+### 4/4  자연shape (12 batch)
+V14 supportmix SCM2048-qfilter-BNN128 generator start part=out_v14_natural seed=88076230 start=0 threads=4 corr_device=cpu
+retry batch=0 task=0 attempt=1/30: ValueError('official SCM response standardized IQR 0.045064 < 0.200000')
+retry batch=0 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=2042, target=2048, candidates=3072')
+retry batch=0 task=0 attempt=3/30: RuntimeError('SCM qfilter retained too few core features: accepted=1769, target=2048, candidates=3072')
+saved batch_000000.npz N=908 P=26426 bytes=48371798 outcome=tabicl samplemaxcorr=0.539669 dt=20.49s
+retry batch=1 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=1601, target=2048, candidates=3072')
+retry batch=1 task=0 attempt=2/30: ValueError('official SCM response unique count 13 < 90')
+retry batch=1 task=0 attempt=3/30: RuntimeError('SCM qfilter retained too few core features: accepted=1, target=2048, candidates=3072')
+saved batch_000001.npz N=4499 P=5334 bytes=48096590 outcome=linear samplemaxcorr=0.519137 dt=59.49s
+retry batch=2 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=1978, target=2048, candidates=3072')
+saved batch_000002.npz N=3707 P=6473 bytes=48104858 outcome=tabicl samplemaxcorr=0.559613 dt=62.85s
+saved batch_000003.npz N=58 P=22622 bytes=2949678 outcome=linear samplemaxcorr=0.540650 dt=1.76s
+saved batch_000004.npz N=1323 P=18127 bytes=48231698 outcome=tabicl samplemaxcorr=0.507716 dt=26.23s
+retry batch=5 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=1660, target=2048, candidates=3072')
+retry batch=5 task=0 attempt=2/30: ValueError('official SCM response unique count 4 < 10')
+retry batch=5 task=0 attempt=3/30: RuntimeError('SCM qfilter retained too few core features: accepted=1470, target=2048, candidates=3072')
+saved batch_000005.npz N=89 P=5209 bytes=1009070 outcome=linear samplemaxcorr=0.627228 dt=23.97s
+retry batch=6 task=0 attempt=1/30: RuntimeError('SCM qfilter retained too few core features: accepted=1685, target=2048, candidates=3072')
+retry batch=6 task=0 attempt=2/30: RuntimeError('SCM qfilter retained too few core features: accepted=4, target=2048, candidates=3072')
+saved batch_000006.npz N=1625 P=14765 bytes=48208046 outcome=tabicl samplemaxcorr=0.497053 dt=16.92s
+retry batch=7 task=0 attempt=1/30: ValueError('official SCM response unique count 40 < 51')
+saved batch_000007.npz N=2504 P=9583 bytes=48144428 outcome=linear samplemaxcorr=0.664567 dt=42.09s
+retry batch=8 task=0 attempt=1/30: ValueError('official SCM response unique count 13 < 37')
+retry batch=8 task=0 attempt=2/30: ValueError('official SCM response dominant ratio 0.333149 > 0.300000')
+saved batch_000008.npz N=1807 P=3054 bytes=11095726 outcome=tabicl samplemaxcorr=0.493756 dt=37.60s
+retry batch=9 task=0 attempt=1/30: ValueError('official SCM response is degenerate')
+saved batch_000009.npz N=1225 P=19586 bytes=48273390 outcome=linear samplemaxcorr=0.692723 dt=6.11s
+saved batch_000010.npz N=2679 P=8957 bytes=48136306 outcome=tabicl samplemaxcorr=0.671497 dt=56.36s
+saved batch_000011.npz N=94 P=8885 bytes=1803732 outcome=linear samplemaxcorr=0.674905 dt=4.91s
+
+### 생성 완료
+  out_v14_test : 20 개
+  out_v14_highp : 25 개
+  out_v14_bnn : 8 개
+  out_v14_natural : 12 개
